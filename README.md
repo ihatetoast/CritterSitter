@@ -1,7 +1,11 @@
 #Final Project working title: Critter Sitter
 
 ##Description
-An app designed to help people with pets connect and find "swap mates". The idea is a sit-mine-sit-yours plan so that no money is exchanged. I watch your dog/turtle/bunny when you're gone; you watch my dog/bird/hamster when I'm gone. Barter only. Option for petless to participate, but the exchange would be a handmade/homemade gift, meal, favor, ... . Never money. 
+I love having pets in my life, but I also love the freedom to travel. I hated having to feel that you can do one or the other, but not both if you can't afford pet boarding. I want to help people who cannot travel with their pet to find a swapmate so they can travel with peace of mind. When I see shelters full of loving animals, I wonder about people who feel that they cannot adopt because they cannot afford to board when they travel, or 
+
+I want to introduce people whose needs match so they can trade off pet sitting favors.
+
+Critter Sitter allows people to describe themselves, their homes, their pet menagerie and browse profiles to find a partner to exchange pet sitting favours with the added benefit of making new friends for humans and non-humans alike.
 
 ##User Stories
 [user stories](https://trello.com/b/XGPVSCna/tiy-final-project)
