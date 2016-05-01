@@ -14,7 +14,7 @@ Critter Sitter allows people to describe themselves, their homes, their pet mena
 [] estimate time
 
 ##Wire Frames
-[pages and directions](./IMG_8270.JPG)
+![pages and directions](./IMG_8270.JPG)
 [x]home
 [x]about
 [x]human profile
