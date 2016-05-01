@@ -9,27 +9,17 @@ Critter Sitter allows people to describe themselves, their homes, their pet mena
 
 ##User Stories
 [user stories](https://trello.com/b/XGPVSCna/tiy-final-project)
-[x] create cards
-[x] create checklist
-[] estimate time
+
+
+
 
 ##Wire Frames
 ![pages and directions](./IMG_8270.JPG)
-[x]home
-[x]about
-[x]human profile
-[x]critter/s profile/s
-[x]browse sitters
-[x]message sitter
-[x]feedback
-[x]blog
+
 
 ##Models
 ![CritterSitter](./CritterSitter.png)
-[x]sitter
-[x]critter
-[x]home
-[x]message
+
 
 ## APIs, Plugins, Libraries, Frameworks
 Framework: Skeleton
