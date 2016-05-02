@@ -1,13 +1,16 @@
 import React from 'react';
 
 
-export default React.createClass({
+const Home = React.createClass({
 	render: function() {
 		return (
 			<section>
-        		
+        		<h1>Critter Sitter</h1>
+
 
 			</section>
 		);
 	}
 });
+
+React.render(<Home />, document.getElementById())
