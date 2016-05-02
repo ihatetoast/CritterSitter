@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
 		t.dateTime('deletedAt').nullable();
 
 		t.string('critterName').notNull();
+		t.string('critterPhoto').nullable();
 		t.string('species').notNull();
 		t.string('energyLevel').notNull();
 		t.string('specNeeds').notNull();

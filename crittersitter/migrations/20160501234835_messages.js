@@ -6,8 +6,8 @@ exports.up = function(knex, Promise) {
         t.dateTime('deletedAt').nullable();
 
         t.string('emailTo').notNull();
-        t.string('emailfrom').notNull();
-        t.string('message').notNull();
+        t.string('emailFrom').notNull();
+        t.string('messageBody').notNull();
 
     });
 };
