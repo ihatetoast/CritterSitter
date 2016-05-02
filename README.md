@@ -22,8 +22,6 @@ Critter Sitter allows people to describe themselves, their homes, their pet mena
 
 
 ## APIs, Plugins, Libraries, Frameworks
-Framework: Skeleton
-Libraries: ReactJS, Perk
-Plugins: Sass
-APIs: THINKING NOT NEC FOR THIS ASSIGNMENT
+Skeleton, ReactJS, Perk, Bookshelf, Sass, Browserify, Backbone, Knex, PSQL, Filestack, Express
+
 

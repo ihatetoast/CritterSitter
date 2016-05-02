@@ -4,5 +4,6 @@ module.exports = bookshelf.model('Authentication', {
 	hasTimestamps: ['createdAt', 'updatedAt'],
 	user: function() {
 		return this.belongsTo('User', 'userId');
+		//User is model, userId is the spec key.
 	}
 });
