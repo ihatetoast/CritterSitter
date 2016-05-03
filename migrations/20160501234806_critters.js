@@ -5,12 +5,11 @@ exports.up = function(knex, Promise) {
 		t.dateTime('updatedAt').nullable();
 		t.dateTime('deletedAt').nullable();
 
-		t.string('critterName').notNull();
+		t.integer('number').unsigned().defaultTo(1);
 		t.string('critterPhoto').nullable();
 		t.string('species').notNull();
-		t.string('energyLevel').notNull();
-		t.string('specNeeds').notNull();
-		t.string('critterBio').notNull();
+		t.string('otherSpecies').nullable();
+		t.text('critterBio').notNull();
 	});
 };
 

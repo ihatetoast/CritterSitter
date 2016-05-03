@@ -1,4 +1,4 @@
 module.exports = bookshelf.model('Critter', {
-    tableName: 'products',
+    tableName: 'critters',
     hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt']
 });

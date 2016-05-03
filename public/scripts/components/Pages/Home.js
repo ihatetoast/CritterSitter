@@ -1,17 +1,24 @@
 //page exists only to have a place for login and register. 
 import React from 'react';
+import ReactDOM from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
+
+import Navigation from './../components/Navigation';
 
 
-const Home = React.createClass({
+
+export default React.createClass({
 	render: function() {
 		return (
 			<section>
-        		<h1>Critter Sitter</h1>
+				<Navigation />
+        		<h1>HOME: Critter Sitter</h1>
+
+				{/*{this.props.children}*/}
 
 
 			</section>
 		);
 	}
 });
-
-React.render(<Home />, document.getElementById())
+ReactDOM.render(router, document.getElementById('container'));

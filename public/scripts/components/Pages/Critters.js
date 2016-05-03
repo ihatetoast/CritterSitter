@@ -5,7 +5,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<section>
-        			
+        		<h1>CRITTERS: Critter Sitter</h1>		
 
 			</section>
 		);

@@ -7,18 +7,20 @@ exports.up = function(knex, Promise) {
 
 		t.string('firstName').notNull();
 		t.string('lastName').notNull();
-		t.string('userName').notNull();
-		t.string('userPhoto').nullable();
+		t.string('photo').nullable();
 		t.string('email').notNull();
-		t.integer('numAdults').unsigned().defaultTo(1);
-		t.integer('numChildren').unsigned().defaultTo(0);
-		t.string('howActiv').notNull();
-		t.string('briefBio').nullable();
-		t.string('homeStyle').notNull();
-		t.string('homeFloors').notNull();
-		t.string('yardSize').notNull();
+		t.string('mobile').notNull();
+		t.text('briefBio').nullable();
+		t.string('hmStyleSize').notNull();
+		t.string('ydStyleSize').notNull();
 		t.string('devEnviron').notNull();
-		
+
+		t.integer('messageId')
+			.unsigned()
+			.notNull()
+			.references('id')
+			.inTable('messages')
+			.onDelete('CASCADE');
 	});
 };
 

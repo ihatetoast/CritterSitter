@@ -5,10 +5,13 @@ exports.up = function(knex, Promise) {
         t.dateTime('updatedAt').nullable();
         t.dateTime('deletedAt').nullable();
 
-        t.string('emailTo').notNull();
-        t.string('emailFrom').notNull();
-        t.string('messageBody').notNull();
-
+        t.integer('userId')
+            .unsigned()
+            .notNull()
+            .references('id')
+            .inTable('users')
+            .onDelete('CASCADE');
+        t.text('messageBody').notNull();
     });
 };
 
