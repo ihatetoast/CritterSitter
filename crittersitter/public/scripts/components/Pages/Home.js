@@ -1,3 +1,4 @@
+//page exists only to have a place for login and register. 
 import React from 'react';
 
 
