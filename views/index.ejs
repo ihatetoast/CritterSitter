@@ -6,8 +6,13 @@
 
 	</head>
 	<body>
-		<section id="container">
-		</section>
+		<section id="container"></section>
+
+
+		<!-- window.user to keep track of if a user is logged in. terniary condition(if user is valid, then json.stringfy(user), otherwise {}  -->
+		<script type="text/javascript">
+			window.user = <%- user ? JSON.stringify(user) : '{}' %>;
+		</script>
 		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
 <!-- 		<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
 		<input type="filepicker" data-fp-apikey="AifGt857oRLCoRsu9sfJfz" onchange="alert(event.fpfile.url)"> -->
