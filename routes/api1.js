@@ -5,7 +5,7 @@ let path = require('path');
 //catch-all to let bookshelf take care of everything
 //from / on.
 let bookshelfApi=require('bookshelf-api')({
-	path: path.join(_final-project, '..','models')
+	path: path.join(__dirname, '..','models')
 });
 
 
