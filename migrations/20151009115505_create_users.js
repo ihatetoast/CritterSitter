@@ -14,13 +14,6 @@ exports.up = function(knex, Promise) {
 		t.string('hmStyleSize').notNull();
 		t.string('ydStyleSize').notNull();
 		t.string('devEnviron').notNull();
-
-		t.integer('messageId')
-			.unsigned()
-			.notNull()
-			.references('id')
-			.inTable('messages')
-			.onDelete('CASCADE');
 	});
 };
 

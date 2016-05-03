@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         t.dateTime('updatedAt').nullable();
         t.dateTime('deletedAt').nullable();
 
-        t.integer('userId')
+        t.integer('recipientId')
             .unsigned()
             .notNull()
             .references('id')

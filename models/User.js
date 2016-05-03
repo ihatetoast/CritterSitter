@@ -9,6 +9,9 @@ module.exports = bookshelf.model('User', {
 	},
 	//will allow me to keep track of messages 
 	messages: function(){
-		return this.hasMany('Message', 'userId');
-	}
+		return this.hasMany('Message', 'recipientId');
+	},
+	critter: function(){
+    	return this.hasOne('Critter','userId');
+    }
 });

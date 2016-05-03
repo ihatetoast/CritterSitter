@@ -10,6 +10,13 @@ exports.up = function(knex, Promise) {
 		t.string('species').notNull();
 		t.string('otherSpecies').nullable();
 		t.text('critterBio').notNull();
+
+		t.integer('userId')
+            .unsigned()
+            .notNull()
+            .references('id')
+            .inTable('users')
+            .onDelete('CASCADE');
 	});
 };
 

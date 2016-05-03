@@ -22,11 +22,14 @@ export default React.createClass({
 		// if(this.state.user.get('id')) {//if user is not logged in, what links does she see? browse,login 
 		//start with everything showing. later create the if/else	
 			return (<nav>
-				<Link to="/Register">My Profile</Link>
-				<Link to="/Critters">My Critters</Link>
-				<Link to="/Browse">Browse Sitters</Link>
-				<a href="#" onClick={this.logout}>Logout</a>		
-				<Link to='/Login'>Login</Link>
+				<Link to='/'>Home</Link>
+				<Link to="/register">My Profile</Link>	
+				<Link to='/mycritters'>Critters</Link>
+				<Link to='/sitters'>Browse Sitters</Link>
+				<Link to='/message'>Message Sitter</Link>
+				<Link to='/messages'>My Messages</Link>
+				<Link to='/login'>Login</Link>
+
 			</nav>);
 		
 	}
