@@ -8,7 +8,6 @@ const UserModel = Backbone.Model.extend({
 		lastName: '',
 		email: '',
 		photo: '',
-		password: '',
 		briefBio:'',
 		hmStyleSize:'',
 		ydStyleSize:'',
