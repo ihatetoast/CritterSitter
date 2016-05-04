@@ -19,6 +19,10 @@ Critter Sitter allows people to describe themselves and their pet menagerie and 
 ![Message Sitter Page](./markups/MessageSitter.png)
 ![View Messages Page](./markups/ViewMessages.png)
 
+##Style Tiles
+![Dominican Joe](./styletiles/dominicanjoe.png)
+![Beer Garden](./styletiles/beergarden.png)
+![Huddle](./styletiles/huddle.png)
 
 
 ##Models

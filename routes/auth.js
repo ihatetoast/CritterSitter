@@ -109,9 +109,7 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 				let newUser = new UserModel({
 					firstName: req.body.firstName,
 					lastName: req.body.lastName,
-					email: req.body.email,
-					password: req.body.password
-
+					email: req.body.email
 				});
 				newUser.save(null, {transacting: t})
 				.then(function(user) {
@@ -155,6 +153,7 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 					});
 				})
 				.catch(function(err) {
+					console.log(err);
 					t.rollback();
 					res.error.add('auth.UNKNOWN');
 					res.error.send('/auth/register');

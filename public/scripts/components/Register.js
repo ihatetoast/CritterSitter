@@ -1,14 +1,14 @@
 import React from 'react';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
-import UserModel from './models/user';
+import user from './../models/user';
 
 
 export default React.createClass ({
 	getInitialState: function() {
 		return{
 			errors: {},
-			user: UserModel
+			user: user
 		};
 	},
 	render: function() {
