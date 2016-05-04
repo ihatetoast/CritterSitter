@@ -15,7 +15,7 @@ export default React.createClass({
 			<section className='page-login container'>
 				<div className='offset-by-four four columns'>
 					<form onSubmit={this.login} ><h1>Login</h1>
-						<input type='text'placeholder='email' ref='email' required='required' />
+						<input type='text' placeholder='email' ref='email' required='required' />
 						<div className='error'>{this.state.errors.email ? this.state.errors.email.message : null} </div>
 						<input type='password' placeholder='password' ref='password' required='required' />
 						<div className="error">{this.state.errors.password ? this.state.errors.password.message : null}</div>
@@ -28,14 +28,15 @@ export default React.createClass({
 	login: function(e) {
 		e.preventDefault();
 		$.ajax({
+			//is this the correct post url? is this just the auth part?
 			url: '/auth/login',
 			type: 'POST',
 			data:{
 				email: this.refs.email.value,
 				password: this.refs.password.value
 			},
-			success: (loggedInArg)=>{
-				this.state.user.set(loggedInArg);
+			success: (loggedArg)=>{
+				this.state.user.set(loggedArg);
 				console.log(success, 'HUZZAH! success message');
 				//once logged in, takes user to browse sitter page.
 				browserHistory.push('./sitters');

@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
 		t.string('critterPhoto').nullable();
 		t.string('species').notNull();
 		t.string('otherSpecies').nullable();
-		t.text('critterBio').notNull();
+		t.string('critterBio', 500).notNull();
 
 		t.integer('userId')
             .unsigned()

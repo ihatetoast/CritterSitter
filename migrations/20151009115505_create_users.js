@@ -10,7 +10,7 @@ exports.up = function(knex, Promise) {
 		t.string('photo').nullable();
 		t.string('email').notNull();
 		t.string('mobile').notNull();
-		t.text('briefBio').nullable();
+		t.string('briefBio', 500).nullable();
 		t.string('hmStyleSize').notNull();
 		t.string('ydStyleSize').notNull();
 		t.string('devEnviron').notNull();
