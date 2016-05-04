@@ -27,11 +27,7 @@ export default React.createClass({
 		return (
 			<section className='page-register container'>
 				<div>
-					<form onSubmit={this.register} ><h1>My Profile</h1>
-						<input type='text' placeholder='First name' ref='firstName' required='required' />
-						<input type='text' placeholder='Family name' ref='lastName' required='required' />
-						<input type='text' placeholder='email' ref='email' required='required' />
-						<input type='password' placeholder='Password' ref='password' required='required' />
+					<form onSubmit={this.makeProfile} ><h1>My Profile</h1>
 						
 						<div ref='home'>
 							<p>Where do you live?</p>
@@ -67,16 +63,12 @@ export default React.createClass({
 			</section>
 		);
 	},
-	register: function(e) {
+	makeProfile: function(e) {
 		e.preventDefault();
 		$.ajax({
 			url: '/auth/register',
 			type: 'POST',
 			data:{
-				firstName: this.refs.firstName.value,
-				lastName: this.refs.lastName.value,
-				email: this.refs.email.value,
-				password: this.refs.password.value,
 				photo: this.refs.photo.value,
 				briefBio: this.refs.sitterbio.value,
 				hmStyleSize: this.refs.home.querySelector('input:checked').value,
@@ -87,10 +79,10 @@ export default React.createClass({
 				this.state.user.set(loggedArg);
 				console.log('HUZZAH! success message');
 				//once logged in, takes user to browse sitter page.
-				browserHistory.push('./sitters');
+				browserHistory.push('/sitters');
 			},
 			error: (errorArg)=> {
-				console.log('WAWAAA ...error message');
+				console.log('error');
 				this.setState({errors: errorArg.responseJSON});
 
 			}

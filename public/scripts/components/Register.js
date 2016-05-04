@@ -1,15 +1,14 @@
 import React from 'react';
 import $ from 'jquery';
-import {hashHistory} from 'react-router';
-import Navigation from './Navigation';
-import user from '../models/user';
+import {browserHistory} from 'react-router';
+import UserModel from './models/user';
 
 
 export default React.createClass ({
 	getInitialState: function() {
 		return{
 			errors: {},
-			user: user
+			user: UserModel
 		};
 	},
 	render: function() {
@@ -29,30 +28,26 @@ export default React.createClass ({
 			);
 	},
 	register: function(e){
-		console.log('User is registered.');
 		e.preventDefault();
 		$.ajax({
 			url: '/auth/register',//whatever local i'm on, then go to the /auth/reg
 			type: 'POST',
 			headers: {
-				Accept: 'application/json'//because i only want json from teh server
+				Accept: 'application/json'//because i only want json from the server
 			},
 			data: {
-				email: this.refs.email.value,
-				password: this.refs.password.value,
 				firstName: this.refs.firstName.value,
-				lastName: this.refs.lastName.value
+				lastName: this.refs.lastName.value,
+				email: this.refs.email.value,
+				password: this.refs.password.value
 			},
 			success: (regUser)=>{
 				console.log('Ajax POST success');
-				console.log(regUser);
 				this.state.user.set(regUser);//this updates the model called user (instantiated as user)
-				console.log(this.state.user);
-				hashHistory.push('/');
+				browserHistory.push('/profile');
 			},
 			error:(errArg)=>{
 				console.log('Ajax POST error');
-				console.log(errArg);
 				this.setState({errors: errArg.responseJSON});
 			}
 		});
