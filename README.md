@@ -21,7 +21,7 @@ Critter Sitter allows people to describe themselves and their pet menagerie and 
 
 ##Style Tiles
 ![Dominican Joe](./styletiles/dominicanjoe.png)
-![Beer Garden](./styletiles/beergarden.png)
+![Beer Garden](./styletiles/beergarden.jpeg)
 ![Huddle](./styletiles/huddle.png)
 
 
