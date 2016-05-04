@@ -23,12 +23,13 @@ export default React.createClass({
 		//start with everything showing. later create the if/else	
 			return (<nav>
 				<Link className="nav-link" to='/'>Home</Link>
-				<Link className="nav-link" to='/register'>My Profile</Link>	
+				<Link className="nav-link" to='/register'>Register</Link>	
+				<Link className="nav-link" to='/profile'>My Profile</Link>	
 				<Link className="nav-link" to='/mycritters'>Critters</Link>
 				<Link className="nav-link" to='/sitters'>Browse Sitters</Link>
 				<Link className="nav-link" to='/message'>Message Sitter</Link>
 				<Link className="nav-link" to='/messages'>My Messages</Link>
-				<Link className="nav-link" to='/login'>Login</Link>
+				<Link className="nav-link" to='/login'>Sign in</Link>
 
 			</nav>);
 		

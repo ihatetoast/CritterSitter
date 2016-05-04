@@ -1,14 +1,15 @@
 import React from 'react';
 import $ from 'jquery';
-import user from '../../models/user';
+import UserModel from '../../models/user';
+import {browserHistory} from 'react-router';
 
 
 
 export default React.createClass({
 		getInitialState: function() {
 		return {
-			// errors: {},
-			user: user
+			errors: {},
+			user: UserModel
 		};
 	},
 		render: function() {
@@ -30,15 +31,15 @@ export default React.createClass({
 						<input type='text' placeholder='First name' ref='firstName' required='required' />
 						<input type='text' placeholder='Family name' ref='lastName' required='required' />
 						<input type='text' placeholder='email' ref='email' required='required' />
-						<input type='text' placeholder='mobile phone' ref='mobile' required='required' />
+						<input type='password' placeholder='Password' ref='password' required='required' />
 						
-						<div>
+						<div ref='home'>
 							<p>Where do you live?</p>
 							<label><input type='radio' name='home' id='radio' value='Apartment, Condo, Townhouse' />Apartment, Condo, Townhouse</label>
 							<label><input type='radio' name='home' id='radio' value='Small house' />Small house</label>
 							<label><input type='radio' name='home' id='radio' value='Large house' />Large house</label>
 						</div>
-						<div>
+						<div ref='yard'>
 							<p>What is your yard like?</p>
 							<label><input type='radio' name='yard' id='radio' value='No yard' />No yard</label>
 							<label><input type='radio' name='yard' id='radio' value='Small courtyard' />Small courtyard</label>
@@ -47,7 +48,7 @@ export default React.createClass({
 							<label><input type='radio' name='yard' id='radio' value='Unfenced yard' />Unfenced yard</label>
 						</div>
 
-						<div>
+						<div ref='devenv'>
 							<p>What type of developed environment:</p>
 							<label><input type='radio' name='dev-env' id='radio' value='Urban' />Urban</label>
 							<label><input type='radio' name='dev-env' id='radio' value='Suburban' />Suburban</label>
@@ -57,8 +58,9 @@ export default React.createClass({
 						
 						<div>
 							<p>Please take a moment to tell us a little bit more about yourself, home, and lifestyle:</p>
-							<textarea placeholder='limit 500 characters' name="sitterbio" cols='80' rows='40'></textarea>
+							<textarea placeholder='limit 500 characters' ref='sitterbio' name="sitterbio" cols='80' rows='40'></textarea>
 						</div>
+						<div ref='photo'>div placeholder for photo</div>
 						<button className="button-primary" type='submit'> Save </button>
 					</form>
 				</div>
@@ -68,20 +70,27 @@ export default React.createClass({
 	register: function(e) {
 		e.preventDefault();
 		$.ajax({
-			url: 'http://localhost:3000/api/v1/User',
+			url: '/auth/register',
 			type: 'POST',
 			data:{
+				firstName: this.refs.firstName.value,
+				lastName: this.refs.lastName.value,
 				email: this.refs.email.value,
-				password: this.refs.password.value
+				password: this.refs.password.value,
+				photo: this.refs.photo.value,
+				briefBio: this.refs.sitterbio.value,
+				hmStyleSize: this.refs.home.querySelector('input:checked').value,
+				ydStyleSize: this.refs.yard.querySelector('input:checked').value,
+				devEnviron: this.refs.devenv.querySelector('input:checked').value
 			},
 			success: (loggedArg)=>{
 				this.state.user.set(loggedArg);
-				console.log(success, 'HUZZAH! success message');
+				console.log('HUZZAH! success message');
 				//once logged in, takes user to browse sitter page.
 				browserHistory.push('./sitters');
 			},
 			error: (errorArg)=> {
-				console.log(error, 'WAWAAA ...error message');
+				console.log('WAWAAA ...error message');
 				this.setState({errors: errorArg.responseJSON});
 
 			}

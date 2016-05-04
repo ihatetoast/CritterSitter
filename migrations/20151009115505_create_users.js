@@ -7,13 +7,12 @@ exports.up = function(knex, Promise) {
 
 		t.string('firstName').notNull();
 		t.string('lastName').notNull();
-		t.string('photo').nullable();
 		t.string('email').notNull();
-		t.string('mobile').notNull();
 		t.string('briefBio', 500).nullable();
-		t.string('hmStyleSize').notNull();
-		t.string('ydStyleSize').notNull();
-		t.string('devEnviron').notNull();
+		t.string('hmStyleSize').nullable();
+		t.string('ydStyleSize').nullable();
+		t.string('devEnviron').nullable();
+		t.string('photo').nullable();
 	});
 };
 

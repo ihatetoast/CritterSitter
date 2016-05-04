@@ -7,6 +7,10 @@ export default React.createClass({
 			<section className='page-critters container'>
 				<div>
 					<form onSubmit={this.register} ><h1>My Critters</h1>	
+						<div>
+							<p>How many critters do you have?</p>
+							<input type='number' ref='numberPets' />
+						</div>
 						<div>What type of pet or pets do you have? Check all that apply:
 							<label><input type='checkbox' id='chbx' value='pet-1_chbx' />dog</label>
 							<label><input type='checkbox' id='chbx' value='pet-2_chbx' />cat</label>

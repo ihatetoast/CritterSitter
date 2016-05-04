@@ -4,12 +4,13 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import Home from './components/Pages/Home';
 import Login from './components/Pages/Login';
-import Register from './components/Pages/Register';
+import Profile from './components/Pages/Profile';
 import Critters from './components/Pages/Critters';
 import Browse from './components/Pages/Browse';
 import MessageToSitter from './components/Pages/MessageToSitter';
 import MyMessages from './components/Pages/MyMessages';
 import App from './components/App';
+import Register from './components/Register';
 
 
 
@@ -21,7 +22,8 @@ const router = (
 			<IndexRoute component={Home}/>
 
 			<Route path="/login" component={Login} />
-			<Route path="/register" component={Register} />
+			<Route path='/Register' component={Register} />
+			<Route path="/profile" component={Profile} />
 			<Route path="/mycritters" component={Critters} />
 			<Route path="/sitters" component={Browse} />
 			<Route path="/message" component={MessageToSitter} />

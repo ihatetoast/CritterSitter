@@ -28,6 +28,9 @@ export default React.createClass({
 	login: function(e) {
 		e.preventDefault();
 		$.ajax({
+			headers: {
+				Accept: 'application/json'
+			},
 			//is this the correct post url? is this just the auth part?
 			url: '/auth/login',
 			type: 'POST',
@@ -37,12 +40,12 @@ export default React.createClass({
 			},
 			success: (loggedArg)=>{
 				this.state.user.set(loggedArg);
-				console.log(success, 'HUZZAH! success message');
+				console.log(loggedArg, 'HUZZAH! success message');
 				//once logged in, takes user to browse sitter page.
 				browserHistory.push('./sitters');
 			},
 			error: (errorArg)=> {
-				console.log(error, 'WAWAAA ...error message');
+				console.log(errorArg, 'WAWAAA ...error message');
 				this.setState({errors: errorArg.responseJSON});
 
 			}

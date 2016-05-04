@@ -50,7 +50,7 @@ router.post('/email', validateAuthProfile, function(req, res, next) {
 		req.flash('email', 'Please enter your email address');
 	}
 	if(!validator.isEmail(req.body.email)) {
-		req.flash('email', 'It looks like there\'s somthing wrong with that email address');
+		req.flash('email', 'It looks like there\'s something wrong with that email address');
 	}
 	if(req.session._flash_messages.email) {
 		return res.redirect('/auth/email');
@@ -109,7 +109,9 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 				let newUser = new UserModel({
 					firstName: req.body.firstName,
 					lastName: req.body.lastName,
-					email: req.body.email
+					email: req.body.email,
+					password: req.body.password
+
 				});
 				newUser.save(null, {transacting: t})
 				.then(function(user) {
