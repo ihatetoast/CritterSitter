@@ -2,7 +2,7 @@
 import Backbone from 'backbone';
 
 
-const UserModel = Backbone.Model.exted({
+const UserModel = Backbone.Model.extend({
 	defaults: {
 		firstName: '',
 		lastName: '',
