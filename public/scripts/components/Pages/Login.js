@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import user from '../../models/user';
-
+import {browserHistory} from 'react-router';
 
 export default React.createClass({
 		getInitialState: function() {
@@ -13,8 +13,8 @@ export default React.createClass({
 		render: function() {
 		return (
 			<section className='page-login container'>
-				<div className='offset-by-four four columns'>
-					<form onSubmit={this.login} ><h1>Login</h1>
+				<div >
+					<form onSubmit={this.login} ><h1>Sign in</h1>
 						<input type='text' placeholder='email' ref='email' required='required' />
 						<div className='error'>{this.state.errors.email ? this.state.errors.email.message : null} </div>
 						<input type='password' placeholder='password' ref='password' required='required' />
@@ -40,12 +40,12 @@ export default React.createClass({
 			},
 			success: (loggedArg)=>{
 				this.state.user.set(loggedArg);
-				console.log(loggedArg, 'HUZZAH! success message');
+				console.log('LOGIN success message');
 				//once logged in, takes user to browse sitter page.
-				browserHistory.push('./sitters');
+				browserHistory.push('/sitters');
 			},
 			error: (errorArg)=> {
-				console.log(errorArg, 'WAWAAA ...error message');
+				console.log('LOGIN error message');
 				this.setState({errors: errorArg.responseJSON});
 
 			}

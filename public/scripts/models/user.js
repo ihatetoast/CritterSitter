@@ -25,3 +25,5 @@ export default new UserModel(window.user);
 	// <script type="text/javascript">
 	// 		window.user = <%- user ? JSON.stringify(user) : '{}' %>;
 	// 	</script>
+
+	

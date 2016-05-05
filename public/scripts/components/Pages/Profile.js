@@ -12,7 +12,7 @@ export default React.createClass({
 			user: user
 		};
 	},
-		render: function() {
+	render: function() {
 	return (
 			<section className='page-register container'>
 				<div>
