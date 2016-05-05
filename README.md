@@ -21,7 +21,7 @@ Critter Sitter allows people to describe themselves and their pet menagerie and 
 ##Models
 ![CritterSitter](./CritterSitter.png)
 
-##Style Tiles (top three to pick from)
+##Style Tiles (top three to pick from) as found on [Open Tiles](http://www.opentil.es/)
 Tiles by [Amalie Barras](https://github.com/amaliebarras):
 ![Dominican Joe](./styletiles/dominicanjoe.png)
 ![Huddle](./styletiles/huddle.png)
