@@ -12,11 +12,12 @@ export default React.createClass({
 							<input type='number' ref='numberPets' />
 						</div>
 						<div>What type of pet or pets do you have? Check all that apply:
-							<label><input type='checkbox' id='chbx' value='pet-1_chbx' />dog</label>
-							<label><input type='checkbox' id='chbx' value='pet-2_chbx' />cat</label>
-							<label><input type='checkbox' id='chbx' value='pet-3_chbx' />bird</label>
-							<label><input type='checkbox' id='chbx' value='pet-4_chbx' />rodent</label>
-							<label><input type='checkbox' id='chbx' value='pet-5_chbx' />reptile</label>
+							<label><input type='checkbox' id='chbx' value='dog' />dog</label>
+							<label><input type='checkbox' id='chbx' value='cat' />cat</label>
+							<label><input type='checkbox' id='chbx' value='bird' />bird</label>
+							<label><input type='checkbox' id='chbx' value='rabbit' />rabbit</label>
+							<label><input type='checkbox' id='chbx' value='rodent' />rodent</label>
+							<label><input type='checkbox' id='chbx' value='reptile' />reptile</label>
 							<p>If your pet's species is not listed, please enter it below:</p>
 							<input type='text' placeholder='Other' ref='other' />
 						</div>

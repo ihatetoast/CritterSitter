@@ -9,7 +9,6 @@ Critter Sitter allows people to describe themselves and their pet menagerie and 
 ##User Stories
 [user stories](https://trello.com/b/XGPVSCna/tiy-final-project)
 
-
 ##Wire Frames
 ![Welcome Page](./markups/WelcomePage.png)
 ![Login Page](./markups/LoginPage.png)
@@ -19,14 +18,16 @@ Critter Sitter allows people to describe themselves and their pet menagerie and 
 ![Message Sitter Page](./markups/MessageSitter.png)
 ![View Messages Page](./markups/ViewMessages.png)
 
-##Style Tiles
-![Dominican Joe](./styletiles/dominicanjoe.png)
-![Beer Garden](./styletiles/beergarden.jpeg)
-![Huddle](./styletiles/huddle.png)
-
-
 ##Models
 ![CritterSitter](./CritterSitter.png)
+
+##Style Tiles (top three to pick from)
+Tiles by [Amalie Barras](https://github.com/amaliebarras):
+![Dominican Joe](./styletiles/dominicanjoe.png)
+![Huddle](./styletiles/huddle.png)
+
+Tile by [Alex MacDuff](https://github.com/amacduff)
+![Beer Garden](./styletiles/beergarden.jpeg)
 
 
 
