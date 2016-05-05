@@ -25,8 +25,8 @@ export default React.createClass({
 					<Link className="nav-link" to='/'>Home</Link>	
 					<Link className="nav-link" to='/profile'>My Profile</Link>	
 					<Link className="nav-link" to='/mycritters'>My Critters</Link>
-					{/*<Link className="nav-link" to='/sitters'>Browse Sitters</Link>
-					<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
+					<Link className="nav-link" to='/sitters'>Browse Sitters</Link>
+					{/*<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
 					<Link className="nav-link" to='/messages'>My Messages</Link>
 					<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
 				</nav>);
