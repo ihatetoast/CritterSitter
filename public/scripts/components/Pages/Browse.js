@@ -2,30 +2,31 @@ import React from 'react';
 import Sitters from './../../collections/UsersCollection';
 import IndivSitter from './subcomponents/IndivSitter.js';
 
-// Warning: setState(...): Can only update a mounted or mounting component. 
-// This usually means you called setState() on an unmounted component. 
-// This is a no-op. Please check the code for the Browse component.
 
 
-// google withrelated
 export default React.createClass({
 	getInitialState: function(){
 		return{Sitters: Sitters};
 	},
 	componentDidMount: function(){
+		console.log('component did mount.');
 		Sitters.on('update', this.updateSitters);
 		Sitters.fetch({
 			data: {
 				//'critter' here is the function 'critter' in BE model
+				//when i use withRelated although sitter is model, the critter is just and object.
 				withRelated: ['critter']
 			}
 		});
 	},
 	updateSitters: function(){
+		console.log('Sitters did update.');
 		this.setState({Sitters: Sitters});
 	},
 	render: function() {
+		console.log('render rendered in a blender.');
 		const listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
+			console.log(sitterval);
 			return(
 				<IndivSitter
 					key = {sitterval.get('id')}
@@ -36,11 +37,18 @@ export default React.createClass({
 					photo  = {sitterval.get('photo')}
 					home = {sitterval.get('hmStyleSize')}
 					yard = {sitterval.get('ydStyleSize')}
-					environment = {sitterval.get('devEnviron')}/>
+					environment = {sitterval.get('devEnviron')}
+					//sitterval gives a collection of models. get() is used
+					//with 
+					number = {sitterval.get('critter').number}
+					species = {sitterval.get('critter').species}
+					other = {sitterval.get('critter').otherSpecies}
+					critterBio = {sitterval.get('critter').critterBio}/>
 				);
 		});
 		return (
 			<section>
+				<h2>Browse registered sitters:</h2>
 				<div>
 					{listOfSitters}
 				</div>
@@ -48,5 +56,6 @@ export default React.createClass({
 			);
 	}
 });
+
 
 		

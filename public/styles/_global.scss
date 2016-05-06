@@ -1,0 +1,71 @@
+// typography
+@import url(https://www.google.com/fonts#UsePlace:use/Collection:Oleo+Script|Roboto+Slab);
+
+
+// typography
+h1 {
+	font-family: 'Roboto Slab', serif;
+	color: #A3282F;
+}
+
+a {
+	text-decoration: none;
+}
+
+// page components
+body {
+	font-family: 'Oleo', Helvetica, Arial, sans-serif;
+
+	font-size: 18px;
+}
+
+nav, section, footer {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+section {
+	margin-top: 1em;
+}
+
+// navigation styles
+nav {
+  background-color: #A3282F;
+ 
+}
+
+.nav-links {
+	float: right;
+	margin-left: 10px;
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	margin-top: 24px;
+	// color: $color-dark-grey;
+	background-color: white;
+	text-align: center;
+	line-height: 38px;
+	text-decoration: none;
+	white-space: nowrap;
+	border-radius: 2px;
+	border: 1px solid;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+// .nav-links:hover {
+// 	color: #5b5b5d;
+// }
+// progress bar styles
+
+
+
+// footer styles
+
+footer {
+	border-top: 1px solid #d3d3d3;
+	// background-color: $color-light-grey;
+	font-size: 0.75em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}

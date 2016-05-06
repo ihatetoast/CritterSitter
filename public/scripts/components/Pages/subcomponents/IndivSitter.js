@@ -7,15 +7,15 @@ export default React.createClass({
 			<section>
 				<div>
 					{/*Below will need function to show only last initial*/}
-					<p><span>{this.props.firstName}</span><span id='lastNameInitial'>{this.props.lastName}</span> lives in a 
-					<span>{this.props.hmStyleSize}</span> with a <span>{this.props.yard}</span> in the<span>{this.props.devEnviron}</span> 
-					with <span>{this.props.number}</span> of critters/s (<span>{this.props.species}</span>, <span>{this.props.otherSpecies}</span>).</p>
+					<p><span>{this.props.firstName}</span><span id='lastNameInitial'>{this.props.lastName}</span> lives in 
+					<span> {this.props.home}</span> with <span>{this.props.yard}</span> in the<span> {this.props.environment}</span>  
+					with <span>{this.props.number}</span> critters/s (<span>{this.props.species}</span>, <span>{this.props.other}</span>).</p>
 				</div>
 				<div>
 					<h6>About Sitter:</h6>
-					<div>{this.props.briefBio}</div>
+					<div>{this.props.sitterBio}</div>
 					<h6>About Critter/s:</h6>
-					<div>{this.props.critterbio}</div>
+					<div>{this.props.critterBio}</div>
 				</div>
 			</section>
 		);

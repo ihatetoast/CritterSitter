@@ -5,7 +5,6 @@ import {browserHistory} from 'react-router';
 
 export default React.createClass({
 	getInitialState: function() {
-		console.log('critter');
 		return {
 			errors: {},
 			//instatiated

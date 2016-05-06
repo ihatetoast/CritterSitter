@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
 		t.string('firstName').notNull();
 		t.string('lastName').notNull();
 		t.string('email').notNull();
-		t.string('briefBio', 500).nullable();
+		t.string('briefBio', 700).nullable();
 		t.string('hmStyleSize').nullable();
 		t.string('ydStyleSize').nullable();
 		t.string('devEnviron').nullable();
