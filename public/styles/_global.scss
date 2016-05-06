@@ -1,11 +1,10 @@
-// typography
+
 @import url(https://www.google.com/fonts#UsePlace:use/Collection:Oleo+Script|Roboto+Slab);
+@import 'variables';
 
-
-// typography
 h1 {
 	font-family: 'Roboto Slab', serif;
-	color: #A3282F;
+	color: $huddle-red;
 }
 
 a {
@@ -34,14 +33,14 @@ nav {
  
 }
 
-.nav-links {
+.nav-link {
 	float: right;
 	margin-left: 10px;
 	display: inline-block;
 	height: 38px;
 	padding: 0 30px;
 	margin-top: 24px;
-	// color: $color-dark-grey;
+	color: $huddle-blue;
 	background-color: white;
 	text-align: center;
 	line-height: 38px;
