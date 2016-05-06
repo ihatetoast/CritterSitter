@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import Home from './components/Pages/Home';
-import Login from './components/Pages/Login';
+import Login from './components/Login';
 import Profile from './components/Pages/Profile';
 import Critters from './components/Pages/Critters';
 import Browse from './components/Pages/Browse';
@@ -22,7 +22,7 @@ const router = (
 			<Route path='/Register' component={Register} />
 			<Route path="/profile" component={Profile} />
 			<Route path="/critters" component={Critters} />
-			<Route path="/sitters" component={Browse} />
+			<Route path="/browse" component={Browse} />
 			<Route path="/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
 		</Route>

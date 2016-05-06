@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import user from '../../models/user';
+import user from '../models/user';
 import {browserHistory} from 'react-router';
 
 export default React.createClass({
@@ -42,7 +42,7 @@ export default React.createClass({
 				this.state.user.set(loggedArg);
 				console.log('LOGIN success message');
 				//once logged in, takes user to browse sitter page.
-				browserHistory.push('/sitters');
+				browserHistory.push('/browse');
 			},
 			error: (errorArg)=> {
 				console.log('LOGIN error message');

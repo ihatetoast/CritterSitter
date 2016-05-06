@@ -65,6 +65,6 @@ export default React.createClass({
 			ydStyleSize: this.refs.yard.querySelector('input:checked').value,
 			devEnviron: this.refs.devenv.querySelector('input:checked').value
 		});
-		browserHistory.push('/sitters');
+		browserHistory.push('/critters');
 	}
 });
