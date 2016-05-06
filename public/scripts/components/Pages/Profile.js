@@ -1,8 +1,6 @@
 import React from 'react';
 import user from '../../models/user';
-
-
-
+import {browserHistory} from 'react-router';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -19,24 +17,24 @@ export default React.createClass({
 					<form onSubmit={this.makeProfile} ><h1>My Profile</h1>	
 						<div ref='home'>
 							<p>Where do you live?</p>
-							<label><input type='radio' name='home' id='radio' value='Apartment, Condo, Townhouse' />Apartment, Condo, Townhouse</label>
-							<label><input type='radio' name='home' id='radio' value='Small house' />Small house</label>
-							<label><input type='radio' name='home' id='radio' value='Large house' />Large house</label>
+							<label><input type='radio' name='home' className='radio' value='an apartment, condo, townhouse' />Apartment, Condo, Townhouse</label>
+							<label><input type='radio' name='home' className='radio' value='a small house' />Small house</label>
+							<label><input type='radio' name='home' className='radio' value='a large house' />Large house</label>
 						</div>
 						<div ref='yard'>
 							<p>What is your yard like?</p>
-							<label><input type='radio' name='yard' id='radio' value='No yard' />No yard</label>
-							<label><input type='radio' name='yard' id='radio' value='Small courtyard' />Small courtyard</label>
-							<label><input type='radio' name='yard' id='radio' value='Small fenced yard' />Small fenced yard</label>
-							<label><input type='radio' name='yard' id='radio' value='Large fenced yard' />Large fenced yard</label>
-							<label><input type='radio' name='yard' id='radio' value='Unfenced yard' />Unfenced yard</label>
+							<label><input type='radio' name='yard' className='radio' value='no yard' />No yard</label>
+							<label><input type='radio' name='yard' className='radio' value='a small courtyard' />Small courtyard</label>
+							<label><input type='radio' name='yard' className='radio' value='a small fenced yard' />Small fenced yard</label>
+							<label><input type='radio' name='yard' className='radio' value='a large fenced yard' />Large fenced yard</label>
+							<label><input type='radio' name='yard' className='radio' value='an unfenced yard' />Unfenced yard</label>
 						</div>
 
 						<div ref='devenv'>
 							<p>What type of developed environment:</p>
-							<label><input type='radio' name='dev-env' id='radio' value='Urban' />Urban</label>
-							<label><input type='radio' name='dev-env' id='radio' value='Suburban' />Suburban</label>
-							<label><input type='radio' name='dev-env' id='radio' value='Rural' />Rural</label>
+							<label><input type='radio' name='dev-env' className='radio' value='city' />City</label>
+							<label><input type='radio' name='dev-env' className='radio' value='suburbs' />Suburbs</label>
+							<label><input type='radio' name='dev-env' className='radio' value='country' />Country</label>
 						</div>
 				
 	
@@ -67,6 +65,6 @@ export default React.createClass({
 			ydStyleSize: this.refs.yard.querySelector('input:checked').value,
 			devEnviron: this.refs.devenv.querySelector('input:checked').value
 		});
-		
+		browserHistory.push('/sitters');
 	}
 });

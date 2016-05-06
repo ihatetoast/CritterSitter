@@ -12,4 +12,4 @@ const MessageModel = Backbone.Model.extend({
 	idAttribute: 'id'
 });
 //instantiated. 
-export default new MessageModel();
+export default MessageModel;

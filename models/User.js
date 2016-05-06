@@ -1,5 +1,6 @@
 require('./Authentication');
 require('./Message');
+require('./Critter');
 
 module.exports = bookshelf.model('User', {
 	tableName: 'users',
@@ -11,6 +12,7 @@ module.exports = bookshelf.model('User', {
 	messages: function(){
 		return this.hasMany('Message', 'recipientId');
 	},
+	//this v v is what withRelated refers to when you read "critter"
 	critter: function(){
     	return this.hasOne('Critter','userId');
     }

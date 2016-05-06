@@ -16,6 +16,6 @@ const CritterModel = Backbone.Model.extend({
 	urlRoot: '/api/v1/Critter',
 	idAttribute: 'id'
 });
-//instantiated. 
-export default new CritterModel();
+
+export default CritterModel;
 	

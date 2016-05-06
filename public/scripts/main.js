@@ -13,9 +13,6 @@ import App from './components/App';
 import Register from './components/Register';
 
 
-
-
-//build end points
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
@@ -24,7 +21,7 @@ const router = (
 			<Route path="/login" component={Login} />
 			<Route path='/Register' component={Register} />
 			<Route path="/profile" component={Profile} />
-			<Route path="/mycritters" component={Critters} />
+			<Route path="/critters" component={Critters} />
 			<Route path="/sitters" component={Browse} />
 			<Route path="/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />

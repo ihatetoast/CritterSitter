@@ -1,9 +1,10 @@
 import Backbone from 'backbone';
-import UserModel from './../models/user.js';
+import User from './../models/UserModel.js';
 
 const UsersCollection = Backbone.Collection.extend({
-	model: UserModel,
+	model: User,
 	url: '/api/v1/user'
 });
+
 
 export default new UsersCollection();

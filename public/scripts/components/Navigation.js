@@ -19,12 +19,12 @@ export default React.createClass({
 	},
 	render: function() {	
 		if(this.state.user.get('id')){
-			console.log('the user IS logged in. Should see only HOME, MY PROFILE, MY CRITTERS, MY MESSAGES, LOG OUT');
+			console.log('the user IS logged in. Should see only HOME, MY PROFILE, MY CRITTERS, BROWSE SITTERS,  MY MESSAGES, LOG OUT');
 			return (
 				<nav>
 					<Link className="nav-link" to='/'>Home</Link>	
 					<Link className="nav-link" to='/profile'>My Profile</Link>	
-					<Link className="nav-link" to='/mycritters'>My Critters</Link>
+					<Link className="nav-link" to='/critters'>My Critters</Link>
 					<Link className="nav-link" to='/sitters'>Browse Sitters</Link>
 					{/*<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
 					<Link className="nav-link" to='/messages'>My Messages</Link>
