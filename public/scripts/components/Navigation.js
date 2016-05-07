@@ -28,7 +28,7 @@ export default React.createClass({
 					<Link className="nav-link" to='/browse'>Browse Sitters</Link>
 					{/*<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
 					<Link className="nav-link" to='/messages'>My Messages</Link>
-					<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
+					<a href="#" className="nav-link" onClick={this.logout}>Logout</a>
 				</div>);
 		}else{
 			console.log('the user is NOT logged in. Should see only HOME, REGISTER, SIGN IN. and be sure to THANK AARON LARNER--THE BEST LARNER EVER!!!');

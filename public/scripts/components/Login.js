@@ -12,14 +12,14 @@ export default React.createClass({
 	},
 		render: function() {
 		return (
-			<section className='page-login container'>
+			<section className='login-form container'>
 				<div >
 					<form onSubmit={this.login} ><h1>Sign in</h1>
 						<input type='text' placeholder='email' ref='email' required='required' />
 						<div className='error'>{this.state.errors.email ? this.state.errors.email.message : null} </div>
 						<input type='password' placeholder='password' ref='password' required='required' />
-						<div className="error">{this.state.errors.password ? this.state.errors.password.message : null}</div>
-						<button className="button-primary" type='submit'> Login </button>
+						<div className='error'>{this.state.errors.password ? this.state.errors.password.message : null}</div>
+						<button className='button-primary' type='submit'> Login </button>
 					</form>
 				</div>
 			</section>
@@ -40,7 +40,7 @@ export default React.createClass({
 			},
 			success: (loggedArg)=>{
 				this.state.user.set(loggedArg);
-				console.log('LOGIN success message');
+				console.log('LOGIN success message. User should\'ve been sent to browse page.');
 				//once logged in, takes user to browse sitter page.
 				browserHistory.push('/browse');
 			},
