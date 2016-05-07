@@ -16,10 +16,10 @@ import Register from './components/Register';
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
-			<IndexRoute component={Home}/>
-
+			<IndexRoute component={Home} />
+			<Route path="/home" component={Home} />
 			<Route path="/login" component={Login} />
-			<Route path='/Register' component={Register} />
+			<Route path='/register' component={Register} />
 			<Route path="/profile" component={Profile} />
 			<Route path="/critters" component={Critters} />
 			<Route path="/browse" component={Browse} />

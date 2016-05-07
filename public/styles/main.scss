@@ -1,6 +1,8 @@
 //import the google fonts from here?
-@import url(https://www.google.com/fonts#UsePlace:use/Collection:Oleo+Script|Roboto+Slab);
-
+@import url(https://fonts.googleapis.com/css?family=Oleo+Script|Roboto:400,700,400italic,500italic);
 
 @import '../../node_modules/skeleton-scss/scss/skeleton.scss';
 @import 'global';
+@import 'banner';
+@import 'navigation';
+@import 'home';

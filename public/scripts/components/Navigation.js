@@ -21,23 +21,23 @@ export default React.createClass({
 		if(this.state.user.get('id')){
 			console.log('the user IS logged in. Should see only HOME, MY PROFILE, MY CRITTERS, BROWSE SITTERS,  MY MESSAGES, LOG OUT');
 			return (
-				<nav>
-					<Link className="nav-link" to='/'>Home</Link>	
+				<div className="navdiv">
+					<Link className="nav-link" to='/home'>Home</Link>	
 					<Link className="nav-link" to='/profile'>My Profile</Link>	
 					<Link className="nav-link" to='/critters'>My Critters</Link>
 					<Link className="nav-link" to='/browse'>Browse Sitters</Link>
 					{/*<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
 					<Link className="nav-link" to='/messages'>My Messages</Link>
 					<a href="#" className="nav-links" onClick={this.logout}>Logout</a>
-				</nav>);
+				</div>);
 		}else{
 			console.log('the user is NOT logged in. Should see only HOME, REGISTER, SIGN IN. and be sure to THANK AARON LARNER--THE BEST LARNER EVER!!!');
 			return (
-				<nav>
-					<Link className="nav-link" to='/'>Home</Link>
+				<div className="navdiv">
+					<Link className="nav-link" to='/home'>Home</Link>
 					<Link className="nav-link" to='/register'>Register</Link>	
 					<Link className="nav-link" to='/login'>Sign in</Link>
-				</nav>);
+				</div>);
 		}
 	},
 	logout: function(e) {
@@ -48,7 +48,7 @@ export default React.createClass({
 			type: 'POST',
 			url: '/auth/logout'
 		});
-		browserHistory.push('/');
+		browserHistory.push('/home');
 	}
 });
 
