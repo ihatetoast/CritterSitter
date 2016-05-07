@@ -22,13 +22,18 @@ export default React.createClass({
 			console.log('the user IS logged in. Should see only HOME, MY PROFILE, MY CRITTERS, BROWSE SITTERS,  MY MESSAGES, LOG OUT');
 			return (
 				<div className="navdiv">
-					<Link className="nav-link" to='/home'>Home</Link>	
-					<Link className="nav-link" to='/profile'>My Profile</Link>	
-					<Link className="nav-link" to='/critters'>My Critters</Link>
-					<Link className="nav-link" to='/browse'>Browse Sitters</Link>
-					{/*<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
-					<Link className="nav-link" to='/messages'>My Messages</Link>
 					<a href="#" className="nav-link" onClick={this.logout}>Logout</a>
+					<Link className="nav-link" to='/critters'>My Critters</Link>
+					<Link className="nav-link" to='/profile'>My Profile</Link>
+					<Link className="nav-link" to='/browse'>Browse Sitters</Link>	
+					<Link className="nav-link" to='/messages'>My Messages</Link>
+					<Link className="nav-link" to='/home'>Home</Link>	
+					
+					
+					
+					{/*<Link className="nav-link" to='/message'>Message Sitter</Link>*/}
+				
+					
 				</div>);
 		}else{
 			console.log('the user is NOT logged in. Should see only HOME, REGISTER, SIGN IN. and be sure to THANK AARON LARNER--THE BEST LARNER EVER!!!');
