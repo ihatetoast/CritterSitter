@@ -11,6 +11,12 @@ exports.up = function(knex, Promise) {
             .references('id')
             .inTable('users')
             .onDelete('CASCADE');
+        t.integer('senderId')
+            .unsigned()
+            .notNull()
+            .references('id')
+            .inTable('users')
+            .onDelete('CASCADE');
         t.text('messageBody').notNull();
     });
 };

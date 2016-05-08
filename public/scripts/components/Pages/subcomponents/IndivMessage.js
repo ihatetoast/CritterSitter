@@ -1,6 +1,15 @@
 import React from 'react';
+import Message from '../../../models/Message';
+// import {browserHistory} from 'react-router';
 
 export default React.createClass({
+	getInitialState: function() {
+		return {
+			errors: {},
+			//instatiated
+			message: new Message
+		};
+	},
 	render: function() {
 		return (
 			<section>
