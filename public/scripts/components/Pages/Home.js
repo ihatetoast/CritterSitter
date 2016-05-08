@@ -1,25 +1,26 @@
 //page exists only to have a place for login and register. 
 import React from 'react';
 
-
 export default React.createClass({
 	render: function() {
 		return (
 			<section>
-				<div className="homediv">
-	        		<h1>Home</h1>
-	        		<p>NOTE TO KATY: this page should show only login and register links</p>
-	        		<div>div for left photo</div>
-	        		<div>Span jess takkos knex jess getInitialStatus 
-	        		fermentum nutellae. Pizzapi dom donec id route href 
-	        		link vel chrome. Chrome donec setState haythem martin, 
-	        		setState Backbone dictum jess sed mollis React fermentum.
-
-					Nutellae span Lorem, chrome vitae quis object ultrices models 
-					migrations etiam sit amet fermentum. Aaron markup object perk dom e  
-					caffeine. This link link React bookshelf ullamcorper haythem pellentesque ullamcorper. </div>
+	        	<h3>Welcome to Critter Sitter</h3>
+		        <div className='homediv offset-by-three six columns'>
+	    			<img src='./../../../images/stan.jpg'/>
+	    			<div className='photocredit'>
+	    				<a href='http://www.christinajenkinsphotography.com/' target='_blank'>Christina Jenkins Photography</a>
+	    			</div>
+		   
+	        		<div className='hometext'>
+	        			<p>Critter Sitter is an app that connects pet lovers
+		        		willing to mutually pet sit. </p>
+		        		<p>Register or login to browse
+		        		other pet sitters. Reach out, connect, have a playdate or two,
+		        		and know that when you travel, your beloved pet is in 
+		        		good hands.</p>
+	        		</div>
 				</div>
-
 			</section>
 		);
 	}
