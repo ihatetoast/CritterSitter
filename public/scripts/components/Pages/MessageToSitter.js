@@ -2,13 +2,7 @@ import React from 'react';
 
 
 export default React.createClass({
-	getInitialState: function() {
-		return {
-			 errors: {},
-			 //instatiated
-			critter: new Critter
-	}	;
-      },
+
 	render: function() {
 		return (
 			<section>

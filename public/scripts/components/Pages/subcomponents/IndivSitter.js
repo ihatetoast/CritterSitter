@@ -1,4 +1,5 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 
 export default React.createClass({
@@ -17,8 +18,14 @@ export default React.createClass({
 					<h6>About Critter/s:</h6>
 					<div>{this.props.critterBio}</div>
 				</div>
+				<div className='indivbuttonholder'>
+					<button onClick={this.makeMessage}>Message me</button>
+				</div>
 			</section>
 		);
+	},
+	makeMessage: function(e){
+		browserHistory.push(`/browse/${this.props.id}/message`);
 	}
 });
 
