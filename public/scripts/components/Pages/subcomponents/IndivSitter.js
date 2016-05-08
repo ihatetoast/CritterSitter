@@ -22,4 +22,6 @@ export default React.createClass({
 	}
 });
 
+//needs a message button that directs user to
+//message to sitter component
 		

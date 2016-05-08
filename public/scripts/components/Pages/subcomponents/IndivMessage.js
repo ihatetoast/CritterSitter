@@ -21,3 +21,6 @@ export default React.createClass({
 	}
 });
 
+//there'll be a userId of one sending it
+//a recipientId for the one it's to
+//messageBody
