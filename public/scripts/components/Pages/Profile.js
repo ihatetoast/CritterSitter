@@ -11,9 +11,9 @@ export default React.createClass({
 		};
 	},
 	render: function() {
-	return (
+		return (
 			<section className='page-register container'>
-				<div>
+				<div><p>NAVIGATION: i want to see only home, logout.</p>
 					<form onSubmit={this.makeProfile} ><h1>My Profile</h1>	
 						<div ref='home'>
 							<p>Where do you live?</p>
@@ -43,11 +43,12 @@ export default React.createClass({
 							<textarea placeholder='limit 500 characters' ref='sitterbio' name="sitterbio" cols='80' rows='40'></textarea>
 						</div>
 						<div ref='photo'>div placeholder for photo</div>
+						Save and continue to My Critters:
 						<button className="button-primary" type='submit'> Save </button>
 					</form>
 				</div>
 			</section>
-		);
+			);
 	},
 	makeProfile: function(e) {
 		e.preventDefault();

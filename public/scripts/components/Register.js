@@ -42,12 +42,12 @@ export default React.createClass ({
 				password: this.refs.password.value
 			},
 			success: (regUser)=>{
-				console.log('Ajax POST success');
+				console.log('register: Ajax POST success');
 				this.state.user.set(regUser);//this updates the model called user (instantiated as user)
 				browserHistory.push('/profile');
 			},
 			error:(errArg)=>{
-				console.log('Ajax POST error');
+				console.log('register: Ajax POST error');
 				this.setState({errors: errArg.responseJSON});
 			}
 		});

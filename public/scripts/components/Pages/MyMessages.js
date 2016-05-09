@@ -5,6 +5,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<section>
+			<p>NAVIGATION: i only want to see home, logout, browse, my profile</p>
 				<h1>My messages</h1>
 				<div>
 					<IndivMessage />
@@ -13,3 +14,5 @@ export default React.createClass({
 		);
 	}
 });
+
+//ajax fetch request

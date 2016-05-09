@@ -31,7 +31,7 @@ export default React.createClass({
 					
 					
 					
-					<Link className="nav-link" to='/browse/:userId/message'>Message Sitter</Link>
+					<Link className="nav-link" to='/browse/:userId/message'></Link>
 				
 					
 				</div>);

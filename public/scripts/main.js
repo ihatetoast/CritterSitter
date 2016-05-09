@@ -38,6 +38,7 @@ const router = (
 			<Route path="/profile" component={Profile} />
 			<Route path="/critters" component={Critters} />
 			<Route path="/browse" component={Browse} />
+			
 			<Route path="/browse/:userId/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
 		</Route>
