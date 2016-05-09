@@ -2,8 +2,8 @@
 @import url(https://www.google.com/fonts#UsePlace:use/Collection:Oleo+Script|Roboto+Slab);
 @import 'variables';
 
-h1 {
-	font-family: 'Roboto Slab', serif;
+h1, h2, h3 {
+	font-family: 'Roboto Slab', sans-serif;
 	color: $huddle-red;
 }
 
@@ -27,25 +27,65 @@ section {
 	margin-top: 1em;
 }
 
-// navigation styles
-nav {
-  background-color: #A3282F;
- 
+.button,
+button {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: $huddle-cream;
+  background-color: $huddle-blue;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.6em;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 0;
+  border: 5px solid $huddle-cream;
+  cursor: pointer;
+  box-sizing: border-box; }
+
+.button.button-primary,
+button.button-primary {
+  color: $huddle-cream;
+  background-color: $huddle-blue;
+  border: 2px solid $huddle-cream;
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 }
 
+.button.button-primary:hover,
+button.button-primary:hover {
+  color: $huddle-cream;
+  background-color: $huddle-red;
+  border: 2px solid $huddle-cream;
 
+input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: $huddle-brown;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: $huddle-cream;
+  border-radius: 0px;
+  border: 1px solid $huddle-brown;
+  cursor: pointer;
+  box-sizing: border-box; }
 
+  input[type="email"], input[type="text"], input[type="password"] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: $huddle-cream;
+  border: 1px solid $huddle-brown;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
 
-
-
-
-
-// footer styles
-
-footer {
-	border-top: 1px solid #d3d3d3;
-	// background-color: $color-light-grey;
-	font-size: 0.75em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
+ }

@@ -1,0 +1,35 @@
+@import 'variables';
+
+
+
+h2{
+	font-weight: 700;
+	color: $huddle-brown;
+}
+
+button {
+  color: $huddle-cream;
+  background-color: $huddle-blue;
+  border: 2px solid $huddle-cream;
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+}
+
+
+button:hover {
+  color: $huddle-cream;
+  background-color: $huddle-red;
+  border: 2px solid $huddle-cream;
+}
+
+input[type="email"], input[type="text"], input[type="password"] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: $huddle-cream;
+  border: 1px solid $huddle-brown;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+
+
+  
