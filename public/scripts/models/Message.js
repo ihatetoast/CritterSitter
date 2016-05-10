@@ -11,5 +11,5 @@ const MessageModel = Backbone.Model.extend({
 	urlRoot: '/api/v1/Message',
 	idAttribute: 'id'
 });
-//instantiated. 
+
 export default MessageModel;

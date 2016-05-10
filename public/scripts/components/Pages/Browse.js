@@ -53,9 +53,9 @@ export default React.createClass({
 					{listOfSitters}
 				</div>
 			</section>
-			);
+		);
 	}
 });
 
-
+// sitterval is the receipient's id because i went fro here
 		

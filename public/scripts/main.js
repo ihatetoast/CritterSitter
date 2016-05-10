@@ -39,7 +39,7 @@ const router = (
 			<Route path="/critters" component={Critters} />
 			<Route path="/browse" component={Browse} />
 			
-			<Route path="/browse/:userId/message" component={MessageToSitter} />
+			<Route path="/browse/:recipientId/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
 		</Route>
 	</Router>

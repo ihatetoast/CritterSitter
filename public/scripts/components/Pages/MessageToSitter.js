@@ -1,6 +1,7 @@
 import React from 'react';
 import Message from '../../models/Message';
 import {browserHistory} from 'react-router';
+import $ from 'jquery';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -25,7 +26,6 @@ export default React.createClass({
 					<form onSubmit={this.sendMessage}>
 						<div className='message-form container'>
 							<div className='msgReceiver'>
-							{/*two fields for the sender and receiver id*/}
 							</div>
 							<textarea placeholder='message to the sitter' className='messageBody' ref='messageTo' name='messageTo'></textarea>
 						</div>
@@ -44,13 +44,14 @@ export default React.createClass({
 				Accept: 'application/json'
 			},
 			data: {
-				message: this.refs.messageTo.value
-				// sender: 
-				// receiver:
+				recipientId: this.props.params.recipientId,
+				messageBody: this.refs.messageTo.value
+
 			},
 			success: (msgSend)=>{
 				console.log('message to sender posts success.');
 				this.state.message.set(msgSend);
+
 				browserHistory.push(`/browse/${this.props.id}/message`);
 			},
 			error: (errArg)=>{
@@ -59,32 +60,8 @@ export default React.createClass({
 			}
 
 		});
-		//when user clicks send, the message goes to the recipient's mymessages bank.
-		//captures message and stores in BE
-		//i need recipient's id
-		//recipient (not in this component) needs sender's id.
-		//browserHistory should push to /browse 
 	}
 });
-
-
- // return knex.schema.createTable('messages', function(t) {
- //        t.increments('id').unsigned().primary();
- //        t.dateTime('createdAt').notNull();
- //        t.dateTime('updatedAt').nullable();
- //        t.dateTime('deletedAt').nullable();
-
- //        t.integer('recipientId')!!!!!! (and i'll need this sender's id, too)
- //            .unsigned()
- //            .notNull()
- //            .references('id')
- //            .inTable('users')
- //            .onDelete('CASCADE');
- //        t.text('messageBody').notNull();
- //    });
-
-
-
 
 
 

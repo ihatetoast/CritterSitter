@@ -1,8 +1,11 @@
-import React from 'react';
-import {browserHistory} from 'react-router';
+// THIS SUBCOMPONENT GIVES THE DETAILS OF THE SITTER AND THE CRITTER.
+// CLICKING "MESSAGE ME" SENDS THE LOGGED-IN USER TO THE MESSAGE PAGE (<MessageToSitter />)
 
+import React from 'react';
+import {Link} from 'react-router';
 
 export default React.createClass({
+	
 	render: function() {
 		return (
 			<section>
@@ -18,15 +21,12 @@ export default React.createClass({
 					<h6>About Critter/s:</h6>
 					<div>{this.props.critterBio}</div>
 				</div>
-				<div className='indivbuttonholder'>
-					<button onClick={this.makeMessage}>Message me</button>
+				<div className='indivbutton'>
+					<Link to={`/browse/${this.props.id}/message`}>Message me</Link>
 				</div>
 			</section>
 		);
-	},
-	makeMessage: function(e){
-		browserHistory.push(`/browse/${this.props.id}/message`);
 	}
 });
 
-		
+

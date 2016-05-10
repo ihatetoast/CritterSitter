@@ -18,6 +18,7 @@ exports.up = function(knex, Promise) {
             .references('id')
             .inTable('users')
             .onDelete('CASCADE');
+            //must match properties of data
         t.text('messageBody').notNull();
     });
 };

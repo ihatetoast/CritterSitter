@@ -33,7 +33,7 @@ router.post(
 );
 
 router.post(
-	//end point
+	//keeping track of sender
 	'/message',
 	loggedIn,
 	function(req, res, next){

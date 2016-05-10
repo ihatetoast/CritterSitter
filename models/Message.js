@@ -6,4 +6,7 @@ module.exports = bookshelf.model('Message', {
     recipient: function(){
     	return this.belongsTo('User','recipientId');
     }
+    // sender: function(){
+    // 	return this.belongsTo('User','recipientId');
+    // }
 });
