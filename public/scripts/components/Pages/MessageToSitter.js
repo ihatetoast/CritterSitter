@@ -52,7 +52,7 @@ export default React.createClass({
 				console.log('message to sender posts success.');
 				this.state.message.set(msgSend);
 
-				browserHistory.push(`/browse/${this.props.id}/message`);
+
 			},
 			error: (errArg)=>{
 				console.log('message to sender did not post.');
@@ -60,6 +60,7 @@ export default React.createClass({
 			}
 
 		});
+						browserHistory.push('/browse');
 	}
 });
 
