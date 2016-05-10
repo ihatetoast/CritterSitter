@@ -3,29 +3,54 @@
 import React from 'react';
 import Messages from './../../collections/MessagesCollection';
 import IndivMessage from './subcomponents/IndivMessage';
+import user from './../../models/user';
 
 
 export default React.createClass({
 	getInitialState: function() {
-		return{Messages:Messages};
+		return{
+			Messages:Messages,//for mapping
+			user:user};//for filtering
 	},
+	// updateMessages: function (){
+	// 	console.log('Messages did update.');
+	// 	this.setState({Messages:Messages});
+	// },
+
 	componentDidMount: function(){
 		console.log('MYMESSAGES component did mount');
-		Messages.on('update', this.updateMessages);
+
+		Messages.on('update', ()=>{
+			console.log('Messages did update.');
+			this.setState({Messages:Messages});});
 		Messages.fetch({
 			data: {
 				withRelated: ['recipient', 'sender']
 			}
 		});
 	},
-	updateMessages: function (){
-		console.log('Messages did update.');
-		this.setState({Messages:Messages});
-	},
 	render: function() {
 		console.log('rendered messages like a goddess');
 		//filter out those who are NOT this user.
-		const listOfMessages = this.state.Messages.map((msgval,i,arr)=>{
+		let userId = this.state.user.get('id');
+		let listOfMessages = this.state.Messages.filter((user,i,arr)=>{
+			if( (user.get('id')) === userId) {
+				return true;
+			}
+			else{
+				return false;
+			}
+			})
+
+// function requireAuth(nextState, replace) {
+// 	  if (!user.get('id')) {
+// 	    replace({
+// 	      pathname: '/login'
+// 	    });
+// 	}
+// }
+
+		.map((msgval,i,arr)=>{
 			return(
 					<IndivMessage
 						key = {msgval.get('id')}

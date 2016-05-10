@@ -36,7 +36,7 @@ export default React.createClass({
 					
 				</div>);
 		}else{
-			console.log('the user is NOT logged in. Should see only HOME, REGISTER, SIGN IN. and be sure to THANK AARON LARNER--THE BEST LARNER EVER!!!');
+			console.log('the user is NOT logged in. Should see only HOME, REGISTER, SIGN IN.');
 			return (
 				<div className="navdiv">
 					<Link className="nav-link" to='/home'>Home</Link>
