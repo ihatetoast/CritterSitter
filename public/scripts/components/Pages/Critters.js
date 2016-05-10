@@ -13,9 +13,9 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<section className='page-critters container'>
+			<section>
 				<div>
-					<form onSubmit={this.makeCritter} ><h1>My Critters</h1>	
+					<form onSubmit={this.makeCritter} ><h2>My Critters</h2>	
 						<div>
 							<p>How many critters do you have?</p>
 							<input type='number' min="1" max="10" ref='number' />

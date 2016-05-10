@@ -1,0 +1,26 @@
+h2{
+	font-weight: 700;
+	color: $huddle-brown;
+}
+h4{
+	color:$huddle-red;
+	margin-bottom: 0;
+}
+.names{
+	margin-right:0.5em;
+	font-weight: 600;
+}
+
+button {
+  color: $huddle-cream;
+  background-color: $huddle-blue;
+  border: 2px solid $huddle-cream;
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+}
+
+
+button:hover {
+  color: $huddle-cream;
+  background-color: $huddle-red;
+  border: 2px solid $huddle-cream;
+}

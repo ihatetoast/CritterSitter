@@ -10,7 +10,10 @@ export default React.createClass({
 	},
 	componentDidMount: function(){
 		console.log('BROWSE component did mount.');
-		Sitters.on('update', this.updateSitters);
+		Sitters.on('update', ()=>{
+			console.log('Sitters did update.');
+			this.setState({Sitters: Sitters});
+		});
 		Sitters.fetch({
 			data: {
 				//'critter' here is the function 'critter' in BE model
@@ -18,10 +21,6 @@ export default React.createClass({
 				withRelated: ['critter']
 			}
 		});
-	},
-	updateSitters: function(){
-		console.log('Sitters did update.');
-		this.setState({Sitters: Sitters});
 	},
 	render: function() {
 		console.log('sitters rendered in a blender.');

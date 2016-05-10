@@ -16,7 +16,7 @@ export default React.createClass({
 		return (
 			<section>
 				<p>NAVIGATION: i want to see only logout, home, browse</p>
-				<h1>Send a message</h1>
+				<h2>Send a message</h2>
 				<div>
 				<p>Introduce yourself! Write a <span className='italSpan'>brief</span> message to the sitters
 				and let them know a little about yourself and what you're looking for. 

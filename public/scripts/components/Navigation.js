@@ -17,7 +17,10 @@ export default React.createClass({
 			});
 		});
 	},
-	render: function() {	
+	render: function() {
+		console.log(this.state.user.toJSON());
+		// if the information on the profile comp is not yet filled/is null,
+		// 	then return a limited menu. 
 		if(this.state.user.get('id')){
 			console.log('the user IS logged in. Should see only HOME, MY PROFILE, MY CRITTERS, BROWSE SITTERS,  MY MESSAGES, LOG OUT');
 			return (
@@ -57,8 +60,12 @@ export default React.createClass({
 	}
 });
 
+// create a fcn outside of render and then this._thatfunction(this.state.user)
 
+// _thatfunction will have three cases: cimplete, incomp, notloggedin
+// var = criticalfields = true
 
+// creatig and array of necce fields, which i will iterate over each: a foreach. if userModel.get(field)=== null
 
 
 

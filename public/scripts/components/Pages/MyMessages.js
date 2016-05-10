@@ -27,29 +27,20 @@ export default React.createClass({
 			data: {
 				withRelated: ['recipient', 'sender']
 			}
-		});
+		}) ;
 	},
 	render: function() {
 		console.log('rendered messages like a goddess');
 		//filter out those who are NOT this user.
 		let userId = this.state.user.get('id');
-		let listOfMessages = this.state.Messages.filter((user,i,arr)=>{
-			if( (user.get('id')) === userId) {
+		let listOfMessages = this.state.Messages.filter((msg,i,arr)=>{
+			if( (msg.get('recipientId')) === userId) {
 				return true;
 			}
 			else{
 				return false;
 			}
 			})
-
-// function requireAuth(nextState, replace) {
-// 	  if (!user.get('id')) {
-// 	    replace({
-// 	      pathname: '/login'
-// 	    });
-// 	}
-// }
-
 		.map((msgval,i,arr)=>{
 			return(
 					<IndivMessage
@@ -58,9 +49,6 @@ export default React.createClass({
 						
 						body = {msgval.get('messageBody')}
 						sent = {msgval.get('createdAt')}
-						
-						//msgval gives a collection of models. get() is used
-						//with arrays' values, so now i need ('messages').something
 						senderFirstName = {msgval.get('sender').firstName}
 						senderLastName = {msgval.get('sender').lastName}
 						receiverFirstName = {msgval.get('recipient').firstName}
@@ -71,7 +59,7 @@ export default React.createClass({
 		return (
 			<section>
 			<p>NAVIGATION: i only want to see home, logout, browse, my profile</p>
-				<h1>My messages</h1>
+				<h2>My messages</h2>
 				<div>
 					{listOfMessages}
 				

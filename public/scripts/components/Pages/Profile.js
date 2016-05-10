@@ -14,7 +14,7 @@ export default React.createClass({
 		return (
 			<section className='page-register container'>
 				<div><p>NAVIGATION: i want to see only home, logout.</p>
-					<form onSubmit={this.makeProfile} ><h1>My Profile</h1>	
+					<form onSubmit={this.makeProfile} ><h2>My Profile</h2>	
 						<div ref='home'>
 							<p>Where do you live?</p>
 							<label><input type='radio' name='home' className='radio' value='an apartment, condo, townhouse' />Apartment, Condo, Townhouse</label>

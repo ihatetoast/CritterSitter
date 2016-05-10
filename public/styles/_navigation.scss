@@ -4,7 +4,7 @@
 .navdiv {
 	background-color: $huddle-red;
 	color: $huddle-cream;
-	float: right;
+	overflow: hidden;
 	width: 100%;
 	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 	border-bottom: 12px solid $huddle-blue;
@@ -28,5 +28,8 @@
 }
 
 .nav-link:hover {
+	color: $huddle-blue;
+}
+.nav-link:active {
 	color: $huddle-blue;
 }
