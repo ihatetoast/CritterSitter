@@ -12,7 +12,7 @@ module.exports = bookshelf.model('User', {
 	messages: function(){
 		return this.hasMany('Message', 'recipientId');
 	},
-	//this v v is what withRelated refers to when you read "critter"
+	//this below is what withRelated refers to when you read "critter"
 	critter: function(){
     	return this.hasOne('Critter','userId');
     }

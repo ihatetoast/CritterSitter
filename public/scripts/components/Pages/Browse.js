@@ -9,7 +9,7 @@ export default React.createClass({
 		return{Sitters: Sitters};
 	},
 	componentDidMount: function(){
-		console.log('component did mount.');
+		console.log('BROWSE component did mount.');
 		Sitters.on('update', this.updateSitters);
 		Sitters.fetch({
 			data: {
@@ -24,7 +24,7 @@ export default React.createClass({
 		this.setState({Sitters: Sitters});
 	},
 	render: function() {
-		console.log('render rendered in a blender.');
+		console.log('sitters rendered in a blender.');
 		const listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
 			return(
 				<IndivSitter
@@ -39,7 +39,7 @@ export default React.createClass({
 					yard = {sitterval.get('ydStyleSize')}
 					environment = {sitterval.get('devEnviron')}
 					//sitterval gives a collection of models. get() is used
-					//with 
+					//with arrays' values, so now i need ('critter').something
 					number = {sitterval.get('critter').number}
 					species = {sitterval.get('critter').species}
 					other = {sitterval.get('critter').otherSpecies}
@@ -48,6 +48,8 @@ export default React.createClass({
 		});
 		return (
 			<section>
+				<p>NAVIGATION: i only want to see home, logout, my profile</p>
+	
 				<h2>Browse registered sitters:</h2>
 				<div>
 					{listOfSitters}

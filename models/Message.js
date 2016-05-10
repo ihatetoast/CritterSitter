@@ -5,8 +5,8 @@ module.exports = bookshelf.model('Message', {
     //pull related data
     recipient: function(){
     	return this.belongsTo('User','recipientId');
+    },
+    sender: function(){
+    	return this.belongsTo('User','senderId');
     }
-    // sender: function(){
-    // 	return this.belongsTo('User','recipientId');
-    // }
 });

@@ -60,7 +60,7 @@ export default React.createClass({
 			}
 
 		});
-						browserHistory.push('/browse');
+		browserHistory.push('/browse');
 	}
 });
 

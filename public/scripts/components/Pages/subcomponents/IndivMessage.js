@@ -1,23 +1,26 @@
-// import React from 'react';
+import React from 'react';
 
-// export default React.createClass({
-// 	render: function() {
-// 		return (
-// 			<section>
-// 				<div>
-// 					<span>{this.props.}</span><span>{this.props.params.lastName}</span>
-// 				</div>
-// 				<div>
-// 					{/*Below will need function to show only basic time/date*/}
-// 					<span>Sent on: {this.props.createdAt}</span>
-// 					}
-// 				</div>
-// 				<div>
-// 					{this.props.messageBody}
-// 				</div>
+export default React.createClass({
+	render: function() {
+		return (
+			<section>
+				<div>
+					<p>To: <span>{this.props.receiverFirstName} </span> <span>{this.props.receiverLastName} </span>
+					From:<span>{this.props.senderFirstName}</span> <span>{this.props.senderLastName}</span></p>
+				</div>
+				<div>
+					{/*Below will need function to show only basic time/date*/}
+					<span>Sent on: {this.props.sent}</span>
+					}
+				</div>
+				<div>
+					{this.props.body}
+				</div>
 				
-// 			</section>
-// 		);
-// 	}
-// });
+			</section>
+		);
+	}
+});
 
+// v2: could I link back to sender to write
+// another message?
