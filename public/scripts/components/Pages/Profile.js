@@ -4,14 +4,21 @@ import {browserHistory} from 'react-router';
 
 export default React.createClass({
 	getInitialState: function() {
-		console.log(user);
 		return {
 			errors: {},
 			user: user
 			//this.state.user is infor for the logged in person this.state.user.get('what')
 		};
 	},
+	componentDidMount: function(){
+		this.state.user.on('change', () => {
+			this.setState({
+				user: user
+			});
+		});
+	},
 	render: function() {
+		console.log('rendering the Profile', this.state.user.get('briefBio'));
 		return (
 			<section className='page-register container'>
 				<div>
@@ -24,7 +31,14 @@ export default React.createClass({
 						</div>
 						<div ref='ydStyleSize'>
 							<p>What is your ydStyleSize like?</p>
-							<label><input type='radio' name='yard' className='radio' value='no yard' />No yard</label>
+							<label>
+								<input 
+									type='radio' 
+									name='yard' 
+									className='radio' 
+									value='no yard' />
+								No yard
+							</label>
 							<label><input type='radio' name='yard' className='radio' value='a small courtyard' />Small courtyard</label>
 							<label><input type='radio' name='yard' className='radio' value='a small fenced yard' />Small fenced yard</label>
 							<label><input type='radio' name='yard' className='radio' value='a large fenced yard' />Large fenced yard</label>
@@ -33,15 +47,15 @@ export default React.createClass({
 
 						<div ref='devEnviron'>
 							<p>What type of developed environment:</p>
-							<label><input type='radio' name='dev-env' className='radio' value='city' />City</label>
-							<label><input type='radio' name='dev-env' className='radio' value='suburbs' />Suburbs</label>
-							<label><input type='radio' name='dev-env' className='radio' value='country' />Country</label>
+							<label><input checked = {this.state.user.get('devEnviron')==='city'} onChange={this.editDevEnivron} type='radio' name='dev-env' className='radio' value='city' />City</label>
+							<label><input checked = {this.state.user.get('devEnviron')==='suburbs'} onChange={this.editDevEnivron} type='radio' name='dev-env' className='radio' value='suburbs' />Suburbs</label>
+							<label><input checked = {this.state.user.get('devEnviron')==='country'} onChange={this.editDevEnivron} type='radio' name='dev-env' className='radio' value='country' />Country</label>
 						</div>
 				
 	
 						<div>
 							<p>Please take a moment to tell us a little bit more about yourself, home, and lifestyle:</p>
-							<textarea placeholder='limit 500 characters' ref='sitterbio' name="sitterbio" cols='80' rows='40'></textarea>
+							<textarea placeholder='limit 500 characters' ref='sitterbio' name="sitterbio" cols='80' rows='40' defaultValue={this.state.user.get('briefBio')}/>
 						</div>
 						<div ref='photo'>div placeholder for photo</div>
 						Save and continue to My Critters:
@@ -56,6 +70,7 @@ export default React.createClass({
 		var hmStyleSize = this.refs.hmStyleSize.querySelector('input:checked') ? this.refs.hmStyleSize.querySelector('input:checked').value : this.state.user.get('hmStyleSize');
 		var ydStyleSize = this.refs.ydStyleSize.querySelector('input:checked') ? this.refs.ydStyleSize.querySelector('input:checked').value : this.state.user.get('ydStyleSize');
 		var devEnviron = this.refs.devEnviron.querySelector('input:checked') ? this.refs.devEnviron.querySelector('input:checked').value : this.state.user.get('devEnviron');
+		
 		user.save({
 			briefBio:this.refs.sitterbio.value,
 			hmStyleSize: hmStyleSize,
@@ -69,8 +84,18 @@ export default React.createClass({
 			},
 			error: ()=>{
 			console.log('ERROR: makeProfile did not work. Bugger!');
+
 			}
 		});
+	},
+	editDevEnivron:function(e) {
+		//i want default to happen. 
+		console.log(e.target.value);
+		//change the value like i do an object:
+		//either {key: newvalue} OR ('key', newvalue)
+		this.state.user.set('devEnviron', e.target.value);
+
+
 	}
 
 });

@@ -18,10 +18,8 @@ export default React.createClass({
 	//any time props change (parent passes in sthg different) compenentWillReceiveProps
 	//componentWillUpdate is when we change the state. 
 	componentDidMount: function(){
-		console.log('MY MESSAGES component did mount');
 //these are the listeners (.on is a clue)
 		Messages.on('update', ()=>{
-			console.log('Messages did update.');
 			this.setState({Messages:Messages});
 
 		});
@@ -41,7 +39,6 @@ export default React.createClass({
 
 	},
 	render: function() {
-		console.log('rendered messages like a goddess');
 		//filter out those who are NOT this user.
 		let userId = this.state.user.get('id');
 		let listOfMessages = this.state.Messages.filter((msg,i,arr)=>{

@@ -13,11 +13,8 @@ export default React.createClass({
 			Sitters: Sitters
 		};
 	},
-	componentDidMount: function(){//see MyMessages for notes
-		console.log('BROWSE component did mount.');
-		
+	componentDidMount: function(){//see MyMessages for notes		
 		Sitters.on('update', ()=>{
-			console.log('Sitters did update.');
 			this.setState({Sitters: Sitters});
 		});
 		Sitters.fetch({
