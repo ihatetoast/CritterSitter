@@ -11,7 +11,7 @@ export default React.createClass({
 		return {
 			errors: {},
 			//instatiated
-			critter: new Critter
+			critter: new Critter()
 		};
 	},
 	render: function() {
@@ -48,12 +48,7 @@ export default React.createClass({
 	makeCritter: function(e) {
 		e.preventDefault();
 			console.log(this.state.critter);
-		this.state.critter.set({
-			critterBio:this.refs.critterbio.value,
-			species: this.refs.species.querySelector('input:checked').value,
-			number: this.refs.number.value,
-			otherSpecies: this.refs.other.value
-		});
+
 		this.state.critter.save({
 			critterBio:this.refs.critterbio.value,
 			species: this.refs.species.querySelector('input:checked').value,

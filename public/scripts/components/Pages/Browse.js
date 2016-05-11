@@ -38,11 +38,11 @@ export default React.createClass({
 					
 					firstName = {sitterval.get('firstName')}
 					lastName = {sitterval.get('lastName')}
-					sitterBio = {sitterval.get('briefBio')}
+					briefBio = {sitterval.get('briefBio')}
 					photo  = {sitterval.get('photo')}
-					home = {sitterval.get('hmStyleSize')}
-					yard = {sitterval.get('ydStyleSize')}
-					environment = {sitterval.get('devEnviron')}
+					hmStyleSize = {sitterval.get('hmStyleSize')}
+					ydStyleSize = {sitterval.get('ydStyleSize')}
+					devEnviron = {sitterval.get('devEnviron')}
 					//sitterval gives a collection of models. get() is used
 					//with arrays' values, so now i need ('critter').something
 					number = {sitterval.get('critter').number}

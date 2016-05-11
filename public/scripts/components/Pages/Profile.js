@@ -1,5 +1,5 @@
 import React from 'react';
-import user from '../../models/user';
+import user from '../../models/user';//this is a session, katy. ooooh. aaaah.
 import {browserHistory} from 'react-router';
 
 export default React.createClass({
@@ -8,6 +8,7 @@ export default React.createClass({
 		return {
 			errors: {},
 			user: user
+			//this.state.user is infor for the logged in person this.state.user.get('what')
 		};
 	},
 	render: function() {
@@ -15,14 +16,14 @@ export default React.createClass({
 			<section className='page-register container'>
 				<div>
 					<form onSubmit={this.makeProfile} ><h2>My Profile</h2>	
-						<div ref='home'>
+						<div ref='hmStyleSize'>
 							<p>Where do you live?</p>
-							<label><input type='radio' name='home' className='radio' value='an apartment, condo, townhouse' />Apartment, Condo, Townhouse</label>
+							<label><input type='radio' name='home' className='radio' value='an apartment, condo, or townhouse' />Apartment, Condo, Townhouse</label>
 							<label><input type='radio' name='home' className='radio' value='a small house' />Small house</label>
 							<label><input type='radio' name='home' className='radio' value='a large house' />Large house</label>
 						</div>
-						<div ref='yard'>
-							<p>What is your yard like?</p>
+						<div ref='ydStyleSize'>
+							<p>What is your ydStyleSize like?</p>
 							<label><input type='radio' name='yard' className='radio' value='no yard' />No yard</label>
 							<label><input type='radio' name='yard' className='radio' value='a small courtyard' />Small courtyard</label>
 							<label><input type='radio' name='yard' className='radio' value='a small fenced yard' />Small fenced yard</label>
@@ -30,7 +31,7 @@ export default React.createClass({
 							<label><input type='radio' name='yard' className='radio' value='an unfenced yard' />Unfenced yard</label>
 						</div>
 
-						<div ref='devenv'>
+						<div ref='devEnviron'>
 							<p>What type of developed environment:</p>
 							<label><input type='radio' name='dev-env' className='radio' value='city' />City</label>
 							<label><input type='radio' name='dev-env' className='radio' value='suburbs' />Suburbs</label>
@@ -52,20 +53,25 @@ export default React.createClass({
 	},
 	makeProfile: function(e) {
 		e.preventDefault();
-		
-		user.set({
-			briefBio:this.refs.sitterbio.value,
-			hmStyleSize: this.refs.home.querySelector('input:checked').value,
-			ydStyleSize: this.refs.yard.querySelector('input:checked').value,
-			devEnviron: this.refs.devenv.querySelector('input:checked').value
-		});
-		console.log(this.state.user);
+		var hmStyleSize = this.refs.hmStyleSize.querySelector('input:checked') ? this.refs.hmStyleSize.querySelector('input:checked').value : this.state.user.get('hmStyleSize');
+		var ydStyleSize = this.refs.ydStyleSize.querySelector('input:checked') ? this.refs.ydStyleSize.querySelector('input:checked').value : this.state.user.get('ydStyleSize');
+		var devEnviron = this.refs.devEnviron.querySelector('input:checked') ? this.refs.devEnviron.querySelector('input:checked').value : this.state.user.get('devEnviron');
 		user.save({
 			briefBio:this.refs.sitterbio.value,
-			hmStyleSize: this.refs.home.querySelector('input:checked').value,
-			ydStyleSize: this.refs.yard.querySelector('input:checked').value,
-			devEnviron: this.refs.devenv.querySelector('input:checked').value
+			hmStyleSize: hmStyleSize,
+			ydStyleSize: ydStyleSize,
+			devEnviron: devEnviron
+		},
+			{
+			success: ()=>{
+				console.log('SUCCESS: makeProfile worked. Profile should be made/edited.');
+				browserHistory.push('/critters');
+			},
+			error: ()=>{
+			console.log('ERROR: makeProfile did not work. Bugger!');
+			}
 		});
-		browserHistory.push('/critters');
 	}
+
 });
+
