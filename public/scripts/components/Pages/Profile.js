@@ -13,7 +13,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<section className='page-register container'>
-				<div><p>NAVIGATION: i want to see only home, logout.</p>
+				<div>
 					<form onSubmit={this.makeProfile} ><h2>My Profile</h2>	
 						<div ref='home'>
 							<p>Where do you live?</p>

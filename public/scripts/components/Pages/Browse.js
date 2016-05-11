@@ -3,6 +3,9 @@ import Sitters from './../../collections/UsersCollection';
 import IndivSitter from './subcomponents/IndivSitter.js';
 
 
+// for backbone, save handles both new and saving. if i have an existing model, just change
+// 	the attributes by modelName.save({keythatexists: newbits})
+// look this up as backbone
 
 export default React.createClass({
 	getInitialState: function(){
@@ -10,7 +13,7 @@ export default React.createClass({
 			Sitters: Sitters
 		};
 	},
-	componentDidMount: function(){
+	componentDidMount: function(){//see MyMessages for notes
 		console.log('BROWSE component did mount.');
 		
 		Sitters.on('update', ()=>{

@@ -2,6 +2,9 @@ import React from 'react';
 import Critter from '../../models/Critter';
 import {browserHistory} from 'react-router';
 
+//make this a subcom just for the form
+//fetch a critter, if not there, make one. 
+//pass fetch or newly made
 
 export default React.createClass({
 	getInitialState: function() {

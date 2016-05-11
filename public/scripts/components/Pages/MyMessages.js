@@ -7,23 +7,38 @@ import user from './../../models/user';
 
 
 export default React.createClass({
+	//messageListener()
 	getInitialState: function() {
 		return{
 			Messages:Messages,//for mapping
 			user:user};//for filtering
 	},
+	// next is cWillMt happens before first render. did is after.
+	// both happen once!
+	//any time props change (parent passes in sthg different) compenentWillReceiveProps
+	//componentWillUpdate is when we change the state. 
 	componentDidMount: function(){
 		console.log('MY MESSAGES component did mount');
-
+//these are the listeners (.on is a clue)
 		Messages.on('update', ()=>{
 			console.log('Messages did update.');
 			this.setState({Messages:Messages});
+
 		});
 		Messages.fetch({
 			data: {
 				withRelated: ['recipient', 'sender']
 			}
 		}) ;
+	},
+	componentWillUnmount: function(){
+		//turn this into a named function somewhere else:
+		// ()=>{
+		// 	console.log('Messages did update.');
+		// 	this.setState({Messages:Messages});
+		// } reference it where i stole it from this.namedFunction with .off
+
+
 	},
 	render: function() {
 		console.log('rendered messages like a goddess');
@@ -64,4 +79,5 @@ export default React.createClass({
 		);
 	}
 });
-
+//filter out to me and from me. collect them all.
+//dazzletime: then break them up by from with array methods.

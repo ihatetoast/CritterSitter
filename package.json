@@ -61,6 +61,7 @@
     "knex": "^0.10.0",
     "lodash": "^4.6.1",
     "middleware": "^1.0.0",
+    "moments": "0.0.2",
     "morgan": "~1.7.0",
     "node-gcm": "^0.14.0",
     "nodemailer": "^2.3.0",
