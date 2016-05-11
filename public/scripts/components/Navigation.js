@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import {Link} from 'react-router';
 import user from '../models/user';
-import $ from 'jquery';
+
 
 export default React.createClass({
 	getInitialState: function() {
@@ -18,56 +18,24 @@ export default React.createClass({
 		});
 	},
 	render: function() {
-		console.log(this.state.user.toJSON());
-		// if the information on the profile comp is not yet filled/is null,
-		// 	then return a limited menu. 
+		console.log(this.state.user.toJSON()); 
 		if(this.state.user.get('id')){
 			console.log('the user IS logged in. Should see only HOME, MY PROFILE, MY CRITTERS, BROWSE SITTERS,  MY MESSAGES, LOG OUT');
 			return (
 				<div className="navdiv">
-					<a href="#" className="nav-link" onClick={this.logout}>Logout</a>
+					<Link className="nav-link" to='/browse'>Browse</Link>
 					<Link className="nav-link" to='/critters'>My Critters</Link>
 					<Link className="nav-link" to='/profile'>My Profile</Link>
-					<Link className="nav-link" to='/browse'>Browse Sitters</Link>	
-					<Link className="nav-link" to='/messages'>My Messages</Link>
-					<Link className="nav-link" to='/home'>Home</Link>	
-					
-					
-					
-					{/*<Link className="nav-link" to={'/browse/:recipientId/message'}></Link>*/}
+					<Link className="nav-link" to='/messages'>Messages</Link>
 				
-					
+						
+					{/*<Link className="nav-link" to={'/browse/:recipientId/message'}></Link>*/}
 				</div>);
 		}else{
-			console.log('the user is NOT logged in. Should see only HOME, REGISTER, SIGN IN.');
+			console.log('the user is NOT logged in. REGISTER, SIGN IN at top right.');
 			return (
 				<div className="navdiv">
-					<Link className="nav-link" to='/home'>Home</Link>
-					<Link className="nav-link" to='/register'>Register</Link>	
-					<Link className="nav-link" to='/login'>Sign in</Link>
 				</div>);
 		}
-	},
-	logout: function(e) {
-		e.preventDefault();
-		console.log('user is loggedOUT');
-		this.state.user.clear();
-		$.ajax({
-			type: 'POST',
-			url: '/auth/logout'
-		});
-		browserHistory.push('/home');
 	}
 });
-
-// create a fcn outside of render and then this._thatfunction(this.state.user)
-
-// _thatfunction will have three cases: cimplete, incomp, notloggedin
-// var = criticalfields = true
-
-// creatig and array of necce fields, which i will iterate over each: a foreach. if userModel.get(field)=== null
-
-
-
-
-

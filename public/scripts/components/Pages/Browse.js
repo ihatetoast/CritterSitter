@@ -6,10 +6,13 @@ import IndivSitter from './subcomponents/IndivSitter.js';
 
 export default React.createClass({
 	getInitialState: function(){
-		return{Sitters: Sitters};
+		return{
+			Sitters: Sitters
+		};
 	},
 	componentDidMount: function(){
 		console.log('BROWSE component did mount.');
+		
 		Sitters.on('update', ()=>{
 			console.log('Sitters did update.');
 			this.setState({Sitters: Sitters});
@@ -24,7 +27,7 @@ export default React.createClass({
 	},
 	render: function() {
 		console.log('sitters rendered in a blender.');
-		const listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
+		let listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
 			return(
 				<IndivSitter
 					key = {sitterval.get('id')}
@@ -47,10 +50,8 @@ export default React.createClass({
 		});
 		return (
 			<section>
-				<p>NAVIGATION: i only want to see home, logout, my profile</p>
-	
 				<h2>Browse registered sitters:</h2>
-				<div>
+				<div >
 					{listOfSitters}
 				</div>
 			</section>

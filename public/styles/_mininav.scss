@@ -1,35 +1,37 @@
 @import 'variables';
 
 
-.navdiv {
-	background-color: $huddle-blue;
+.mini_navdiv {
+	padding-top: 0.25em;
+	background-color: $huddle-red;
 	color: $huddle-cream;
 	overflow: hidden;
 	width: 100%;
 	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-	// border-bottom: 12px solid $huddle-blue;
-	margin-bottom: 1em;
 }
 
-.nav-link {
-	background-color: $huddle-blue;
+.mini_nav-link {
+	background-color: $huddle-red;
 	color: $huddle-cream;
 	border: none;
+	padding-right: 0.5em;
 	float: right;
 	display: inline-block;
-	margin-left: 1.5em;
 	margin-right: 0.5em;
-	height: 1.5em;
+	font-size: 0.75em;
 	text-align: center;
 	text-decoration: none;
 	border:none;
 	cursor: pointer;
 	// box-sizing: border-box;
 }
+.pipe {
+	border-right: $huddle-cream solid 2px;
+}
 
 .nav-link:hover {
-	color: $huddle-red;
+	color: $huddle-blue;
 }
 .nav-link:active {
-	color: $huddle-red;
+	color: $huddle-blue;
 }

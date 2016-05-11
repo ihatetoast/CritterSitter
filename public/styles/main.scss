@@ -1,13 +1,21 @@
 //import the google fonts from here?
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script|Roboto:400,700,400italic,500italic);
+@import 'variables';
 
 @import '../../node_modules/skeleton-scss/scss/skeleton.scss';
 @import 'global';
+
+//top of the pages
 @import 'banner';
 @import 'navigation';
-@import 'home';
+@import 'mininav';
+
+//components with forms
 @import 'login';
 @import 'register';
+
+
+@import 'home';
 @import 'mymessages';
 @import 'browse';
 @import 'indivsitter';

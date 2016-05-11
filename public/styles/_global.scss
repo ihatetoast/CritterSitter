@@ -2,6 +2,7 @@
 @import url(https://www.google.com/fonts#UsePlace:use/Collection:Oleo+Script|Roboto+Slab);
 @import 'variables';
 
+
 h1, h2, h3 {
 	font-family: 'Roboto Slab', sans-serif;
 	color: $huddle-red;
@@ -14,8 +15,8 @@ a {
 // page components
 body {
 	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
-
 	font-size: 18px;
+  color: $huddle-brown;
 }
 
 nav, section, footer {

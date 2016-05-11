@@ -8,9 +8,9 @@ export default React.createClass({
 	
 	render: function() {
 		return (
-			<section>
+			<section className='offset-by-two eight columns'>
 				<div>
-					<h4>About Sitter:</h4>
+					<h4>About {this.props.firstName}:</h4>
 					{/*Below will need function to show only last initial*/}
 					<p><span className='names'>{this.props.firstName}</span><span id='lastNameInitial'>{this.props.lastName}</span> lives in 
 					<span> {this.props.home}</span> with <span>{this.props.yard}</span> in the<span> {this.props.environment}</span>  
@@ -21,8 +21,8 @@ export default React.createClass({
 					<h4>About Critter/s:</h4>
 					<div>{this.props.critterBio}</div>
 				</div>
-				<div className='indivbutton'>
-					<Link to={`/browse/${this.props.id}/message`}>Message me</Link>
+				<div >
+					<button className='msgSitter'><Link to={`/browse/${this.props.id}/message`}>Message {this.props.firstName}</Link></button>
 				</div>
 			</section>
 		);

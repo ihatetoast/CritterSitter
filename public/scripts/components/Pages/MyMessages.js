@@ -12,17 +12,13 @@ export default React.createClass({
 			Messages:Messages,//for mapping
 			user:user};//for filtering
 	},
-	// updateMessages: function (){
-	// 	console.log('Messages did update.');
-	// 	this.setState({Messages:Messages});
-	// },
-
 	componentDidMount: function(){
-		console.log('MYMESSAGES component did mount');
+		console.log('MY MESSAGES component did mount');
 
 		Messages.on('update', ()=>{
 			console.log('Messages did update.');
-			this.setState({Messages:Messages});});
+			this.setState({Messages:Messages});
+		});
 		Messages.fetch({
 			data: {
 				withRelated: ['recipient', 'sender']

@@ -5,13 +5,21 @@ import $ from 'jquery';
 
 export default React.createClass({
 	getInitialState: function() {
-		console.log(Message);
 		return {
 			errors: {},
-			//instatiated
+			//instatiating, so needs () bc method
 			message: new Message()
 		};
 	},
+	//ask instructor: this was not in before. why?
+	// componentDidMount: function() {
+	// 	this.state.Message.on('change', () => {
+	// 		console.log('Message to Sitter: Component did mount');
+	// 		this.setState({
+	// 			Message: Message
+	// 		});
+	// 	});
+	// },
 	render: function() {
 		return (
 			<section>
@@ -27,7 +35,7 @@ export default React.createClass({
 						<div className='message-form container'>
 							<div className='msgReceiver'>
 							</div>
-							<textarea placeholder='message to the sitter' className='messageBody' ref='messageTo' name='messageTo'></textarea>
+							<textarea placeholder='message to the sitter' className='messageBody' ref='messageTo' name='messageTo' cols='80' rows='40'></textarea>
 						</div>
 						<button className="button-primary" type='submit'>Send</button>
 					</form>
