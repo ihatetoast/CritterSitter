@@ -14,8 +14,8 @@ export default React.createClass({
 		};
 	},
 	componentDidMount: function(){
-		console.log('session id: ',this.state.user.id);
-		console.log('this critter\'s id: ', this.state['critter']);
+		// console.log('session id: ',this.state.user.id);
+		// console.log('this critter\'s id: ', this.state['critter']);
 		this.state.critter.on('change', this._critterDetails);
 		Critters.fetch(
 		{
@@ -24,7 +24,6 @@ export default React.createClass({
 			//i've checked the network response and saw the array of objs.
 			// success(critters)<=an array i'll get back.
 			success:(critters)=>{
-				console.log('SUCCESS: critters', critters.toJSON()[0]);
 				this.state.critter.set(critters.toJSON()[0]);
 			},
 			error:(errArg)=>{
@@ -43,7 +42,6 @@ export default React.createClass({
 		this.setState({critter:this.state.critter});
 	},
 	render: function() {
-		console.log('render: critters', this.state.critter);
 		return (
 			<section>
 				<div>
@@ -52,7 +50,8 @@ export default React.createClass({
 							<div>
 							<p>How many critters do you have?</p>
 							<input 
-								defaultValue={this.state.critter.get('number')}
+								value={this.state.critter.get('number')}
+								onChange={this.handleNumber}
 								type='number' 
 								min="1" 
 								max="20" 
@@ -63,22 +62,24 @@ export default React.createClass({
 						<div>
 							<p>List the types of critters you have:</p>
 							<input 
-								defaultValue={this.state.critter.get('otherSpecies')}
+								value={this.state.critter.get('otherSpecies')}
+								onChange={this.handleOtherSpecies}
 								type='text' 
 								placeholder='dog, cat, goat, hamster ...' 
-								ref='otherspecies' />
+								ref='otherSpecies' />
 						</div>
 	
 
 						<div>
 							<p>Please take a moment to tell us a little bit more about your critters:</p>
 							<textarea 
+								value={this.state.critter.get('critterBio')}
+								onChange ={this.handleCritterBio}
 								placeholder='limit 500 characters' 
-								ref='critterbio' 
-								name='critterbio' 
+								ref='critterBio' 
+								name='critterBio' 
 								cols='80' 
-								rows='40'
-								defaultValue={this.state.critter.get('critterBio')}/>
+								rows='40'/>
 						</div>
 						<div>
 							<button className="button-primary" type='submit'> Save </button>
@@ -90,25 +91,38 @@ export default React.createClass({
 	},
 	makeCritter: function(e) {
 		e.preventDefault();
+		// var critterBio = this.refs.critterBio ? this.refs.critterBio.value : this.state.critter.get('critterBio');
+		// var number = this.refs.number ? this.refs.number.value : this.state.critter.get('number');
+		// var otherSpecies = this.refs.otherSpecies ? this.refs.otherSpecies.value : this.state.critter.get('otherSpecies');
+		
 
-		this.state.critter.save({
-			critterBio:this.refs.critterbio.value,
-			number: this.refs.number.value,
-			otherSpecies: this.refs.otherspecies.value
+		// this.state.critter.save({
+		// 	critterBio: critterBio,
+		// 	number: number,
+		// 	otherSpecies: otherSpecies
+		// },
+			this.state.critter.save({
+				critterBio: this.refs.critterBio.value,
+				number: this.refs.number.value,
+				otherSpecies: this.refs.otherSpecies.value
 		},
 			{
 			success: ()=>{
-				console.log('SUCCESS: makeCritter edited/changed');
 				browserHistory.push('/browse');
 			},
 			error: ()=>{
 				console.log('ERROR: critter not edited');
 			}
 		});
+	},
+	handleCritterBio: function(e){
+		this.state.critter.set('critterBio', e.target.value);
+	},
+	handleOtherSpecies: function(e){
+		this.state.critter.set('otherSpecies', e.target.value);
+	},
+	handleNumber: function(e){
+		this.state.critter.set('number', e.target.value);
 	}
-	// handleOtherSpeciesChange: function(e){
-	// 	console.log('handleOtherSpeciesChange: e.target.value:', e.target.value);
-	// 	this.state.critter.set('otherSpecies', e.target.value);
-	// }
 });
 
