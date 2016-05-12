@@ -22,7 +22,12 @@ export default React.createClass({
 					<div>{this.props.critterBio}</div>
 				</div>
 				<div >
-					<button className='msgSitter'><Link to={`/browse/${this.props.id}/message`}>Message {this.props.firstName}</Link></button>
+					<button className='msgSitter'>
+						<Link 
+							to={`/browse/${this.props.id}/message`}>
+						Message {this.props.firstName}
+						</Link>
+					</button>
 				</div>
 			</section>
 		);

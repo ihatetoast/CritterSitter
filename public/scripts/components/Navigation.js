@@ -17,7 +17,6 @@ export default React.createClass({
 		});
 	},
 	render: function() {
-		console.log(this.state.user.toJSON()); 
 		if(this.state.user.get('id')){
 			return (
 				<div className="navdiv">

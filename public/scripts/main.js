@@ -38,7 +38,7 @@ const router = (
 			<Route path="/profile" component={Profile} />
 			<Route path="/critters" component={Critters} />
 			<Route path="/browse" component={Browse} />
-			
+			<Route path="/messages/:recipientId/message" component={Conversation} />
 			<Route path="/browse/:recipientId/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
 		</Route>

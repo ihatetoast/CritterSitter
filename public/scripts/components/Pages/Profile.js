@@ -18,48 +18,149 @@ export default React.createClass({
 		});
 	},
 	render: function() {
-		console.log('rendering the Profile', this.state.user.get('briefBio'));
 		return (
 			<section className='page-register container'>
 				<div>
 					<form onSubmit={this.makeProfile} ><h2>My Profile</h2>	
 						<div ref='hmStyleSize'>
 							<p>Where do you live?</p>
-							<label><input type='radio' name='home' className='radio' value='an apartment, condo, or townhouse' />Apartment, Condo, Townhouse</label>
-							<label><input type='radio' name='home' className='radio' value='a small house' />Small house</label>
-							<label><input type='radio' name='home' className='radio' value='a large house' />Large house</label>
+							<label>
+								<input 
+								checked = {this.state.user.get('hmStyleSize')==='an apartment, condo, or townhouse'}
+								onChange={this.editHmStyleSize}
+								type='radio' 
+								name='home' 
+								className='radio' 
+								value='an apartment, condo, or townhouse' />
+							Apartment, Condo, Townhouse
+							</label>
+							<label>
+								<input 
+								checked = {this.state.user.get('hmStyleSize')==='a small house'}
+								onChange={this.editHmStyleSize}
+								type='radio' 
+								name='home' 
+								className='radio' 
+								value='a small house' />
+							Small house
+							</label>
+							<label>
+								<input 
+								checked = {this.state.user.get('hmStyleSize')==='a large house'}
+								onChange={this.editHmStyleSize}
+								type='radio' 
+								name='home' 
+								className='radio' 
+								value='a large house' />
+							Large house
+							</label>
 						</div>
 						<div ref='ydStyleSize'>
 							<p>What is your ydStyleSize like?</p>
 							<label>
 								<input 
+									checked = {this.state.user.get('ydStyleSize')==='no yard'} 
+									onChange={this.editYdStyleSize}
 									type='radio' 
 									name='yard' 
 									className='radio' 
 									value='no yard' />
 								No yard
 							</label>
-							<label><input type='radio' name='yard' className='radio' value='a small courtyard' />Small courtyard</label>
-							<label><input type='radio' name='yard' className='radio' value='a small fenced yard' />Small fenced yard</label>
-							<label><input type='radio' name='yard' className='radio' value='a large fenced yard' />Large fenced yard</label>
-							<label><input type='radio' name='yard' className='radio' value='an unfenced yard' />Unfenced yard</label>
+							<label>
+								<input 
+									checked = {this.state.user.get('ydStyleSize')==='a small courtyard'} 
+									onChange={this.editYdStyleSize} 
+									type='radio' 
+									name='yard' 
+									className='radio'
+									value='a small courtyard' />
+								Small courtyard
+							</label>
+							<label>
+								<input 
+									checked = {this.state.user.get('ydStyleSize')==='a small fenced yard'} 
+									onChange={this.editYdStyleSize} 
+									type='radio' 
+									name='yard' 
+									className='radio' 
+									value='a small fenced yard' />
+								Small fenced yard
+							</label>
+							<label>
+								<input 
+									checked = {this.state.user.get('ydStyleSize')==='a large fenced yard'} 
+									onChange={this.editYdStyleSize}
+									type='radio' 
+									name='yard' 
+									className='radio' 
+									value='a large fenced yard' />
+								Large fenced yard
+							</label>
+							<label>
+								<input 
+									checked = {this.state.user.get('ydStyleSize')==='an unfenced yard'} 
+									onChange={this.editYdStyleSize} 
+									type='radio' 
+									name='yard' 
+									className='radio' 
+									value='an unfenced yard' />
+								Unfenced yard
+							</label>
 						</div>
 
 						<div ref='devEnviron'>
 							<p>What type of developed environment:</p>
-							<label><input checked = {this.state.user.get('devEnviron')==='city'} onChange={this.editDevEnivron} type='radio' name='dev-env' className='radio' value='city' />City</label>
-							<label><input checked = {this.state.user.get('devEnviron')==='suburbs'} onChange={this.editDevEnivron} type='radio' name='dev-env' className='radio' value='suburbs' />Suburbs</label>
-							<label><input checked = {this.state.user.get('devEnviron')==='country'} onChange={this.editDevEnivron} type='radio' name='dev-env' className='radio' value='country' />Country</label>
+							<label>
+								<input 
+									checked = {this.state.user.get('devEnviron')==='city'} 
+									onChange={this.editDevEnivron} 
+									type='radio' 
+									name='dev-env' 
+									className='radio' 
+									value='city' />
+								City
+							</label>
+							<label>
+								<input 
+								checked = {this.state.user.get('devEnviron')==='suburbs'} 
+								onChange={this.editDevEnivron} 
+								type='radio' 
+								name='dev-env' 
+								className='radio' 
+								value='suburbs' />
+							Suburbs
+							</label>
+							<label>
+								<input 
+									checked = {this.state.user.get('devEnviron')==='country'} 
+									onChange={this.editDevEnivron} 
+									type='radio' 
+									name='dev-env' 
+									className='radio' 
+									value='country' />
+								Country
+							</label>
 						</div>
-				
-	
 						<div>
-							<p>Please take a moment to tell us a little bit more about yourself, home, and lifestyle:</p>
-							<textarea placeholder='limit 500 characters' ref='sitterbio' name="sitterbio" cols='80' rows='40' defaultValue={this.state.user.get('briefBio')}/>
+							<p>Please take a moment to tell us a little bit more about yourself:</p>
+							<textarea 
+								placeholder='limit 500 characters' 
+								ref='sitterbio' 
+								name="sitterbio" 
+								cols='80' 
+								rows='40' 
+								defaultValue={this.state.user.get('briefBio')}/>
 						</div>
-						<div ref='photo'>div placeholder for photo</div>
-						Save and continue to My Critters:
-						<button className="button-primary" type='submit'> Save </button>
+
+						<div ref='photo'>
+							div placeholder for photo
+						</div>
+
+						<div>
+							<button className="button-primary" type='submit'> Save </button>
+						</div>
+
 					</form>
 				</div>
 			</section>
@@ -79,23 +180,25 @@ export default React.createClass({
 		},
 			{
 			success: ()=>{
-				console.log('SUCCESS: makeProfile worked. Profile should be made/edited.');
 				browserHistory.push('/critters');
 			},
 			error: ()=>{
 			console.log('ERROR: makeProfile did not work. Bugger!');
-
 			}
 		});
 	},
-	editDevEnivron:function(e) {
-		//i want default to happen. 
-		console.log(e.target.value);
+	editDevEnivron:function(e) {//i want default to happen. 
 		//change the value like i do an object:
 		//either {key: newvalue} OR ('key', newvalue)
 		this.state.user.set('devEnviron', e.target.value);
-
-
+	},
+	editHmStyleSize:function(e) {
+		console.log(e.target.value);
+		this.state.user.set('hmStyleSize', e.target.value);
+	},
+	editYdStyleSize:function(e) {
+		console.log(e.target.value);
+		this.state.user.set('ydStyleSize', e.target.value);
 	}
 
 });

@@ -26,7 +26,6 @@ export default React.createClass({
 		});
 	},
 	render: function() {
-		console.log('sitters rendered in a blender.');
 		let listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
 			return(
 				<IndivSitter
