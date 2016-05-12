@@ -48,101 +48,37 @@ export default React.createClass({
 			<section>
 				<div>
 					<form onSubmit={this.makeCritter} ><h2>My Critters</h2>	
-						<div ref='species'>
-							What type of pet or pets do you have? Check all that apply:
-							<label>
-								<input
-								checked = {this.state.checked}
-								onChange={this.editSpecies}
-								type='checkbox'
-								className='chbx'
-								value='dog' />
-								dog
-							</label>
-							<label>
-								<input
-									checked = {this.state.checked}
-									onChange={this.editSpecies}
-									type='checkbox' 
-									className='chbx' 
-									value='cat'/>
-								cat
-							</label>
-							<label>
-								<input 
-									checked = {this.state.checked}
-									onChange={this.editSpecies}
-									type='checkbox' 
-									className='chbx'  
-									value='bird'/>
-								bird
-							</label>
-							<label>
-								<input
-									checked = {this.state.checked}
-									onChange={this.editSpecies}
-									type='checkbox' 
-									className='chbx' 
-									value='rabbit'/>
-								rabbit
-							</label>
-							<label>
-								<input 
-									checked = {this.state.checked}
-									onChange={this.editSpecies}
-									type='checkbox' 
-									className='chbx'  
-									value='rodent'/>
-								rodent
-							</label>
-							<label>
-								<input 
-									checked = {this.state.checked}
-									onChange={this.editSpecies}
-									type='checkbox' 
-									className='chbx' 
-									value='reptile'/>
-								reptile
-							</label>
-							<label>
-								<input 
-									checked = {this.state.checked}
-									onChange={this.editSpecies}
-									type='checkbox' 
-									className='chbx'  
-									value='crustacean'/>
-								crustacean
-							</label>
-						</div>
 
-						<div>
-							<p>If your pet's species is not listed, please enter it below:</p>
-							<input 
-								value={this.state.critter.get('otherSpecies')}
-								onChange={this.state.critter.handleOtherSpeciesChange}
-								type='text' 
-								placeholder='Other' 
-								ref='otherSpecies' />
-						</div>
-						<div>
+							<div>
 							<p>How many critters do you have?</p>
 							<input 
-								value={this.state.critter.get('number')}
+								defaultValue={this.state.critter.get('number')}
 								type='number' 
 								min="1" 
 								max="20" 
 								ref='number' />
 						</div>
 
+
+						<div>
+							<p>List the types of critters you have:</p>
+							<input 
+								defaultValue={this.state.critter.get('otherSpecies')}
+								type='text' 
+								placeholder='dog, cat, goat, hamster ...' 
+								ref='otherspecies' />
+						</div>
+	
+
 						<div>
 							<p>Please take a moment to tell us a little bit more about your critters:</p>
 							<textarea 
 								placeholder='limit 500 characters' 
-								ref='critterBio' 
-								name="critterBio" 
-								cols='70' 
-								rows='20'
-								value={this.state.critter.get('critterBio')}/>
+								ref='critterbio' 
+								name='critterbio' 
+								cols='80' 
+								rows='40'
+								defaultValue={this.state.critter.get('critterBio')}/>
 						</div>
 						<div>
 							<button className="button-primary" type='submit'> Save </button>
@@ -153,17 +89,12 @@ export default React.createClass({
 		);
 	},
 	makeCritter: function(e) {
-		var number = this.refs.number ? this.refs.number.value : this.state.critter.get('number');
-		var species = this.refs.species.querySelector('input:checked') ? this.refs.species.querySelector('input:checked').value : this.state.critter.get('species');
-		var otherSpecies = this.refs.otherSpecies ? this.refs.otherSpecies.value : this.state.critter.get('otherSpecies');
-		
-		console.log('makeCritter: critters', number, species, otherSpecies);
+		e.preventDefault();
 
 		this.state.critter.save({
-			critterBio:this.refs.critterBio.value,
-			species: species,
-			number: number,
-			otherSpecies: otherSpecies
+			critterBio:this.refs.critterbio.value,
+			number: this.refs.number.value,
+			otherSpecies: this.refs.otherspecies.value
 		},
 			{
 			success: ()=>{
@@ -174,14 +105,10 @@ export default React.createClass({
 				console.log('ERROR: critter not edited');
 			}
 		});
-	},
-	editSpecies: function(e){
-		console.log('editSpecies: e.target.value:', e.target.value);
-		this.state.critter.set('species', e.target.checked);
-	},
-	handleOtherSpeciesChange: function(e){
-		console.log('handleOtherSpeciesChange: e.target.value:', e.target.value);
-		this.state.critter.set('otherSpecies', e.target.value);
 	}
+	// handleOtherSpeciesChange: function(e){
+	// 	console.log('handleOtherSpeciesChange: e.target.value:', e.target.value);
+	// 	this.state.critter.set('otherSpecies', e.target.value);
+	// }
 });
 
