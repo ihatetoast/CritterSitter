@@ -44,7 +44,6 @@ export default React.createClass ({
 				password: this.refs.password.value
 			},
 			success: (regUser)=>{
-				console.log('register: Ajax POST success');
 				this.state.user.set(regUser);//this updates the model called user (instantiated as user)
 				browserHistory.push('/profile');
 			},

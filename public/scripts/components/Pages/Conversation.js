@@ -1,13 +1,17 @@
-//i need a params here because i do not want to see all the messages, just mine
+//a page dedicated to the conversations between one sender and recipient
+// i want to see a simple JSX of from/to with msg body with a
+// short form with textarea and submit to send a message back.
+
+//to get here, i have pressed a button on the MyMessages page.
+//send button refreshes page with latest entry. newest at top
 
 import React from 'react';
 import Messages from './../../collections/MessagesCollection';
-import MessageList from './subcomponents/MessageList';
+import IndivMessage from './subcomponents/IndivMessage';
 import user from './../../models/user';
 
 
 export default React.createClass({
-	//messageListener()
 	getInitialState: function() {
 		return{
 			Messages:Messages,//for mapping
@@ -18,16 +22,14 @@ export default React.createClass({
 			this.setState({Messages:Messages});
 		});
 		Messages.fetch({
-			data: {
-				withRelated: ['recipient', 'sender']
-			}
-		});
+			data: {withRelated: ['recipient', 'sender']}
+		}) ;
 	},
 	componentWillUnmount: function(){
-		Messages.off('update', this._loadMessages);
+		Messages.of('update');
 	},
-	_loadMessages: function(){
-		this.setState({Messages:Messages});
+	_loadConversation: function(){
+		this.setState({Messages:Messages, user:user});
 	},
 	render: function() {
 		//filter out those who are NOT this user.
@@ -42,7 +44,7 @@ export default React.createClass({
 			})
 		.map((msgval,i,arr)=>{
 			return(
-					<MessageList
+					<IndivMessage
 						key = {msgval.get('id')}
 						id = {msgval.get('id')}
 						
@@ -57,13 +59,11 @@ export default React.createClass({
 		});
 		return (
 			<section>
-				<h2>{this.state.user.get('recipient')}'s messages</h2>
 				<div>
 					{listOfMessages}
+				
 				</div>
 			</section>
 		);
 	}
 });
-//filter out to me and from me. collect them all.
-//dazzletime: then break them up by from with array methods.

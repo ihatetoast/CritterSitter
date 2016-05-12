@@ -13,11 +13,8 @@ export default React.createClass({
 			Sitters: Sitters
 		};
 	},
-	componentDidMount: function(){//see MyMessages for notes
-		console.log('BROWSE component did mount.');
-		
+	componentDidMount: function(){//see MyMessages for notes		
 		Sitters.on('update', ()=>{
-			console.log('Sitters did update.');
 			this.setState({Sitters: Sitters});
 		});
 		Sitters.fetch({
@@ -29,7 +26,6 @@ export default React.createClass({
 		});
 	},
 	render: function() {
-		console.log('sitters rendered in a blender.');
 		let listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
 			return(
 				<IndivSitter
@@ -38,11 +34,11 @@ export default React.createClass({
 					
 					firstName = {sitterval.get('firstName')}
 					lastName = {sitterval.get('lastName')}
-					sitterBio = {sitterval.get('briefBio')}
+					briefBio = {sitterval.get('briefBio')}
 					photo  = {sitterval.get('photo')}
-					home = {sitterval.get('hmStyleSize')}
-					yard = {sitterval.get('ydStyleSize')}
-					environment = {sitterval.get('devEnviron')}
+					hmStyleSize = {sitterval.get('hmStyleSize')}
+					ydStyleSize = {sitterval.get('ydStyleSize')}
+					devEnviron = {sitterval.get('devEnviron')}
 					//sitterval gives a collection of models. get() is used
 					//with arrays' values, so now i need ('critter').something
 					number = {sitterval.get('critter').number}

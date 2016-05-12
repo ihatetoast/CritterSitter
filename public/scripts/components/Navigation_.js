@@ -12,7 +12,6 @@ export default React.createClass({
         const fields = ['ydStyleSize', 'hmStyleSize', 'devEnviron', 'briefBio'];
         const fieldsAreComplete = true;
 
-
         fields.forEach(function(field){
         if (userModel.get(field) === null ) { 
             fieldsAreComplete = false;

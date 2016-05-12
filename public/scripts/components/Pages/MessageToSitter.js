@@ -54,19 +54,14 @@ export default React.createClass({
 			data: {
 				recipientId: this.props.params.recipientId,
 				messageBody: this.refs.messageTo.value
-
 			},
 			success: (msgSend)=>{
-				console.log('message to sender posts success.');
 				this.state.message.set(msgSend);
-
-
 			},
 			error: (errArg)=>{
 				console.log('message to sender did not post.');
 				this.setState({errors: errArg.responseJSON});
 			}
-
 		});
 		browserHistory.push('/browse');
 	}

@@ -11,7 +11,6 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		this.state.user.on('change', () => {
-			console.log('Component did mount');
 			this.setState({
 				user: user
 			});
@@ -20,7 +19,6 @@ export default React.createClass({
 	render: function() {
 		console.log(this.state.user.toJSON()); 
 		if(this.state.user.get('id')){
-			console.log('the user IS logged in. Should see only LOG OUT and HOME');
 			return (
 				<div className="mini_navdiv">
 					<a href="#" className="mini_nav-link" onClick={this.logout}>Logout</a>
@@ -28,7 +26,6 @@ export default React.createClass({
 					{/*<Link className="nav-link" to={'/browse/:recipientId/message'}></Link>*/}
 				</div>);
 		}else{
-			console.log('the user is NOT logged in. Should see only REGISTER, SIGN IN.');
 			return (
 				<div className="mini_navdiv">
 					{/*<Link className="nav-link" to='/home'>Home</Link><span>|</span>*/}
@@ -39,7 +36,6 @@ export default React.createClass({
 	},
 	logout: function(e) {
 		e.preventDefault();
-		console.log('user is loggedOUT');
 		this.state.user.clear();
 		$.ajax({
 			type: 'POST',

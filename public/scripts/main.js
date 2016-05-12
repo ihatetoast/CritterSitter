@@ -15,6 +15,7 @@ import Critters from './components/Pages/Critters';
 import Browse from './components/Pages/Browse';
 import MessageToSitter from './components/Pages/MessageToSitter';
 import MyMessages from './components/Pages/MyMessages';
+import Conversation from './components/Pages/Conversation';
 
 
 // function requireAuth(nextState, replace) {
@@ -38,7 +39,7 @@ const router = (
 			<Route path="/profile" component={Profile} />
 			<Route path="/critters" component={Critters} />
 			<Route path="/browse" component={Browse} />
-			
+			<Route path="/messages/:recipientId/message" component={Conversation} />
 			<Route path="/browse/:recipientId/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
 		</Route>
