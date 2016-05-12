@@ -1,12 +1,17 @@
+//v2 
+
+//changing subcomp to style for <Conversation /> page.
+
 import React from 'react';
 
 export default React.createClass({
 	render: function() {
 		return (
 			<section>
+				<h2>Conversation between me and {this.props.senderFirstName} {this.props.senderLastName}</h2>
 				<div>
-					<p>To: <span>{this.props.receiverFirstName} </span> <span>{this.props.receiverLastName} </span>
-					From:<span>{this.props.senderFirstName}</span> <span>{this.props.senderLastName}</span></p>
+					<p>To: <span>{this.props.receiverFirstName} </span> </p>
+					<p>From: <span>{this.props.senderFirstName}</span> </p>
 				</div>
 				<div>
 					{/*Below will need function to show only basic time/date*/}

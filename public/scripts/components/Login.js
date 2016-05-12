@@ -40,7 +40,6 @@ export default React.createClass({
 			},
 			success: (loggedArg)=>{
 				this.state.user.set(loggedArg);
-				console.log('LOGIN success message. User should\'ve been sent to browse page.');
 				//once logged in, takes user to browse sitter page.
 				browserHistory.push('/browse');
 			},

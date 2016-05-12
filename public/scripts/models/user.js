@@ -1,3 +1,5 @@
+//DONE THIS WAY -- IT'S A SESSION
+
 //FE models require Backbone
 // import Backbone from 'backbone';
 import User from './UserModel';

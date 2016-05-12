@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Messages from './../../collections/MessagesCollection';
-import IndivMessage from './subcomponents/IndivMessage';
+import MessageList from './subcomponents/MessageList';
 import user from './../../models/user';
 
 
@@ -13,35 +13,23 @@ export default React.createClass({
 			Messages:Messages,//for mapping
 			user:user};//for filtering
 	},
-	// next is cWillMt happens before first render. did is after.
-	// both happen once!
-	//any time props change (parent passes in sthg different) compenentWillReceiveProps
-	//componentWillUpdate is when we change the state. 
 	componentDidMount: function(){
-		console.log('MY MESSAGES component did mount');
-//these are the listeners (.on is a clue)
 		Messages.on('update', ()=>{
-			console.log('Messages did update.');
 			this.setState({Messages:Messages});
-
 		});
 		Messages.fetch({
 			data: {
 				withRelated: ['recipient', 'sender']
 			}
-		}) ;
+		});
 	},
 	componentWillUnmount: function(){
-		//turn this into a named function somewhere else:
-		// ()=>{
-		// 	console.log('Messages did update.');
-		// 	this.setState({Messages:Messages});
-		// } reference it where i stole it from this.namedFunction with .off
-
-
+		Messages.off('update', this._loadMessages);
+	},
+	_loadMessages: function(){
+		this.setState({Messages:Messages});
 	},
 	render: function() {
-		console.log('rendered messages like a goddess');
 		//filter out those who are NOT this user.
 		let userId = this.state.user.get('id');
 		let listOfMessages = this.state.Messages.filter((msg,i,arr)=>{
@@ -54,7 +42,7 @@ export default React.createClass({
 			})
 		.map((msgval,i,arr)=>{
 			return(
-					<IndivMessage
+					<MessageList
 						key = {msgval.get('id')}
 						id = {msgval.get('id')}
 						
@@ -69,11 +57,9 @@ export default React.createClass({
 		});
 		return (
 			<section>
-			<p>NAVIGATION: i only want to see home, logout, browse, my profile</p>
-				<h2>My messages</h2>
+				<h2>{this.state.user.get('recipient')}'s messages</h2>
 				<div>
 					{listOfMessages}
-				
 				</div>
 			</section>
 		);
