@@ -7,7 +7,6 @@ export default React.createClass({
 		return {
 			errors: {},
 			user: user
-			//this.state.user is infor for the logged in person this.state.user.get('what')
 		};
 	},
 	componentDidMount: function(){

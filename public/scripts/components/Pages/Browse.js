@@ -44,7 +44,8 @@ export default React.createClass({
 					number = {sitterval.get('critter').number}
 					species = {sitterval.get('critter').species}
 					other = {sitterval.get('critter').otherSpecies}
-					critterBio = {sitterval.get('critter').critterBio}/>
+					critterBio = {sitterval.get('critter').critterBio}
+					critterPhoto={sitterval.get('critter').critterPhoto}/>
 				);
 		});
 		return (
