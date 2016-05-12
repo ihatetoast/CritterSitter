@@ -11,11 +11,13 @@ export default React.createClass({
 		};
 	},
 	componentDidMount: function(){
-		this.state.user.on('change', () => {
-			this.setState({
-				user: user
-			});
-		});
+		this.state.user.on('change', this._updateProfile);
+	},
+	componentWillUnmount: function(){
+		this.state.user.off('change', this._updateProfile);
+	},
+	_updateProfile: function(){
+		this.setState({user:user});
 	},
 	render: function() {
 		return (
@@ -168,7 +170,9 @@ export default React.createClass({
 	},
 	makeProfile: function(e) {
 		e.preventDefault();
-		var hmStyleSize = this.refs.hmStyleSize.querySelector('input:checked') ? this.refs.hmStyleSize.querySelector('input:checked').value : this.state.user.get('hmStyleSize');
+		var hmStyleSize = this.refs.hmStyleSize.querySelector('input:checked') ?
+			this.refs.hmStyleSize.querySelector('input:checked').value 
+			: this.state.user.get('hmStyleSize');
 		var ydStyleSize = this.refs.ydStyleSize.querySelector('input:checked') ? this.refs.ydStyleSize.querySelector('input:checked').value : this.state.user.get('ydStyleSize');
 		var devEnviron = this.refs.devEnviron.querySelector('input:checked') ? this.refs.devEnviron.querySelector('input:checked').value : this.state.user.get('devEnviron');
 		

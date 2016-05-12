@@ -1,117 +1,116 @@
 import React from 'react';
 import Critter from '../../models/Critter';
 import {browserHistory} from 'react-router';
-// import user from '../../models/user';
+import Critters from '../../collections/CrittersCollection';
+import user from '../../models/user';
 // import UserModel from '../../models/UserModel';
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
 			errors: {},
+			user:user,
 			critter: new Critter()
-			// user: user,
-			// usermodel: new UserModel()
 		};
 	},
 	componentDidMount: function(){
-		console.log('componentDidMount: critters' );
-		// console.log('this is the logged in user\'s id: ', this.state.user['id']);
-		// console.log('Looking for the critter id: ', this.state.user['userId']);
-		this.state.critter.on('change', () => {
-			this.setState({
-				critter: critter,
-				// user:user,
-				// usermodel: UserModel,
-				data:{withRelated:['user', 'critter']}
-			});
-			console.log('Looking for the critter id: ', this.state.get['user'].id);
+		console.log('session id: ',this.state.user.id);
+		console.log('this critter\'s id: ', this.state['critter']);
+		this.state.critter.on('change', this._critterDetails);
+		Critters.fetch(
+		{
+			//listening to a model and fetching from a collection
+			//when the data comes back our model doesn't know that it came back
+			//i've checked the network response and saw the array of objs.
+			// success(critters)<=an array i'll get back.
+			success:(critters)=>{
+				console.log('SUCCESS: critters', critters.toJSON()[0]);
+				this.state.critter.set(critters.toJSON()[0]);
+			},
+			error:(errArg)=>{
+				console.log('ERROR: critter did not fetch and update model');
+			},
+			data: 
+				{
+					where: {userId: this.state.user['id']}
+				}
 		});
 	},
-	// FROM BROWSE PAGE: 
-	//componentDidMount: function(){//see MyMessages for notes		
-	// 	Sitters.on('update', ()=>{
-	// 		this.setState({Sitters: Sitters});
-	// 	});
-	// 	Sitters.fetch({
-	// 		data: {
-	// 			//'critter' here is the function 'critter' in BE model
-	// 			//when i use withRelated although sitter is model, the critter is just and object.
-	// 			withRelated: ['critter']
-	// 		}
-	// 	});
-	// },
+	componentWillUnmount: function(){
+		this.state.critter.off('change', this._critterDetails);
+	},
+	_critterDetails: function(){
+		this.setState({critter:this.state.critter});
+	},
 	render: function() {
-		// console.log('render: critters');
+		console.log('render: critters', this.state.critter);
 		return (
 			<section>
 				<div>
 					<form onSubmit={this.makeCritter} ><h2>My Critters</h2>	
-						<div>
-							<p>How many critters do you have?</p>
-							<input 
-								defaultValue={this.state.critter.get('number')}
-								type='number' 
-								min="1" 
-								max="20" 
-								ref='number' />
-						</div>
-
 						<div ref='species'>
 							What type of pet or pets do you have? Check all that apply:
 							<label>
 								<input
+								checked = {this.state.checked}
 								onChange={this.editSpecies}
 								type='checkbox'
-								className='chbx' 
+								className='chbx'
 								value='dog' />
 								dog
 							</label>
 							<label>
 								<input
+									checked = {this.state.checked}
 									onChange={this.editSpecies}
 									type='checkbox' 
 									className='chbx' 
-									value='cat' />
+									value='cat'/>
 								cat
 							</label>
 							<label>
 								<input 
+									checked = {this.state.checked}
 									onChange={this.editSpecies}
 									type='checkbox' 
-									className='chbx' 
-									value='bird' />
+									className='chbx'  
+									value='bird'/>
 								bird
 							</label>
 							<label>
 								<input
+									checked = {this.state.checked}
 									onChange={this.editSpecies}
 									type='checkbox' 
 									className='chbx' 
-									value='rabbit' />
+									value='rabbit'/>
 								rabbit
 							</label>
 							<label>
 								<input 
+									checked = {this.state.checked}
 									onChange={this.editSpecies}
 									type='checkbox' 
-									className='chbx' 
-									value='rodent' />
+									className='chbx'  
+									value='rodent'/>
 								rodent
 							</label>
 							<label>
 								<input 
+									checked = {this.state.checked}
 									onChange={this.editSpecies}
 									type='checkbox' 
 									className='chbx' 
-									value='reptile' />
+									value='reptile'/>
 								reptile
 							</label>
 							<label>
 								<input 
+									checked = {this.state.checked}
 									onChange={this.editSpecies}
 									type='checkbox' 
-									className='chbx' 
-									value='crustacean' />
+									className='chbx'  
+									value='crustacean'/>
 								crustacean
 							</label>
 						</div>
@@ -119,12 +118,20 @@ export default React.createClass({
 						<div>
 							<p>If your pet's species is not listed, please enter it below:</p>
 							<input 
-								defaultValue={this.state.critter.get('otherSpecies')}
-								// value={this.state.critter.value}
+								value={this.state.critter.get('otherSpecies')}
 								onChange={this.state.critter.handleOtherSpeciesChange}
 								type='text' 
 								placeholder='Other' 
 								ref='otherSpecies' />
+						</div>
+						<div>
+							<p>How many critters do you have?</p>
+							<input 
+								value={this.state.critter.get('number')}
+								type='number' 
+								min="1" 
+								max="20" 
+								ref='number' />
 						</div>
 
 						<div>
@@ -135,7 +142,7 @@ export default React.createClass({
 								name="critterBio" 
 								cols='70' 
 								rows='20'
-								defaultValue={this.state.critter.get('critterBio')}/>
+								value={this.state.critter.get('critterBio')}/>
 						</div>
 						<div>
 							<button className="button-primary" type='submit'> Save </button>
@@ -170,7 +177,7 @@ export default React.createClass({
 	},
 	editSpecies: function(e){
 		console.log('editSpecies: e.target.value:', e.target.value);
-		this.state.critter.set('species', e.target.value);
+		this.state.critter.set('species', e.target.checked);
 	},
 	handleOtherSpeciesChange: function(e){
 		console.log('handleOtherSpeciesChange: e.target.value:', e.target.value);

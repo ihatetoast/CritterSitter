@@ -3,6 +3,7 @@
 //adding subcomp to style for <MyMessages /> page.
 
 import React from 'react';
+import {Link} from 'react-router';
 
 export default React.createClass({
 	render: function() {
@@ -20,7 +21,7 @@ export default React.createClass({
 						View conversation with {this.props.firstName}
 						</Link>
 					</button>
-					}
+				
 				</div>
 			</section>
 		);

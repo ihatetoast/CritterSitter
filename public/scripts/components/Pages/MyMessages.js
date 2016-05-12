@@ -13,30 +13,21 @@ export default React.createClass({
 			Messages:Messages,//for mapping
 			user:user};//for filtering
 	},
-	// next is cWillMt happens before first render. did is after.
-	// both happen once!
-	//any time props change (parent passes in sthg different) compenentWillReceiveProps
-	//componentWillUpdate is when we change the state. 
 	componentDidMount: function(){
-//these are the listeners (.on is a clue)
 		Messages.on('update', ()=>{
 			this.setState({Messages:Messages});
-
 		});
 		Messages.fetch({
 			data: {
 				withRelated: ['recipient', 'sender']
 			}
-		}) ;
+		});
 	},
 	componentWillUnmount: function(){
-		//turn this into a named function somewhere else:
-		// ()=>{
-		// 	console.log('Messages did update.');
-		// 	this.setState({Messages:Messages});
-		// } reference it where i stole it from this.namedFunction with .off
-
-
+		Messages.off('update', this._loadMessages);
+	},
+	_loadMessages: function(){
+		this.setState({Messages:Messages});
 	},
 	render: function() {
 		//filter out those who are NOT this user.
@@ -66,7 +57,7 @@ export default React.createClass({
 		});
 		return (
 			<section>
-				<h2>My messages</h2>
+				<h2>{this.state.user.get('recipient')}'s messages</h2>
 				<div>
 					{listOfMessages}
 				</div>

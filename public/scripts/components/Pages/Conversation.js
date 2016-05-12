@@ -17,31 +17,19 @@ export default React.createClass({
 			Messages:Messages,//for mapping
 			user:user};//for filtering
 	},
-	// next is cWillMt happens before first render. did is after.
-	// both happen once!
-	//any time props change (parent passes in sthg different) compenentWillReceiveProps
-	//componentWillUpdate is when we change the state. 
 	componentDidMount: function(){
-//these are the listeners (.on is a clue)
 		Messages.on('update', ()=>{
 			this.setState({Messages:Messages});
-
 		});
 		Messages.fetch({
-			data: {
-				withRelated: ['recipient', 'sender']
-			}
+			data: {withRelated: ['recipient', 'sender']}
 		}) ;
 	},
 	componentWillUnmount: function(){
-		//turn this into a named function somewhere else:
-		// ()=>{
-		// 	console.log('Messages did update.');
-		// 	this.setState({Messages:Messages});
-		// } reference it where i stole it from this.namedFunction with .off
-		// this is route/link from my messages and does NOT have a nav link
-
-
+		Messages.of('update');
+	},
+	_loadConversation: function(){
+		this.setState({Messages:Messages, user:user});
 	},
 	render: function() {
 		//filter out those who are NOT this user.

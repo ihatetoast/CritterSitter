@@ -15,6 +15,7 @@ import Critters from './components/Pages/Critters';
 import Browse from './components/Pages/Browse';
 import MessageToSitter from './components/Pages/MessageToSitter';
 import MyMessages from './components/Pages/MyMessages';
+import Conversation from './components/Pages/Conversation';
 
 
 // function requireAuth(nextState, replace) {
