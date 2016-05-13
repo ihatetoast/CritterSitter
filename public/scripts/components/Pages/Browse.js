@@ -24,7 +24,7 @@ export default React.createClass({
 		});
 	},
 	componentWillUnmount: function(){
-		this.Sitters.off('update change', this._browseSetState);
+		Sitters.off('update change', this._browseSetState);
 	},
 	_browseSetState: function(){
 		this.setState({Sitters:Sitters});

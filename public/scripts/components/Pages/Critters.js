@@ -12,7 +12,8 @@ export default React.createClass({
 		return {
 			errors: {},
 			user:user,
-			critter: new Critter()
+			critter: new Critter(),
+			critterPhoto:''
 		};
 	},
 	componentDidMount: function(){
@@ -84,7 +85,7 @@ export default React.createClass({
 								<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
 							</div>
 							<div>
-								<img src={this.state.critterPhoto} width='225' height='100%' ref='critterPhoto'/>
+								<img src={this.state.critterPhoto} width='120' height='auto' ref='critterPhoto'/>
 							</div>
 						</div>
 						<div>
@@ -102,7 +103,11 @@ export default React.createClass({
 				container: 'window',
 				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR']
 			},
-			(Blob) => {this.state.critter.save({critterPhoto: Blob.url});}
+			(Blob) => {
+				this.setState({
+					critterPhoto: Blob.url
+				});
+				this.state.critter.save({critterPhoto: Blob.url});}
 		);},
 	makeCritter: function(e) {
 		e.preventDefault();

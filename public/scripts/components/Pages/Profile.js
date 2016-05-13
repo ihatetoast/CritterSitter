@@ -8,7 +8,8 @@ export default React.createClass({
 	getInitialState: function() {
 		return {
 			errors: {},
-			user: user
+			user: user,
+			photo:''
 		};
 	},
 	componentDidMount: function(){
@@ -160,7 +161,7 @@ export default React.createClass({
 								<button	type = 'button' onClick = {this._uploadPhoto}>Upload a photo</button>
 							</div>
 							<div>
-								<img src={this.state.photo} width='225' height='100%' ref='photo'/>
+								<img src={this.state.photo} width='120' height='auto' ref='photo'/>
 							</div>
 							<div>
 								<button className="button-primary" type='submit'> Save </button>
@@ -178,7 +179,12 @@ export default React.createClass({
 				container: 'window',
 				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR']
 			},
-			(Blob) => {	this.state.user.save({photo: Blob.url});}
+			(Blob) => {	
+				this.setState({
+					photo: Blob.url
+				});
+				this.state.user.save({photo: Blob.url});
+			}
 	);},
 	makeProfile: function(e) {
 		e.preventDefault();
