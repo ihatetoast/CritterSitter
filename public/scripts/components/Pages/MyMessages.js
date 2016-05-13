@@ -5,6 +5,7 @@ import Messages from './../../collections/MessagesCollection';
 import MessageList from './subcomponents/MessageList';
 import user from './../../models/user';
 
+var moment = require('moment');
 
 export default React.createClass({
 	//messageListener()
@@ -41,13 +42,15 @@ export default React.createClass({
 			}
 			})
 		.map((msgval,i,arr)=>{
+			//	wheregoes = moment(whati'mgetting / howit is).format(style)
+			var date = moment(msgval.get('createdAt').format("DD MMM YYYY"));
 			return(
 					<MessageList
 						key = {msgval.get('id')}
 						id = {msgval.get('id')}
 						
 						body = {msgval.get('messageBody')}
-						sent = {msgval.get('createdAt')}
+						sent = {date}
 						senderFirstName = {msgval.get('sender').firstName}
 						senderLastName = {msgval.get('sender').lastName}
 						receiverFirstName = {msgval.get('recipient').firstName}
