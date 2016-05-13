@@ -15,7 +15,7 @@ export default React.createClass({
 			user:user};//for filtering
 	},
 	componentDidMount: function(){
-		Messages.on('update', ()=>{
+		Messages.on('change', ()=>{
 			this.setState({Messages:Messages});
 		});
 		Messages.fetch({
@@ -25,7 +25,7 @@ export default React.createClass({
 		});
 	},
 	componentWillUnmount: function(){
-		Messages.off('update', this._loadMessages);
+		Messages.off('change', this._loadMessages);
 	},
 	_loadMessages: function(){
 		this.setState({Messages:Messages});
@@ -43,14 +43,14 @@ export default React.createClass({
 			})
 		.map((msgval,i,arr)=>{
 			//	wheregoes = moment(whati'mgetting / howit is).format(style)
-			var date = moment(msgval.get('createdAt').format("DD MMM YYYY"));
+			let timeDateStamp = moment(msgval.get('createdAt')).format('dddd, DD MMM YYYY');
 			return(
 					<MessageList
 						key = {msgval.get('id')}
 						id = {msgval.get('id')}
 						
 						body = {msgval.get('messageBody')}
-						sent = {date}
+						sent = {timeDateStamp}
 						senderFirstName = {msgval.get('sender').firstName}
 						senderLastName = {msgval.get('sender').lastName}
 						receiverFirstName = {msgval.get('recipient').firstName}
