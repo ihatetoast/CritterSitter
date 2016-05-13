@@ -19,7 +19,10 @@ export default React.createClass({
 				</div>
 				<div>
 					<div>{this.props.briefBio}</div>
-					<h4>About Critter/s:</h4>
+					<h4>About {this.props.firstName}'s Critters:</h4>
+					<div className="critterPhoto">
+						<img src={this.props.critterPhoto}/>
+					</div>
 					<div>{this.props.critterBio}</div>
 				</div>
 				<div >

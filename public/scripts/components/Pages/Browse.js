@@ -14,9 +14,7 @@ export default React.createClass({
 		};
 	},
 	componentDidMount: function(){//see MyMessages for notes		
-		Sitters.on('update', ()=>{
-			this.setState({Sitters: Sitters});
-		});
+		Sitters.on('update change', this._browseSetState);
 		Sitters.fetch({
 			data: {
 				//'critter' here is the function 'critter' in BE model
@@ -24,6 +22,12 @@ export default React.createClass({
 				withRelated: ['critter']
 			}
 		});
+	},
+	componentWillUnmount: function(){
+		this.Sitters.on('update change', this._browseSetState);
+	},
+	_browseSetState: function(){
+		this.setState({Sitters:Sitters});
 	},
 	render: function() {
 		let listOfSitters = this.state.Sitters.map((sitterval,i,arr)=>{
