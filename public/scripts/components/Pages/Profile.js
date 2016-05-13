@@ -2,6 +2,8 @@ import React from 'react';
 import user from '../../models/user';//this is a session, katy. ooooh. aaaah.
 import {browserHistory} from 'react-router';
 
+import filepicker from 'filepicker-js';
+
 export default React.createClass({
 	getInitialState: function() {
 		return {
@@ -22,7 +24,7 @@ export default React.createClass({
 		return (
 			<section className='page-register container'>
 				<div>
-					<form onSubmit={this.makeProfile} ><h2>My Profile</h2>	
+					<form onSubmit={this.makeProfile} ><h2>Profile</h2>	
 						<div ref='hmStyleSize'>
 							<p>Where do you live?</p>
 							<label>
@@ -109,7 +111,6 @@ export default React.createClass({
 								Unfenced yard
 							</label>
 						</div>
-
 						<div ref='devEnviron'>
 							<p>What type of developed environment:</p>
 							<label>
@@ -153,20 +154,32 @@ export default React.createClass({
 								rows='40' 
 								defaultValue={this.state.user.get('briefBio')}/>
 						</div>
-
-						<div ref='photo'>
-							div placeholder for photo
+						<div className="photo-container">
+							<h5> Upload a photo</h5>
+							<div>
+								<button	type = 'button' onClick = {this._uploadPhoto}>Upload a photo</button>
+							</div>
+							<div>
+								<img src={this.state.photo} width='225' height='100%' ref='photo'/>
+							</div>
+							<div>
+								<button className="button-primary" type='submit'> Save </button>
+							</div>
 						</div>
-
-						<div>
-							<button className="button-primary" type='submit'> Save </button>
-						</div>
-
 					</form>
 				</div>
 			</section>
-			);
+		);
 	},
+	_uploadPhoto: function(e) {
+		filepicker.pick(
+			{
+				mimetype: 'image/*',
+				container: 'window',
+				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR']
+			},
+			(Blob) => {	this.state.user.save({photo: Blob.url});}
+	);},
 	makeProfile: function(e) {
 		e.preventDefault();
 		var hmStyleSize = this.refs.hmStyleSize.querySelector('input:checked') ?
@@ -174,21 +187,19 @@ export default React.createClass({
 			: this.state.user.get('hmStyleSize');
 		var ydStyleSize = this.refs.ydStyleSize.querySelector('input:checked') ? this.refs.ydStyleSize.querySelector('input:checked').value : this.state.user.get('ydStyleSize');
 		var devEnviron = this.refs.devEnviron.querySelector('input:checked') ? this.refs.devEnviron.querySelector('input:checked').value : this.state.user.get('devEnviron');
-		
-		user.save({
-			briefBio:this.refs.sitterbio.value,
-			hmStyleSize: hmStyleSize,
-			ydStyleSize: ydStyleSize,
-			devEnviron: devEnviron
-		},
+
+		user.save(
 			{
-			success: ()=>{
-				browserHistory.push('/critters');
+				briefBio:this.refs.sitterbio.value,
+				hmStyleSize: hmStyleSize,
+				ydStyleSize: ydStyleSize,
+				devEnviron: devEnviron,
+				photo: this.refs.photo.value
 			},
-			error: ()=>{
-			console.log('ERROR: makeProfile did not work. Bugger!');
-			}
-		});
+			{
+				success: ()=>{browserHistory.push('/critters');},
+				error: ()=>{console.log('ERROR: makeProfile did not work. Bugger!');}}
+		);
 	},
 	editDevEnivron:function(e) {//i want default to happen. 
 		//change the value like i do an object:
@@ -203,6 +214,4 @@ export default React.createClass({
 		console.log(e.target.value);
 		this.state.user.set('ydStyleSize', e.target.value);
 	}
-
 });
-

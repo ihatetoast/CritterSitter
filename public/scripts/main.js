@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
-
+import $ from 'jquery';
+import filepicker from 'filepicker-js';
 // import user from './models/user';
 
 import App from './components/App';
@@ -18,14 +19,12 @@ import MyMessages from './components/Pages/MyMessages';
 import Conversation from './components/Pages/Conversation';
 
 
-// function requireAuth(nextState, replace) {
-// 	  if (!user.get('id')) {
-// 	    replace({
-// 	      pathname: '/login'
-// 	    });
-// 	}
-// }
-
+filepicker.setKey('AifGt857oRLCoRsu9sfJfz');
+	$.ajaxSetup({
+		headers: {
+			Accept: 'application/JSON'
+		}
+	});
 
 
 const router = (

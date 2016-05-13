@@ -29,6 +29,16 @@ Critter Sitter allows people to describe themselves and their pet menagerie and 
 
 
 ## APIs, Plugins, Libraries, Frameworks
-Skeleton, ReactJS, Perk, Bookshelf, Sass, Browserify, Backbone, Knex, PSQL, Filestack, Express
+Backbone
+Bookshelf
+Browserify
+Express
+Filestack, Filepicker
 Hackpad PM group: [DAKpad](https://hackpad.com/DAKpad-v3ksBycy5Se)
+Knex
+Perk
+PSQL
+ReactJS
+Sass
+Skeleton
 

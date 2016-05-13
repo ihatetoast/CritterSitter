@@ -11,6 +11,7 @@ export default React.createClass({
 			<section className='offset-by-two eight columns'>
 				<div>
 					<h4>About {this.props.firstName}:</h4>
+					<div className="photo"><img src={this.props.photo}/></div>
 					{/*Below will need function to show only last initial*/}
 					<p><span className='names'>{this.props.firstName}</span><span id='lastNameInitial'>{this.props.lastName}</span> lives in 
 					<span> {this.props.hmStyleSize}</span> with <span>{this.props.ydStyleSize}</span> in the<span> {this.props.devEnviron}</span>  
