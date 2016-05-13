@@ -220,7 +220,6 @@ gulp.task('jsmin', ['prod-js-bundle'], function() {
 
 gulp.task('cssmin', ['prod-sass-bundle'], function() {
 	return gulp.src('./public/styles/main.scss.css')
-    .pipe(cleanCss({compatibility: 'ie8', s0: true}))
     .pipe(rename({
       suffix: '.min'
     }))
