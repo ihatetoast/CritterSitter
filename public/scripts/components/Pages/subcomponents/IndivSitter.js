@@ -11,15 +11,22 @@ export default React.createClass({
 			<section className='offset-by-two eight columns'>
 				<div>
 					<h4>About {this.props.firstName}:</h4>
-					<div className="photo"><img src={this.props.photo}/></div>
+					<div className="photo">
+						<img src={this.props.photo}/>
+					</div>
 					{/*Below will need function to show only last initial*/}
 					<p><span className='names'>{this.props.firstName}</span><span id='lastNameInitial'>{this.props.lastName}</span> lives in 
 					<span> {this.props.hmStyleSize}</span> with <span>{this.props.ydStyleSize}</span> in the<span> {this.props.devEnviron}</span>  
-					with <span>{this.props.number}</span> critters/s (<span>{this.props.species}</span>, <span>{this.props.other}</span>).</p>
+					with <span>{this.props.number}</span> critters/s (<span>{this.props.other}</span>).</p>
 				</div>
 				<div>
 					<div>{this.props.briefBio}</div>
-					<h4>About Critter/s:</h4>
+					<h4>About {this.props.firstName}'s Critters:</h4>
+					
+					<div className="critterPhoto">
+						<img src={this.props.critterPhoto}/>
+					</div>
+			
 					<div>{this.props.critterBio}</div>
 				</div>
 				<div >

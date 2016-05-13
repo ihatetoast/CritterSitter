@@ -3,6 +3,8 @@ import Critter from '../../models/Critter';
 import {browserHistory} from 'react-router';
 import Critters from '../../collections/CrittersCollection';
 import user from '../../models/user';
+import filepicker from 'filepicker-js';
+
 // import UserModel from '../../models/UserModel';
 
 export default React.createClass({
@@ -46,7 +48,6 @@ export default React.createClass({
 			<section>
 				<div>
 					<form onSubmit={this.makeCritter} ><h2>My Critters</h2>	
-
 							<div>
 							<p>How many critters do you have?</p>
 							<input 
@@ -57,8 +58,6 @@ export default React.createClass({
 								max="20" 
 								ref='number' />
 						</div>
-
-
 						<div>
 							<p>List the types of critters you have:</p>
 							<input 
@@ -68,8 +67,6 @@ export default React.createClass({
 								placeholder='dog, cat, goat, hamster ...' 
 								ref='otherSpecies' />
 						</div>
-	
-
 						<div>
 							<p>Please take a moment to tell us a little bit more about your critters:</p>
 							<textarea 
@@ -81,6 +78,15 @@ export default React.createClass({
 								cols='80' 
 								rows='40'/>
 						</div>
+						<div className="photo-container">
+							<h5> Upload a photo</h5>
+							<div>
+								<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
+							</div>
+							<div>
+								<img src={this.state.critterPhoto} width='225' height='100%' ref='critterPhoto'/>
+							</div>
+						</div>
 						<div>
 							<button className="button-primary" type='submit'> Save </button>
 						</div>
@@ -89,6 +95,15 @@ export default React.createClass({
 			</section>
 		);
 	},
+	_uploadCritterPhoto: function() {
+		filepicker.pick(
+			{
+				mimetype: 'image/*',
+				container: 'window',
+				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR']
+			},
+			(Blob) => {this.state.critter.save({critterPhoto: Blob.url});}
+		);},
 	makeCritter: function(e) {
 		e.preventDefault();
 		// var critterBio = this.refs.critterBio ? this.refs.critterBio.value : this.state.critter.get('critterBio');
@@ -104,7 +119,8 @@ export default React.createClass({
 			this.state.critter.save({
 				critterBio: this.refs.critterBio.value,
 				number: this.refs.number.value,
-				otherSpecies: this.refs.otherSpecies.value
+				otherSpecies: this.refs.otherSpecies.value,
+				critterPhoto: this.refs.critterPhoto.value
 		},
 			{
 			success: ()=>{

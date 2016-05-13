@@ -162,9 +162,9 @@ export default React.createClass({
 							<div>
 								<img src={this.state.photo} width='225' height='100%' ref='photo'/>
 							</div>
-							<div>
+						</div>
+						<div>
 								<button className="button-primary" type='submit'> Save </button>
-							</div>
 						</div>
 					</form>
 				</div>
@@ -188,8 +188,7 @@ export default React.createClass({
 		var ydStyleSize = this.refs.ydStyleSize.querySelector('input:checked') ? this.refs.ydStyleSize.querySelector('input:checked').value : this.state.user.get('ydStyleSize');
 		var devEnviron = this.refs.devEnviron.querySelector('input:checked') ? this.refs.devEnviron.querySelector('input:checked').value : this.state.user.get('devEnviron');
 
-		user.save(
-			{
+		user.save({
 				briefBio:this.refs.sitterbio.value,
 				hmStyleSize: hmStyleSize,
 				ydStyleSize: ydStyleSize,
