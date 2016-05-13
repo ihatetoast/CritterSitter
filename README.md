@@ -33,9 +33,10 @@ Backbone
 Bookshelf
 Browserify
 Express
-Filestack, Filepicker
+Filestack (Filepicker)
 Hackpad PM group: [DAKpad](https://hackpad.com/DAKpad-v3ksBycy5Se)
 Knex
+Moments
 Perk
 PSQL
 ReactJS
