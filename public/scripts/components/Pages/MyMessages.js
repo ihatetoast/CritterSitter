@@ -15,7 +15,7 @@ export default React.createClass({
 			user:user};//for filtering
 	},
 	componentDidMount: function(){
-		Messages.on('change', ()=>{
+		Messages.on('update change', ()=>{
 			this.setState({Messages:Messages});
 		});
 		Messages.fetch({
