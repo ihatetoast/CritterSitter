@@ -1,7 +1,6 @@
 @import 'variables';
 
 
-
 h2{
 	font-weight: 700;
 	color: $huddle-brown;
@@ -21,7 +20,9 @@ button:hover {
   border: 2px solid $huddle-cream;
 }
 
-input[type="email"], input[type="text"], input[type="password"] {
+input[type="email"], 
+input[type="text"], 
+input[type="password"] {
   height: 38px;
   padding: 6px 10px;
   background-color: $huddle-cream;
@@ -30,6 +31,6 @@ input[type="email"], input[type="text"], input[type="password"] {
   box-shadow: none;
   box-sizing: border-box; }
 
-
-
-  
+  input:-webkit-autofill {
+    background-color: $huddle-cream !important;
+}

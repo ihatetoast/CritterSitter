@@ -12,14 +12,15 @@ export default React.createClass({
 	},
 		render: function() {
 		return (
-			<section className='offset-by-four four columns'>
-				<div >
-					<form onSubmit={this.login} ><h2>Sign in</h2>
+			<section className='row form_log-reg'>
+				<div className='offset-by-four four columns'>
+					<h3 className="log-reg">Sign in</h3>
+					<form autocomplete='off' onSubmit={this.login}>
 						<input type='text' placeholder='email' ref='email' required='required' />
 						<div className='error'>{this.state.errors.email ? this.state.errors.email.message : null} </div>
 						<input type='password' placeholder='password' ref='password' required='required' />
 						<div className='error'>{this.state.errors.password ? this.state.errors.password.message : null}</div>
-						<button className='button-primary' type='submit'> Login </button>
+						<button type='submit'> Login </button>
 					</form>
 				</div>
 			</section>
