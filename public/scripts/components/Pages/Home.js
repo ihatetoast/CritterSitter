@@ -6,7 +6,7 @@ export default React.createClass({
 		return (
 			<section className='page-section-home'>
 	        	<h3>Welcome to Critter Sitter</h3>
-		        <div className='homediv offset-by-three six columns'>
+		        <div className='homediv offset-by-two eight columns'>
 	    			<img src='./../../../images/stan.jpg'/>
 	    			<div className='photocredit'>
 	    				<a href='http://www.christinajenkinsphotography.com/' target='_blank'>Christina Jenkins Photography</a>

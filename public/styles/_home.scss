@@ -1,8 +1,9 @@
 @import 'variables';
 
-a {
-	color: $huddle-blue;
+a:hover {
+	color: $huddle-red;
 }
+
 .page-section-home{
 	margin: 1em;
 }
