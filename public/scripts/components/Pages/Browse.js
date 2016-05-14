@@ -54,10 +54,14 @@ export default React.createClass({
 		});
 		return (
 			<section>
-				<h2>Browse registered sitters:</h2>
-				<div >
-					{listOfSitters}
-				</div>
+					<div className ='container'>
+						<div className='offset-by-two'>
+							<h2>Browse sitters</h2>
+						</div>
+					</div>
+					<div >
+						{listOfSitters}
+					</div>
 			</section>
 		);
 	}

@@ -1,19 +1,11 @@
 @import 'variables';
 
-
+.container{
+	margin-top: 2em;
+}
 
 h2{
 	font-weight: 700;
 	color: $huddle-brown;
+	font-size: 3em;
 }
-.msgSitter {
-	border: 2px solid $huddle-blue;
-	border-radius: 0.25em;
-	color: $huddle-cream;
-	background-color: $huddle-blue;
-	text-align: center;
-
-}
-.msgSitter:hover{
-	background-color: $huddle-red;
-  }

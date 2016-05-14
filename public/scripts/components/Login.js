@@ -16,11 +16,11 @@ export default React.createClass({
 				<div className='offset-by-four four columns'>
 					<h3 className="log-reg">Sign in</h3>
 					<form autocomplete='off' onSubmit={this.login}>
-						<input type='text' placeholder='email' ref='email' required='required' />
+						<input className='input_log-reg' type='text' placeholder='email' ref='email' required='required' />
 						<div className='error'>{this.state.errors.email ? this.state.errors.email.message : null} </div>
-						<input type='password' placeholder='password' ref='password' required='required' />
+						<input className='input_log-reg' type='password' placeholder='password' ref='password' required='required' />
 						<div className='error'>{this.state.errors.password ? this.state.errors.password.message : null}</div>
-						<button type='submit'> Login </button>
+						<button className='button_log-reg' type='submit'> Login </button>
 					</form>
 				</div>
 			</section>
@@ -47,6 +47,7 @@ export default React.createClass({
 			error: (errorArg)=> {
 				console.log('LOGIN error message');
 				this.setState({errors: errorArg.responseJSON});
+				browserHistory.push('/register');
 
 			}
 		});

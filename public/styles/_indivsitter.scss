@@ -1,17 +1,24 @@
+@import 'variables';
+;.subcomp-indivsitter{
+  margin: 1em;}
+
 h2{
 	font-weight: 700;
 	color: $huddle-brown;
 }
-h4{
+h4, h5{
 	color:$huddle-red;
 	margin-bottom: 0;
 }
+
 .names{
 	margin-right:0.5em;
 	font-weight: 600;
 }
-
-button {
+a{
+  text-decoration: none;
+}
+span.msgSitter {
   color: $huddle-cream;
   background-color: $huddle-blue;
   border: 2px solid $huddle-cream;
@@ -19,7 +26,7 @@ button {
 }
 
 
-button:hover {
+.msgSitter:hover {
   color: $huddle-cream;
   background-color: $huddle-red;
   border: 2px solid $huddle-cream;

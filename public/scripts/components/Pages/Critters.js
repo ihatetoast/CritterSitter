@@ -101,7 +101,7 @@ export default React.createClass({
 			{
 				mimetype: 'image/*',
 				container: 'window',
-				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR']
+				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR', 'IMAGE_SEARCH', 'URL', 'WEBCAM']
 			},
 			(Blob) => {
 				this.setState({
