@@ -76,7 +76,7 @@ export default React.createClass({
 								placeholder='limit 500 characters' 
 								ref='critterBio' 
 								name='critterBio' 
-								cols='80' 
+								cols='50' 
 								rows='40'/>
 						</div>
 						<div className="photo-container">
@@ -85,7 +85,7 @@ export default React.createClass({
 								<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
 							</div>
 							<div>
-								<img src={this.state.critterPhoto} width='120' height='auto' ref='critterPhoto'/>
+								<img src={this.state.critterPhoto} width='220' height='auto' ref='critterPhoto'/>
 							</div>
 						</div>
 						<div>

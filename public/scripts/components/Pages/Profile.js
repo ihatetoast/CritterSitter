@@ -161,7 +161,7 @@ export default React.createClass({
 								<button	type = 'button' onClick = {this._uploadPhoto}>Upload a photo</button>
 							</div>
 							<div>
-								<img src={this.state.photo} width='120' height='auto' ref='photo'/>
+								<img src={this.state.photo} width='220' height='auto' ref='photo'/>
 							</div>
 							<div>
 								<button className="button-primary" type='submit'> Save </button>

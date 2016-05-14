@@ -1,33 +1,69 @@
 @import 'variables';
-;.subcomp-indivsitter{
-  margin: 1em;}
+
+.indivSitter{
+  margin-top: 0em;
+}
 
 h2{
 	font-weight: 700;
 	color: $huddle-brown;
 }
-h4, h5{
+h3, h4, h5{
 	color:$huddle-red;
 	margin-bottom: 0;
 }
-
+.about{
+  color: $huddle-red;
+}
 .names{
 	margin-right:0.5em;
 	font-weight: 600;
+  color: $huddle-brown;
 }
 a{
   text-decoration: none;
 }
-span.msgSitter {
-  color: $huddle-cream;
+
+.msgSitter {
   background-color: $huddle-blue;
   border: 2px solid $huddle-cream;
   font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  float:right;
+  span{
+    color: $huddle-cream;
+  }
+}
+.buttondiv{
+  float: right;
 }
 
-
-.msgSitter:hover {
+button.msgSitter:hover {
   color: $huddle-cream;
   background-color: $huddle-red;
-  border: 2px solid $huddle-cream;
+}
+.one-third,
+.two-thirds {
+  padding: 1em;
+  margin-left: 1em;
+}
+
+.toprow{
+  border-top: 5px solid $huddle-blue;
+
+}
+.bottomrow{
+  margin-bottom: 3em;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+}
+.sitter-para1,
+.sitter-para2,
+.critter-para{
+  line-height: 1.5em;
+}
+.sitter-para2 {
+  margin-bottom: 1em;
 }

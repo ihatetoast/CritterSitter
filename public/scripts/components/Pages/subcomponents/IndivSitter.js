@@ -8,23 +8,21 @@ export default React.createClass({
 	
 	render: function() {
 		return (
-			<div className='container'>
+			<div className='indivSitter container'>
 						
-						<div className='row'>
-							
-							<div className='four columns'>
-									<div><img src={this.props.photo} width='250' height='auto'/></div>
-							</div>
-									
-
-							<div className='offset-by-two five columns'>
-								<h3>About {this.props.firstName}:</h3>
+						<div className='row toprow'>
+							<div className='one-half column'>
+									<div>
+										<img src={this.props.photo}/>
+									</div>								
+							</div>									
+							<div className='one-half column'>
+								<h3 className='about'>About {this.props.firstName}:</h3>
 								<div className='sitter-para1'>
 									<p><span className='names'>{this.props.firstName}</span>lives in 
 									<span> {this.props.hmStyleSize}</span> with <span>{this.props.ydStyleSize}</span> in the<span> {this.props.devEnviron}</span>  
 									with <span>{this.props.number}</span> critters/s (<span>{this.props.other}</span>).</p>
 								</div>
-
                 <div className='sitter-para2'>
                   <h5>In {this.props.firstName}'s words:</h5>
                   <div>{this.props.briefBio}</div>
@@ -33,24 +31,27 @@ export default React.createClass({
 						</div>
 
 
-						<div className='row'>
-								<h4>About {this.props.firstName}'s Critters:</h4>
-								<div className="critterPhoto">
-									<img src={this.props.critterPhoto} width="350" height='auto'/>
+						<div className='row bottomrow'>
+							<div className='one-half column'>
+								<h5>{this.props.firstName}'s Critters:</h5>
+								<div>
+									<p className='critter-para'>{this.props.critterBio}</p>
 								</div>
-								<div>{this.props.critterBio}</div>
 							</div>
-							
-							<div >
-								<button>
-									<Link
-										className='msgSitter'
-										to={`/browse/${this.props.id}/message`}>
-									Message {this.props.firstName}
-									</Link>
-								</button>
+							<div className='one-half column'>
+								<div className="critterPhoto">
+									<img src={this.props.critterPhoto}/>
+								</div>
+								<div className='buttondiv'>
+                  <Link to={`/browse/${this.props.id}/message`}>
+                  	<button className='msgSitter'>
+                      Message {this.props.firstName}
+                    </button>
+                      </Link>
+                  </div>
 							</div>
 						</div>
+		</div>
 									
 		);
 	}
