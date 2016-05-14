@@ -4,7 +4,7 @@ import React from 'react';
 export default React.createClass({
 	render: function() {
 		return (
-			<section>
+			<section className='page-section-home'>
 	        	<h3>Welcome to Critter Sitter</h3>
 		        <div className='homediv offset-by-three six columns'>
 	    			<img src='./../../../images/stan.jpg'/>
@@ -13,12 +13,14 @@ export default React.createClass({
 	    			</div>
 		   
 	        		<div className='hometext'>
-	        			<p>Critter Sitter is an app that connects pet lovers
-		        		willing to mutually pet sit. </p>
-		        		<p>Register or login to browse
-		        		other pet sitters. Reach out, connect, have a playdate or two,
-		        		and know that when you travel, your beloved pet is in 
-		        		good hands.</p>
+	        			<p className='homepara'><span className='critterSitter'>Critter Sitter</span> connects pet lovers willing to pet sit. Having a beloved pet should 
+									not keep you from travelling. travelling should not stop you from adopting a pet. </p>
+
+								<p className='homepara'>Professional pet sitters and boarding kennels are expensive. Friends and family cannot 
+									always help out.  We can!</p>
+
+								<p className='homepara'>Register or login and find a good match. Reach out, connect, have a playdate or two, 
+									and know that when you are away, your beloved pet is in good hands with a critter sitter.</p>
 	        		</div>
 				</div>
 			</section>

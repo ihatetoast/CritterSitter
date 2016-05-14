@@ -13,7 +13,7 @@
 .mini_nav-link {
 	background-color: $huddle-red;
 	color: $huddle-cream;
-	border: none;
+	// border: none;
 	padding-right: 0.5em;
 	float: right;
 	display: inline-block;
@@ -30,8 +30,5 @@
 }
 
 .nav-link:hover {
-	color: $huddle-blue;
-}
-.nav-link:active {
 	color: $huddle-blue;
 }

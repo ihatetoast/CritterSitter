@@ -6,6 +6,17 @@
 	color: $huddle-cream;
 	overflow: hidden;
 	width: 100%;
+	height: 1.5em;
+	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+	// border-bottom: 12px solid $huddle-blue;
+	margin-bottom: 1em;
+}
+.empty-navdiv {
+	background-color: $huddle-blue;
+	
+	overflow: hidden;
+	width: 100%;
+	height: 1.5em;
 	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 	// border-bottom: 12px solid $huddle-blue;
 	margin-bottom: 1em;
@@ -25,7 +36,6 @@
 	border:none;
 	cursor: pointer;
 	// box-sizing: border-box;
-
 }
 
 .nav-link:hover {
@@ -33,4 +43,7 @@
 }
 .nav-link:active {
 	color: $huddle-red;
+}
+a{
+	color: $huddle-cream;
 }

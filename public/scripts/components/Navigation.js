@@ -30,7 +30,7 @@ export default React.createClass({
 				</div>);
 		}else{
 			return (
-				<div className="navdiv">
+				<div className="empty-navdiv">
 				</div>);
 		}
 	}
