@@ -59,7 +59,7 @@ export default React.createClass({
 										onChange={this.handleNumber}
 										type='number' 
 										min="1" 
-										max="20" 
+										max="30" 
 										ref='number' />
 								</div>
 
@@ -76,7 +76,7 @@ export default React.createClass({
 
 
 						<div className='photopara-critters row'>
-							<div className='eight columns'>
+							<div className='two-thirds column'>
 								<h5>Please take a moment to tell us a little bit more about your critters:</h5>
 								<div className='textarea'>
 									<textarea 
@@ -89,7 +89,7 @@ export default React.createClass({
 								</div>
 							</div>
 
-							<div className='three columns'>
+							<div className='one-third column'>
 								<h5> Upload a photo</h5>
 								<div>
 									<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
@@ -101,9 +101,9 @@ export default React.createClass({
 						</div>
 						
 						<div className='row'>
-							<div className='savebutton offset-by-eight four columns'>
-								<button className="button-primary" type='submit'> Save and browse sitters </button>
-							</div>
+						<div className='savebutton'>
+							<button className="button-primary" type='submit'> Save </button>
+						</div>
 						</div>
 					</form>
 				</div>
