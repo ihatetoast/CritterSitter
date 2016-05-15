@@ -8,16 +8,25 @@ import React from 'react';
 export default React.createClass({
 	render: function() {
 		return (
-			<section className="messagelist-row">
-			
-				<div className="messagelist-div">
-					<p>From: <span className="messagelist-from">{this.props.senderFirstName}</span> </p>
-					<p><span className="messagelist-sent">Sent on: {this.props.sent}</span></p>
-				</div>
-				<div>
-					{this.props.body}
-				</div>
-				
+			<section className="messagelist-item">
+				<div className='row'>
+									<div className='one-third column'>
+										<img src={this.props.fromPhoto}/>
+									</div>
+								<div className='two-thirds column'>
+									<div className='fromdatebody'>
+										<div>
+											From: <span className="fromsent">{this.props.senderFirstName}</span>
+										</div>
+										<div>
+											Sent: <span className="fromsent">{this.props.sent}</span>
+										</div>
+										<div>
+											{this.props.body}
+										</div>
+									</div>
+								</div>
+				</div>	
 			</section>
 		);
 	}

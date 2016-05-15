@@ -51,6 +51,7 @@ export default React.createClass({
 						
 						body = {msgval.get('messageBody')}
 						sent = {dateSent}
+						fromPhoto ={msgval.get('sender').photo}
 						senderFirstName = {msgval.get('sender').firstName}
 						senderLastName = {msgval.get('sender').lastName}
 						receiverFirstName = {msgval.get('recipient').firstName}
@@ -60,13 +61,19 @@ export default React.createClass({
 		});
 		return (
 			<section>
-				<h2>My messages</h2>
-				<div>
-					{listOfMessages}
+				<div className ='container'>
+					<div className='offset-by-two'>
+						<h2>{this.state.user.get('firstName')}'s messages</h2>
+						<div className='listofmessages'>
+							{listOfMessages}
+						</div>
+					</div>
 				</div>
 			</section>
 		);
 	}
 });
+
+				
 //filter out to me and from me. collect them all.
 //dazzletime: then break them up by from with array methods.

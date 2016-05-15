@@ -1,8 +1,27 @@
 @import 'variables';
 
+.container {
 
+}
 
 h2{
 	font-weight: 700;
 	color: $huddle-brown;
+}
+// .listofmessages {
+// 	border-top: 5px solid $huddle-blue;
+
+// }
+
+// .messagefromdate{
+// 	margin-top: 1em;
+// }
+
+// .messagebody {
+// 	margin-bottom: 1em;
+// }
+img{
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5em;
 }
