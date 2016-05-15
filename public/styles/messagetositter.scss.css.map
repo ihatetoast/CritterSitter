@@ -1,0 +1,1 @@
+{"version":3,"file":"messagetositter.scss.css","sources":["messagetositter.scss.scss","_variables.scss"],"sourcesContent":["@import 'variables';\n\n","// color variables\n$huddle-blue: #6797C4;\n$huddle-red: #A3282F;\n$huddle-brown: #4D433B;\n$huddle-cream: #FBF6CB;\n"],"mappings":"","names":[],"sourceRoot":"/source/"}

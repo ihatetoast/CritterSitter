@@ -23,12 +23,11 @@ export default React.createClass({
 	render: function() {
 		return (
 			<section>
-				<p>NAVIGATION: i want to see only logout, home, browse</p>
 				<h2>Send a message</h2>
 				<div>
-				<p>Introduce yourself! Write a <span className='italSpan'>brief</span> message to the sitters
+				<p>Introduce yourself! Write a brief message to the sitters
 				and let them know a little about yourself and what you're looking for. 
-				<span className='boldSpan'>Be sure to include a way for them to reach you (email or mobile).</span></p>
+				<span className='boldSpan'> Be sure to include a way for them to reach you (email or mobile).</span></p>
 				</div>
 				<div>
 					<form onSubmit={this.sendMessage}>
