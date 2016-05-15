@@ -59,7 +59,7 @@ export default React.createClass({
 										onChange={this.handleNumber}
 										type='number' 
 										min="1" 
-										max="30" 
+										max="40" 
 										ref='number' />
 								</div>
 
@@ -92,18 +92,18 @@ export default React.createClass({
 							<div className='one-third column'>
 								<h5> Upload a photo</h5>
 								<div>
-									<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
+									<button	className='uploadedphoto' type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
 								</div>
 								<div>
-									<img src={this.state.critterPhoto} width='220' height='auto' ref='critterPhoto'/>
+									<img src={this.state.critterPhoto} ref='critterPhoto'/>
 								</div>
 							</div>
 						</div>
 						
 						<div className='row'>
-						<div className='savebutton'>
-							<button className="button-primary" type='submit'> Save </button>
-						</div>
+							<div className='offset-by-eight four columns'>
+							<button className="button-primary" type='submit'>Save and browse sitters</button>
+							</div>
 						</div>
 					</form>
 				</div>
