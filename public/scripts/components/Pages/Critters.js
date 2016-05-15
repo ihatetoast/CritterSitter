@@ -51,7 +51,6 @@ export default React.createClass({
 					<h2>My Critters</h2>
 						<form onSubmit={this.makeCritter} >	
 							<div className='numberandtypes row'>
-								
 								<div className='one-half column'>
 									<h5>How many critters do you have?</h5>
 									<input 
@@ -72,7 +71,18 @@ export default React.createClass({
 										placeholder='dog, cat, goat, hamster ...' 
 										ref='otherSpecies' />
 								</div>
-					</div>
+							</div>
+							<div className='critterphoto row'>
+								<div className='four columns'>
+									<img src='./../../../../images/rabbit-968550_640.jpg'/>
+								</div>
+								<div className='four columns'>
+									<img src='./../../../../images/bulldog-601714_640.jpg'/>
+								</div>
+								<div className='four columns'>
+									<img src='./../../../../images/guinea-pigs-806924_640.jpg'/>
+								</div>
+							</div>
 
 
 						<div className='photopara-critters row'>
