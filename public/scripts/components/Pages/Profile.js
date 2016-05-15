@@ -199,9 +199,11 @@ export default React.createClass({
 	_uploadPhoto: function(e) {
 		filepicker.pick(
 			{
+				conversions: ['crop', 'rotate', 'filter'],
+				cropRatio: 1,
+				cropForce: true,
 				mimetype: 'image/*',
-				container: 'window',
-				services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR', 'IMAGE_SEARCH', 'URL', 'WEBCAM']
+				services: ['CONVERT','COMPUTER', 'FACEBOOK', 'CLOUDAPP', 'DROPBOX', 'IMGUR', 'INSTAGRAM', 'FLICKR', 'IMAGE_SEARCH', 'URL', 'WEBCAM']
 			},
 			(Blob) => {	
 				this.setState({

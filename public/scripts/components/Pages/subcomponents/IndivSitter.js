@@ -48,7 +48,7 @@ export default React.createClass({
                       Message {this.props.firstName}
                     </button>
                       </Link>
-                  </div>
+                 </div>
 							</div>
 						</div>
 		</div>
