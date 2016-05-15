@@ -805,6 +805,19 @@ h2 {
   font-weight: 700;
   color: #4D433B; }
 
+.listofmessages {
+  border-top: 5px solid #6797C4; }
+
+.fromdatebody {
+  margin-top: 1em; }
+  .fromdatebody span {
+    color: #6797C4; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5em; }
+
 .container {
   margin-top: 2em; }
 
@@ -843,7 +856,7 @@ a {
   .msgSitter span {
     color: #FBF6CB; }
 
-.buttondiv {
+.critterPhoto {
   float: right; }
 
 button.msgSitter:hover {
@@ -859,7 +872,8 @@ button.msgSitter:hover {
   border-top: 5px solid #6797C4; }
 
 .bottomrow {
-  margin-bottom: 3em; }
+  margin-bottom: 3em;
+  overflow: hidden; }
 
 img {
   max-width: 100%;
