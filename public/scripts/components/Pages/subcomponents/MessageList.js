@@ -25,7 +25,7 @@ export default React.createClass({
 											{this.props.body}
 										</div>
 										<div className='buttondiv'>
-											<Link to={`/browse/${this.props.}/message`}>
+											<Link to={`/browse/${this.props.senderId}/message`}>
 												<button className='msgSitter'>
 													Message
 												</button>
