@@ -1,8 +1,8 @@
 //v2 
-
 //adding subcomp to style for <MyMessages /> page.
 
 import React from 'react';
+import {Link} from 'react-router';
 // import {Link} from 'react-router';
 
 export default React.createClass({
@@ -24,13 +24,24 @@ export default React.createClass({
 										<div>
 											{this.props.body}
 										</div>
+										<div className='buttondiv'>
+											<Link to={`/browse/${this.props.}/message`}>
+												<button className='msgSitter'>
+													Message
+												</button>
+											</Link>
+										</div>
 									</div>
-								</div>
-				</div>	
+								</div>	
+				</div>
 			</section>
 		);
 	}
 });
+
+
+
+
 
 
 				// 	<div className="messagelist-viewbtn-div">

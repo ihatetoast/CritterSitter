@@ -56,6 +56,7 @@ export default React.createClass({
 						senderLastName = {msgval.get('sender').lastName}
 						receiverFirstName = {msgval.get('recipient').firstName}
 						receiverLastName = {msgval.get('recipient').lastName}
+						senderId={msgval.get('sender').id}
 						/>
 				);
 		});

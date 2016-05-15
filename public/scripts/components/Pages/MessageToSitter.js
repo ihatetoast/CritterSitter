@@ -7,7 +7,6 @@ export default React.createClass({
 	getInitialState: function() {
 		return {
 			errors: {},
-			//instatiating, so needs () bc method
 			message: new Message()
 		};
 	},
@@ -24,7 +23,7 @@ export default React.createClass({
 		return (
 			<section className='page-MessageToSitter'>
 				<div className='container'>
-					<h2>Send a message to </h2>
+					<h2>Send a message</h2>
 						
 					<div className='toprow row'>
 						<div className='one-third column'>
