@@ -25,7 +25,36 @@ img{
 	margin-top: 1em;
 }
 
-input[type="radio"] {
-  box-sizing: border-box;
-  margin-right: 0.5em 
+.radiobuttons-home{
+	label {
+		input[type="radio"] {
+		  box-sizing: border-box;
+		  margin-right: 0.5em 
+		}
+	font-weight: 200;
+	font-size: 0.75em;
+	}
+}
+.ydStyleSize{
+	label {
+		input[type="radio"] {
+		  box-sizing: border-box;
+		  margin-right: 0.5em 
+		}
+	font-weight: 200;
+	font-size: 0.7em;
+	}
+	.four.columns{
+		margin:0.1em;
+	}
+}
+.devEnviron{
+	label {
+		input[type="radio"] {
+		  box-sizing: border-box;
+		  margin-right: 0.5em 
+		}
+	font-weight: 200;
+	font-size: 0.75em;
+	}
 }
