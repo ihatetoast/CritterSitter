@@ -22,22 +22,36 @@ export default React.createClass({
 	// },
 	render: function() {
 		return (
-			<section>
-				<h2>Send a message</h2>
-				<div>
-				<p>Introduce yourself! Write a brief message to the sitters
-				and let them know a little about yourself and what you're looking for. 
-				<span className='boldSpan'> Be sure to include a way for them to reach you (email or mobile).</span></p>
-				</div>
-				<div>
-					<form onSubmit={this.sendMessage}>
-						<div className='message-form container'>
-							<div className='msgReceiver'>
+			<section className='page-MessageToSitter'>
+				<div className='container'>
+					<h2>Send a message</h2>
+						
+					<div className='toprow row'>
+						<div className='one-third column'>
+							<p>Write a message to introduce yourself. Be sure to include a way for them to reach you (email or mobile).</p>
+						<div className='row'>
+							<div>
+									<img src='./../../../images/dog-and-cat-on-laptop.jpg'/>
 							</div>
-							<textarea placeholder='message to the sitter' className='messageBody' ref='messageTo' name='messageTo' cols='80' rows='40'></textarea>
 						</div>
-						<button className="button-primary" type='submit'>Send</button>
-					</form>
+						</div>
+						<div className='two-thirds column'>
+							<form onSubmit={this.sendMessage}>
+									<div>					
+										<textarea 
+											placeholder='message to the sitter' 
+											className='messageBody' 
+											ref='messageTo' 
+											name='messageTo' 
+											rows='10'>
+										</textarea>
+									</div>
+								<div className='offset-by-ten one column'>
+									<button className="button-primary" type='submit'>Send</button>
+								</div>
+							</form>
+						</div>						
+					</div>				
 				</div>
 			</section>
 		);

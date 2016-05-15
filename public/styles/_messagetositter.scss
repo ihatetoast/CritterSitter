@@ -1,0 +1,17 @@
+@import 'variables';
+
+.container{
+	margin-top: 2em;
+}
+
+textarea {
+	width: 100%;
+	height:auto;
+}
+img{
+	max-width: 100%;
+}
+.toprow {
+	border-top: 5px solid $huddle-blue;
+	margin-top: 1em;
+}
