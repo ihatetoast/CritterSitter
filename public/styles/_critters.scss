@@ -9,14 +9,23 @@ h2{
 	color: $huddle-brown;
 	font-size: 3em;
 }
-.photopara{
-  border-top: 5px solid $huddle-blue;
-}
-
 
 textarea {
-	width:100%;
+	width: 100%;
+	height:auto;
 }
 img{
 	max-width: 100%;
 }
+.numberandtypes {
+	border-top: 5px solid $huddle-blue;
+	margin-top: 1em;
+}
+.photopara-critters{
+  border-top: 2px solid $huddle-blue;
+  margin-top: 4em;
+}
+input[type="number"] {
+	background-color: $huddle-cream;
+	box-sizing: border-box;
+	padding: 1em; }

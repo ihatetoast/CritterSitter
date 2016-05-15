@@ -9,11 +9,12 @@ h2{
 	color: $huddle-brown;
 	font-size: 3em;
 }
-.photopara{
+.photopara-sitters{
   border-top: 5px solid $huddle-blue;
 }
 
 textarea {
+	width: 100%;
 	height:auto;
 }
 img{
@@ -22,4 +23,9 @@ img{
 .radiobuttonsintro {
 	border-top: 2px solid $huddle-blue;
 	margin-top: 1em;
+}
+
+input[type="radio"] {
+  box-sizing: border-box;
+  margin-right: 0.5em 
 }

@@ -27,8 +27,7 @@ export default React.createClass({
 				<div className='container'>
 				<h2>Profile</h2>
 					<form onSubmit={this.makeProfile} >
-
-						<div className='photopara row'>
+						<div className='photopara-sitters row'>
 							<div className='profileparadiv two-thirds column'>
 								<h5>Tell us about yourself:</h5>
 								<div className='profilepara-div'>
@@ -58,13 +57,13 @@ export default React.createClass({
 							</div>	
 						</div>
 						<div className='radiobuttonsintro row'>
-							<div className='offset-by-one ten columns'>
+							<div className='twelve columns'>
 								<p>Give us a general feel for where you live. This will help others choose a match that
 								best suits their critters. </p>
 							</div>
 						</div>
 						<div className='radiobuttons row'>
-							<div className='hmStyleSize offset-by-one three columns' ref='hmStyleSize'>
+							<div className='hmStyleSize four columns' ref='hmStyleSize'>
 								<h5>Home:</h5>
 								<label>
 									<input 
@@ -98,7 +97,7 @@ export default React.createClass({
 								</label>
 							</div>
 
-							<div className='ydStyleSize offset-by-one three columns' ref='ydStyleSize'>
+							<div className='ydStyleSize four columns' ref='ydStyleSize'>
 								<h5>Yard:</h5>
 								<label>
 									<input 
@@ -152,7 +151,7 @@ export default React.createClass({
 								</label>
 							</div>
 
-							<div className='devEnviron offset-by-one three  columns' ref='devEnviron'>
+							<div className='devEnviron four  columns' ref='devEnviron'>
 								<h5>Area:</h5>
 								<label>
 									<input 

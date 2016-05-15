@@ -46,50 +46,64 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<section>
-				<div>
-					<form onSubmit={this.makeCritter} ><h2>My Critters</h2>	
-							<div>
-							<p>How many critters do you have?</p>
-							<input 
-								value={this.state.critter.get('number')}
-								onChange={this.handleNumber}
-								type='number' 
-								min="1" 
-								max="20" 
-								ref='number' />
-						</div>
-						<div>
-							<p>List the types of critters you have:</p>
-							<input 
-								value={this.state.critter.get('otherSpecies')}
-								onChange={this.handleOtherSpecies}
-								type='text' 
-								placeholder='dog, cat, goat, hamster ...' 
-								ref='otherSpecies' />
-						</div>
-						<div>
-							<p>Please take a moment to tell us a little bit more about your critters:</p>
-							<textarea 
-								value={this.state.critter.get('critterBio')}
-								onChange ={this.handleCritterBio}
-								placeholder='limit 500 characters' 
-								ref='critterBio' 
-								name='critterBio' 
-								cols='50' 
-								rows='40'/>
-						</div>
-						<div className="photo-container">
-							<h5> Upload a photo</h5>
-							<div>
-								<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
+			<section className='page-critter'>
+				<div className='container'>
+					<h2>My Critters</h2>
+						<form onSubmit={this.makeCritter} >	
+							<div className='numberandtypes row'>
+								
+								<div className='one-half column'>
+									<h5>How many critters do you have?</h5>
+									<input 
+										value={this.state.critter.get('number')}
+										onChange={this.handleNumber}
+										type='number' 
+										min="1" 
+										max="20" 
+										ref='number' />
+								</div>
+
+								<div className='one-half column'>
+									<h5>List the types of critters you have:</h5>
+									<input 
+										value={this.state.critter.get('otherSpecies')}
+										onChange={this.handleOtherSpecies}
+										type='text' 
+										placeholder='dog, cat, goat, hamster ...' 
+										ref='otherSpecies' />
+								</div>
+					</div>
+
+
+						<div className='photopara-critters row'>
+							<div className='eight columns'>
+								<h5>Please take a moment to tell us a little bit more about your critters:</h5>
+								<div className='textarea'>
+									<textarea 
+										value={this.state.critter.get('critterBio')}
+										onChange ={this.handleCritterBio}
+										placeholder='limit 500 characters' 
+										ref='critterBio' 
+										name='critterBio'  
+										rows='7'/>
+								</div>
 							</div>
-							<div>
-								<img src={this.state.critterPhoto} width='220' height='auto' ref='critterPhoto'/>
+
+							<div className='three columns'>
+								<h5> Upload a photo</h5>
+								<div>
+									<button	type = 'button' onClick = {this._uploadCritterPhoto}>Upload a photo</button>
+								</div>
+								<div>
+									<img src={this.state.critterPhoto} width='220' height='auto' ref='critterPhoto'/>
+								</div>
 							</div>
 						</div>
-						<div>
-							<button className="button-primary" type='submit'> Save </button>
+						
+						<div className='row'>
+							<div className='savebutton offset-by-eight four columns'>
+								<button className="button-primary" type='submit'> Save and browse sitters </button>
+							</div>
 						</div>
 					</form>
 				</div>
