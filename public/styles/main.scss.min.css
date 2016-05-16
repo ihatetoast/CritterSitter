@@ -905,9 +905,29 @@ img {
   border-top: 2px solid #6797C4;
   margin-top: 1em; }
 
-input[type="radio"] {
-  box-sizing: border-box;
-  margin-right: 0.5em; }
+.radiobuttons-home label {
+  font-weight: 200;
+  font-size: 0.75em; }
+  .radiobuttons-home label input[type="radio"] {
+    box-sizing: border-box;
+    margin-right: 0.5em; }
+
+.ydStyleSize label {
+  font-weight: 200;
+  font-size: 0.7em; }
+  .ydStyleSize label input[type="radio"] {
+    box-sizing: border-box;
+    margin-right: 0.5em; }
+
+.ydStyleSize .four.columns {
+  margin: 0.1em; }
+
+.devEnviron label {
+  font-weight: 200;
+  font-size: 0.75em; }
+  .devEnviron label input[type="radio"] {
+    box-sizing: border-box;
+    margin-right: 0.5em; }
 
 .container {
   margin-top: 2em; }
