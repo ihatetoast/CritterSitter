@@ -20,7 +20,7 @@ export default React.createClass({
 								<h3 className='about'>About {this.props.firstName}:</h3>
 								<div className='sitter-para1'>
 									<p><span className='names'>{this.props.firstName}</span>lives in 
-									<span> {this.props.hmStyleSize}</span> with <span>{this.props.ydStyleSize}</span> in the<span> {this.props.devEnviron}</span>  
+									<span> {this.props.hmStyleSize} </span> with <span>{this.props.ydStyleSize}</span> in the <span> {this.props.devEnviron} </span>  
 									with <span>{this.props.number}</span> critters/s (<span>{this.props.other}</span>).</p>
 								</div>
                 <div className='sitter-para2'>
