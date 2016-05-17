@@ -31,8 +31,15 @@ export default React.createClass({
 												</button>
 											</Link>
 										</div>
+										<div className='buttondiv'>
+											<Link to='/delete'>
+												<button className='msgSitter'>
+													Delete
+												</button>
+											</Link>
 									</div>
-								</div>	
+								</div>
+							</div>	
 				</div>
 			</section>
 		);

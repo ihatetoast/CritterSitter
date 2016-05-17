@@ -27,7 +27,8 @@ export default React.createClass({
 						
 					<div className='toprow row'>
 						<div className='one-third column'>
-							<p>Write a message to introduce yourself. Be sure to include a way for them to reach you (email or mobile).</p>
+							<p>Write a message to introduce yourself. Critter Sitter offers in-app messaging; otherwise, feel free to include
+							your mobile or email address if you wish to communicate outside the app.</p>
 						<div className='row'>
 							<div>
 									<img src='./../../../images/dog-and-cat-on-laptop.jpg'/>

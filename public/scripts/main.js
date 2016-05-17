@@ -18,6 +18,7 @@ import MessageToSitter from './components/Pages/MessageToSitter';
 import MyMessages from './components/Pages/MyMessages';
 import Conversation from './components/Pages/Conversation';
 import Dashboard from './components/Pages/Dashboard';
+import Delete from './components/Pages/Delete';
 
 
 filepicker.setKey('AifGt857oRLCoRsu9sfJfz');
@@ -43,6 +44,7 @@ const router = (
 			<Route path="/browse/:recipientId/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
 			<Route path="/dashboard" component={Dashboard} />
+			<Route path="/delete" component={Delete} />
 		</Route>
 	</Router>
 );
