@@ -27,7 +27,14 @@ export default React.createClass({
 										<div className='buttondiv'>
 											<Link to={`/browse/${this.props.senderId}/message`}>
 												<button className='msgSitter'>
-													Message
+													Message {this.props.senderFirstName} back
+												</button>
+											</Link>
+										</div>
+										<div className='buttondiv'>
+											<Link to='/delete'>
+												<button className='msgSitter'>
+													Delete message
 												</button>
 											</Link>
 										</div>
