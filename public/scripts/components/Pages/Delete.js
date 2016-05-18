@@ -8,23 +8,23 @@ export default React.createClass({
 		return (
 			<section className="page-delete">
 				<div className='row'>
-					<h2>OMG, you tried to delete.</h2>	
+					<h2>Delete component: to be built next</h2>	
 					<div className='offset-by-three six columns'>
 						<img src={'./../../../images/jess.jpg'}/>
 					</div>			
 				</div>
-				<div className='row'>
-					<h2>It's like you're all "Doopty Doo! I wanna delete. I wanna put things on my head.</h2>	
-				</div>
-				<div className='offset-by-three six columns'>
-					<img src={'./../../../images/larner.jpeg'}/>
-				</div>
-				<div className='offset-by-three six columns'>
-					<button className='msgbutton'>This button, like your thought process, does not work.</button>
-				</div>
+				{/*<div className='row'>
+									<h2>It's like you're all "Doopty Doo! I wanna delete. I wanna put things on my head.</h2>	
+								</div>
+								<div className='offset-by-three six columns'>
+									<img src={'./../../../images/larner.jpeg'}/>
+								</div>
+								<div className='offset-by-three six columns'>
+									<button className='msgbutton'>This button, like your thought process, does not work.</button>
+								</div>*/}
 			</section>
 		);
-	}
+}
 });
 
 
