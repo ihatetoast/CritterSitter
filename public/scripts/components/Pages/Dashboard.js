@@ -33,12 +33,12 @@ export default React.createClass({
 		return (
 			<section className='page-register'>
 				<div className='container'>
-				<h2>Sitter's Dashboard</h2>
-						<div className='row'>
+					<h2>Sitter's Dashboard</h2>
+					<div className='welcomesitter row'>
+						<h5>Welcome, {this.state.user.get('firstName')}!</h5>
+					</div>
+						<div className='sitterdashboard row'>
 							<div className='one-half column'>
-								<div className='welcomesitter'>
-									<h5>Hello, {this.state.user.get('firstName')}!</h5>
-								</div>
 								<div className='welcomephoto'>
 									<img src={this.state.user.get('photo')} />
 								</div>
@@ -50,19 +50,37 @@ export default React.createClass({
 							</div>
 
 							<div className='one-half column'>
-								<p>Your bio: </p>
+								<p>In your words: </p>
 								<div>{this.state.user.get('briefBio')}</div>
-							</div>
-						</div>
-
-
-
-
-						<div className='buttonrow row'>
+								<div className='buttonrow row'>
 							<div className='offset-by-eight four columns'>
 								<button className="button-primary" type='submit'>
 									<Link to='/profile' >Edit profile </Link>
 								</button>
+							</div>
+						</div>
+							</div>
+						</div>
+						<div className='critterdashboard row'>
+							<div className='one-half column'>
+								<div className='welcomephoto'>
+									<img src={this.state.critter.get('critterPhoto')} />
+								</div>
+								<div>
+									<p>Number of critters: {this.state.critter.get('number')}</p><p>{this.state.critter.get('otherSpecies')}</p>
+								</div>
+							</div>
+
+							<div className='one-half column'>
+								<p>In your words: </p>
+								<div>{this.state.critter.get('critterBio')}</div>
+								<div className='buttonrow row'>
+							<div className='offset-by-eight four columns'>
+								<button className="button-primary" type='submit'>
+									<Link to='/profile' >Edit profile </Link>
+								</button>
+							</div>
+						</div>
 							</div>
 						</div>
 				</div>

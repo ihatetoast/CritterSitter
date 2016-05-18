@@ -43,7 +43,7 @@ const router = (
 			<Route path="/messages/:recipientId/message" component={Conversation} />
 			<Route path="/browse/:recipientId/message" component={MessageToSitter} />
 			<Route path="/messages" component={MyMessages} />
-			<Route path="/dashboard" component={Dashboard} />
+			<Route path="/:id/dashboard" component={Dashboard} />
 			<Route path="/delete" component={Delete} />
 		</Route>
 	</Router>
