@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import user from '../../models/user';//this is a session, katy. ooooh. aaaah.
 import Critter from '../../models/Critter';
 
-// import Crittes from './../../collections/CrittersCollection';
+// import Critters from './../../collections/CrittersCollection';
 
 
 
@@ -16,17 +16,26 @@ export default React.createClass({
 		return {
 			errors: {},
 			user: user,
-			critter: new Critter()
+			critter: new Critter(),
+			data: 
+				{
+					where: {userId: this.state.user['id']}
+				}
 		};
 	},
 	componentDidMount: function(){
 		this.state.user.on('change', this._showDash);
+		this.state.critter.on('change', this._showDashCritter);
 	},
 	componentWillUnmount: function(){
 		this.state.user.off('change', this._showDash);
+		this.state.critter.off('change', this._showDashCritter);
 	},
 	_showDash: function(){
 		this.setState({user:user});
+	},
+	_showDashCritter: function(){
+		this.setState({critter:new Critter()});
 	},
 	render: function() {
 		

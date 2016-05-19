@@ -24,7 +24,7 @@ export default React.createClass({
 					<Link className="nav-link" to='/messages'>Messages</Link>
 					<Link className="nav-link" to='/critters'>Edit Critters</Link>
 					<Link className="nav-link" to='/profile'>Edit Profile</Link>
-					<Link className="nav-link" to={`/${this.state.user.get('id')}/dashboard`}>Dashboard</Link>
+					<Link className="nav-link" to='/dashboard'>Dashboard</Link>
 						
 					{/*<Link className="nav-link" to={'/browse/:recipientId/message'}></Link>*/}
 				</div>);
