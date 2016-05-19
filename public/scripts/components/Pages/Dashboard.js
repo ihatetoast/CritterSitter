@@ -16,11 +16,7 @@ export default React.createClass({
 		return {
 			errors: {},
 			user: user,
-			critter: new Critter(),
-			data: 
-				{
-					where: {userId: this.state.user['id']}
-				}
+			critter: new Critter()
 		};
 	},
 	componentDidMount: function(){
