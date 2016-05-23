@@ -973,3 +973,23 @@ img {
 .toprow {
   border-top: 5px solid #6797C4;
   margin-top: 1em; }
+
+.welcomesitter {
+  border-top: 5px solid #6797C4;
+  margin-top: 1em; }
+
+.critterdashboard {
+  border-top: 2px solid #6797C4;
+  margin-top: 1em; }
+
+.yourwords {
+  font-weight: 500;
+  color: #A3282F; }
+
+.msgSitter {
+  background-color: #6797C4;
+  border: 2px solid #FBF6CB;
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif; }
+
+a {
+  color: #FBF6CB; }
