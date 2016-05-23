@@ -45,6 +45,7 @@ const router = (
 			<Route path="/messages" component={MyMessages} />
 			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/delete" component={Delete} />
+
 		</Route>
 	</Router>
 );

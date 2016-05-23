@@ -10,15 +10,7 @@ export default React.createClass({
 			message: new Message()
 		};
 	},
-	//ask instructor: this was not in before. why?
-	// componentDidMount: function() {
-	// 	this.state.Message.on('change', () => {
-	// 		console.log('Message to Sitter: Component did mount');
-	// 		this.setState({
-	// 			Message: Message
-	// 		});
-	// 	});
-	// },
+
 	render: function() {
 		return (
 			<section className='page-MessageToSitter'>
