@@ -10,15 +10,7 @@ export default React.createClass({
 			message: new Message()
 		};
 	},
-	//ask instructor: this was not in before. why?
-	// componentDidMount: function() {
-	// 	this.state.Message.on('change', () => {
-	// 		console.log('Message to Sitter: Component did mount');
-	// 		this.setState({
-	// 			Message: Message
-	// 		});
-	// 	});
-	// },
+
 	render: function() {
 		return (
 			<section className='page-MessageToSitter'>
@@ -27,7 +19,8 @@ export default React.createClass({
 						
 					<div className='toprow row'>
 						<div className='one-third column'>
-							<p>Write a message to introduce yourself. Critter Sitter offers and in-app messaging service, or you may share your email address or mobile number..</p>
+							<p>Write a message to introduce yourself. Critter Sitter offers in-app messaging; otherwise, feel free to include
+							your mobile or email address if you wish to communicate outside the app.</p>
 						<div className='row'>
 							<div>
 									<img src='./../../../images/dog-and-cat-on-laptop.jpg'/>

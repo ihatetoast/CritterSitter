@@ -1,0 +1,26 @@
+@import 'variables';
+
+
+.welcomesitter {
+	border-top: 5px solid $huddle-blue;
+	margin-top: 1em;
+}
+.critterdashboard {
+	border-top: 2px solid $huddle-blue;
+	margin-top: 1em;
+}
+
+.yourwords {
+	font-weight: 500;
+	color: $huddle-red;
+}
+
+.msgSitter {
+  background-color: $huddle-blue;
+  border: 2px solid $huddle-cream;
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+ }
+
+ a{
+ 	color: $huddle-cream;
+ }

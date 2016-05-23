@@ -42,7 +42,7 @@ export default React.createClass({
 			success: (loggedArg)=>{
 				this.state.user.set(loggedArg);
 				//once logged in, takes user to browse sitter page.
-				browserHistory.push('/browse');
+				browserHistory.push('/dashboard');
 			},
 			error: (errorArg)=> {
 				console.log('LOGIN error message');
@@ -53,7 +53,6 @@ export default React.createClass({
 		});
 	}
 });
-
 
 
 
