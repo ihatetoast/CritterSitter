@@ -21,10 +21,10 @@ export default React.createClass({
 			return (
 				<div className="navdiv">
 					<Link className="nav-link" to='/browse'>Browse</Link>
-					<Link className="nav-link" to='/critters'>My Critters</Link>
-					<Link className="nav-link" to='/profile'>My Profile</Link>
 					<Link className="nav-link" to='/messages'>Messages</Link>
-				
+					<Link className="nav-link" to='/critters'>Edit Critters</Link>
+					<Link className="nav-link" to='/profile'>Edit Profile</Link>
+					<Link className="nav-link" to='/dashboard'>Dashboard</Link>
 						
 					{/*<Link className="nav-link" to={'/browse/:recipientId/message'}></Link>*/}
 				</div>);
@@ -35,3 +35,6 @@ export default React.createClass({
 		}
 	}
 });
+
+
+// to={`/${this.state.user.get('id')}/dashboard`}

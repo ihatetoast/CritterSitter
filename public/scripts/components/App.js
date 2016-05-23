@@ -1,5 +1,4 @@
 import React from 'react';
-// import Navigation from './Navigation';
 import Banner from './Pages/subcomponents/Banner';
 // import Footer from './footer'; 
 
