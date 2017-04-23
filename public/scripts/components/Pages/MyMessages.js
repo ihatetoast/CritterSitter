@@ -64,7 +64,7 @@ export default React.createClass({
 			<section>
 				<div className ='container'>
 					<div className='offset-by-two'>
-						<h2>{this.state.user.get('firstName')}'s messages</h2>
+						<h2>{this.state.user.get('firstName')}&amp;s messages</h2>
 						<div className='listofmessages'>
 							{listOfMessages}
 						</div>
