@@ -52,7 +52,7 @@ export default React.createClass({
 		return (
 			<section className='page-register'>
 				<div className='container'>
-					<h2>Sitter's Dashboard</h2>
+					<h2>Sitter&apos;s Dashboard</h2>
 					<div className='welcomesitter row'>
 						<h5>Welcome, {this.state.user.get('firstName')}!</h5>
 					</div>
